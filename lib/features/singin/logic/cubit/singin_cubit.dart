@@ -1,4 +1,4 @@
-import 'dart:js';
+// ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,8 +44,8 @@ class SinginCubit extends Cubit<SinginState> {
       success: (singin) async {
         emit(SinginState.success(singin));
         await SharedPrefHelper.setData('token', singin.token ?? '');
-        print(await SharedPrefHelper.getString('token'));
-        CourseesCubit.get(context).id = singin.user?.id;
+        await SharedPrefHelper.setData('id', singin.user!.id);
+        await SharedPrefHelper.setData('userName', singin.user!.username ?? '');
         print('User Email: ${singin.user!.email}');
         print('Message: ${singin.user!.username}');
       },

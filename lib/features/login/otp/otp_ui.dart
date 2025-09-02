@@ -41,7 +41,7 @@ class OTPLogin extends StatelessWidget {
               disabledBorderColor: ColorManger.primary_ColorBlue,
               enabledBorderColor: Colors.black,
               showFieldAsBox: true,
-              onCodeChanged: (String code) {
+              onSubmit: (code) {
                 LoginCubit.get(context).otpLogin = code;
               },
             ),
@@ -52,7 +52,6 @@ class OTPLogin extends StatelessWidget {
                 paddingV: 20.h,
                 function: () {
                   LoginCubit.get(context).emitOtpLogin();
-                  // context.pushNamed(Routers.home_page);
                 })
           ],
         ),

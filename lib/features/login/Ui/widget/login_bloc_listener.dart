@@ -38,7 +38,10 @@ class _LoginBlocListenerState extends State<LoginBlocListener> {
                     ),
                   )),
           success: (loginResponse) {
-            context.pushNamed(Routers.otp);
+            // context.pushNamed(Routers.otp);
+            context.read<LoginCubit>().type_user == 'student'
+                ? context.pushNamed(Routers.home_page)
+                : context.pushNamed(Routers.home_page_teacher);
           },
           error: (error) {
             errorLogin(context, error);

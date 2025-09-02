@@ -4,7 +4,10 @@ import 'dart:core';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
 import 'package:learn_programtion/core/helper/spacing.dart';
+import 'package:learn_programtion/core/routing/router.dart';
+import '../../../../core/theming/color.dart';
 import '../../../../core/theming/font_style.dart';
 
 class CoursesItem extends StatelessWidget {
@@ -36,7 +39,7 @@ class CoursesItem extends StatelessWidget {
             ClipRRect(
               child: Image.asset(
                 image!,
-                height: 250.h,
+                height: 160.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
@@ -44,7 +47,7 @@ class CoursesItem extends StatelessWidget {
                   topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             ),
             Container(
-              height: 250.h,
+              height: 160.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -91,7 +94,7 @@ class CoursesItem extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(
               textDirection: TextDirection.rtl,
-              'Flutter عبارة عن إطار عمل مفتوح المصدر تطوّره Google وتدعمه. يستخدم مطورو الواجهة الأمامية والمطورون الشاملون Flutter لإنشاء واجهة مستخدم (UI) للتطبيق تعمل على منصات متعددة بتعليمة برمجية أساسية واحدة.',
+              descripe!,
               style: FontStyleAndText.fontmedia,
               textAlign: TextAlign.right,
               maxLines: 3,
@@ -122,11 +125,22 @@ class CoursesItem extends StatelessWidget {
                   style: FontStyleAndText.fontsmall,
                 ),
                 Spacer(),
-                Text(
-                  ' ${time!}',
-                  textDirection: TextDirection.rtl,
-                  style: FontStyleAndText.fontsmall,
-                ),
+                Row(children: [
+                  Icon(Icons.delete, size: 25, color: ColorManger.font),
+                  horizontalBox(13.w),
+                  InkWell(
+                    child: Icon(Icons.edit, size: 25, color: ColorManger.font),
+                    onTap: () {
+                      context.pushNamed(Routers.edit_courses);
+                    },
+                  ),
+                  horizontalBox(13.w),
+                ])
+                // Text(
+                //   ' ${time!}',
+                //   textDirection: TextDirection.rtl,
+                //   style: FontStyleAndText.fontsmall,
+                // ),
               ],
             ),
           )

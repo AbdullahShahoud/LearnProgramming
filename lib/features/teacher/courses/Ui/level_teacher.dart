@@ -15,10 +15,11 @@ class LevelsTeacher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final course = context.read<CourserCubitTeacher>().selectedcorse;
     return Scaffold(
-        body: BlocBuilder<CourserCubitTeacher, CourserCubitTeacherState>(
+        body: BlocConsumer<CourserCubitTeacher, CourserCubitTeacherState>(
+      listener: (context, state) {},
       builder: (context, state) {
+        final course = context.read<CourserCubitTeacher>().selectedcorse;
         return SafeArea(
             child: SingleChildScrollView(
           child:

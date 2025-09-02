@@ -29,12 +29,12 @@ class DioFactory {
   }
 
   static Future<void> _addDioHeader() async {
-    // String? token = await SharedPrefHelper.getString('token');
+    final token = await SharedPrefHelper.getString('token');
+
     _dio?.options.headers = {
       'Content-Type': 'application/json',
       'Accept': '*/*',
-      // if (await SharedPrefHelper.getString('token') != null)
-      'Authorization': 'Token ${await SharedPrefHelper.getString('token')}',
+      if (token != null && token.isNotEmpty) 'Authorization': 'Token $token',
     };
   }
 

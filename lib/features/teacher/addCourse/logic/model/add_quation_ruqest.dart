@@ -9,8 +9,8 @@ class QuationRuqest {
   String? b;
   String? c;
   String? correct_choice;
-  String? quiz;
-  String? course;
+  int? quiz;
+  int? course;
 
   QuationRuqest({
     required this.question,

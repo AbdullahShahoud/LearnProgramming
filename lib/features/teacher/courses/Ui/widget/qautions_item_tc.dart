@@ -1,11 +1,15 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/DI/dependency_injection.dart';
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/theming/color.dart';
 import '../../../../../core/theming/font_style.dart';
+import '../../../addCourse/Ui/widget/from_test.dart';
+import '../../logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../logic/model/courses_response.dart';
 
 class QuationItemTeacher extends StatefulWidget {
@@ -27,16 +31,6 @@ class _QuationItemState extends State<QuationItemTeacher> {
               final question = widget.test.questions![index];
               return Stack(
                 children: [
-                  Positioned(
-                      top: 5,
-                      left: 4,
-                      child: Row(
-                        children: [
-                          Icon(Icons.delete, size: 15, color: Colors.black),
-                          horizontalBox(15),
-                          Icon(Icons.edit, size: 15, color: Colors.black)
-                        ],
-                      )),
                   Container(
                       margin:
                           EdgeInsets.only(bottom: 10.h, left: 8.w, right: 8.w),
@@ -145,6 +139,42 @@ class _QuationItemState extends State<QuationItemTeacher> {
                                             horizontal: 7.h),
                                         child: Icon(Icons.circle))
                                   ])),
+                        ],
+                      )),
+                  Positioned(
+                      top: 5,
+                      left: 7,
+                      child: Row(
+                        children: [
+                          Icon(Icons.delete, size: 25, color: ColorManger.font),
+                          horizontalBox(13.w),
+                          InkWell(
+                            child: Icon(Icons.edit,
+                                size: 25, color: ColorManger.font),
+                            onTap: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  backgroundColor:
+                                      ColorManger.primary_ColorBlue,
+                                  builder: ((context) {
+                                    return BlocProvider(
+                                        create: (context) =>
+                                            CourserCubitTeacher(
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                              getIt(),
+                                            ),
+                                        child: FromTest(context));
+                                  }));
+                            },
+                          )
                         ],
                       )),
                 ],

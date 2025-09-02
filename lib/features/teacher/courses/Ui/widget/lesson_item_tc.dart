@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/core/routing/router.dart';
 
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/theming/color.dart';
@@ -22,16 +24,6 @@ class _LessonState extends State<LessonItemTeacher> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-            top: 5,
-            left: 4,
-            child: Row(
-              children: [
-                Icon(Icons.delete, size: 15, color: Colors.black),
-                horizontalBox(15),
-                Icon(Icons.edit, size: 15, color: Colors.black)
-              ],
-            )),
         Card(
           color: ColorManger.primary_ColorBlue,
           child: Padding(
@@ -56,6 +48,21 @@ class _LessonState extends State<LessonItemTeacher> {
             ),
           ),
         ),
+        Positioned(
+            top: 5,
+            left: 7,
+            child: Row(
+              children: [
+                Icon(Icons.delete, size: 25, color: ColorManger.font),
+                horizontalBox(13.w),
+                InkWell(
+                  child: Icon(Icons.edit, size: 25, color: ColorManger.font),
+                  onTap: () {
+                    context.pushNamed(Routers.edit_lession);
+                  },
+                )
+              ],
+            )),
       ],
     );
   }

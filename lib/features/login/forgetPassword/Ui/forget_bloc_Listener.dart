@@ -35,7 +35,7 @@ class _ForgetBlocListenerState extends State<ForgetBlocListener> {
                   )),
           successForget: (forgetResponse) {
             print('successLogin');
-            context.pushNamed(Routers.confirmPassword);
+            context.pushNamed(Routers.Password);
           },
           errorForget: (error) {
             errorLogin(context, error);

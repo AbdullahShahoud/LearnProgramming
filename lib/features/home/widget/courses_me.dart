@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_programtion/core/helper/extention.dart';
@@ -27,7 +28,7 @@ Widget CoursesMe(List<CoursesMeResponse> courseItem) {
         ),
       ),
       verticalBox(10.h),
-      SizedBox(
+      Container(
         height: 160.h,
         child: ListView.builder(
           itemBuilder: (context, index) => InkWell(

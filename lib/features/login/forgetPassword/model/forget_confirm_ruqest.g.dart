@@ -9,8 +9,8 @@ part of 'forget_confirm_ruqest.dart';
 ForgatePasswordConfirmRquest _$ForgatePasswordConfirmRquestFromJson(
         Map<String, dynamic> json) =>
     ForgatePasswordConfirmRquest(
-      token: json['token'] as String?,
-      password: json['password'] as String?,
+      token: (json['token'] as num?)?.toInt(),
+      password: (json['password'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ForgatePasswordConfirmRquestToJson(

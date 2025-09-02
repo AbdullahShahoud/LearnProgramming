@@ -42,6 +42,7 @@ class _LessonItemState extends State<LessonBodyTeacher> {
           // TODO: implement listener
         },
         builder: (context, state) {
+          var cubit = CourserCubitTeacher.get(context);
           final lessonMe = CourserCubitTeacher.get(context).selectedlesson;
           return SingleChildScrollView(
             child: Expanded(
@@ -60,49 +61,35 @@ class _LessonItemState extends State<LessonBodyTeacher> {
                     onTap: () {
                       showDialog(
                           context: context,
-                          builder: (context) => BlocBuilder<CourserCubitTeacher,
-                                  CourserCubitTeacherState>(
-                                builder: (context, state) {
-                                  return AlertDialog(
-                                    content: Container(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 20.h),
-                                      height: 220.h,
-                                      width: 400.w,
-                                      child: Column(
-                                        children: [
-                                          Column(
-                                            children: [
-                                              FromFields(
-                                                  vaildet: (value) {
-                                                    if (value!.isEmpty ||
-                                                        value == null) {
-                                                      return 'الرجاء ادخال الرابط';
-                                                    }
-                                                  },
-                                                  hint: 'ادخل الرابط',
-                                                  controller:
-                                                      CourserCubitTeacher.get(
-                                                              context)
-                                                          .controller1!,
-                                                  icon: Icon(Icons
-                                                      .question_answer_rounded),
-                                                  keyboardType:
-                                                      TextInputType.name,
-                                                  context: context),
-                                              verticalBox(10.h),
-                                              button(
-                                                  text: 'تعديل',
-                                                  paddingH: 90.w,
-                                                  paddingV: 16.h,
-                                                  function: () {}),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                },
+                          builder: (context) => AlertDialog(
+                                content: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 20.h),
+                                    height: 220.h,
+                                    width: 400.w,
+                                    child: Column(
+                                      children: [
+                                        FromFields(
+                                            vaildet: (value) {
+                                              if (value!.isEmpty ||
+                                                  value == null) {
+                                                return 'الرجاء ادخال الرابط';
+                                              }
+                                            },
+                                            hint: 'ادخل الرابط',
+                                            controller: cubit.controller1,
+                                            icon: Icon(
+                                                Icons.question_answer_rounded),
+                                            keyboardType: TextInputType.name,
+                                            context: context),
+                                        verticalBox(10.h),
+                                        button(
+                                            text: 'تعديل',
+                                            paddingH: 90.w,
+                                            paddingV: 16.h,
+                                            function: () {}),
+                                      ],
+                                    )),
                               ));
                     },
                     child: Row(

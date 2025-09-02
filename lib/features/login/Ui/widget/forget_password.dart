@@ -27,7 +27,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               style: FontStyleAndText.smallestTouch,
             ),
             onTap: () {
-              context.pushNamed(Routers.info);
+              context.pushNamed(Routers.confirmPassword);
             },
           ),
           Spacer(),

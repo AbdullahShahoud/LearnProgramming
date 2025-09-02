@@ -7,7 +7,6 @@ import 'package:learn_programtion/features/singin/logic/cubit/singin_cubit.dart'
 import 'package:learn_programtion/features/singin/logic/cubit/singin_stare.dart';
 
 import '../../../core/helper/spacing.dart';
-import '../../../core/network/api_constant.dart';
 import '../../../core/routing/router.dart';
 import '../../../core/theming/color.dart';
 import '../../widget/button.dart';
@@ -146,7 +145,7 @@ class _WelcomeState extends State<Welcome> {
                   paddingV: 20.h,
                   paddingH: 100.w,
                   function: () {
-                    context.pushNamed(Routers.home_page_teacher);
+                    context.pushNamed(Routers.singin);
                   },
                 )
               ],

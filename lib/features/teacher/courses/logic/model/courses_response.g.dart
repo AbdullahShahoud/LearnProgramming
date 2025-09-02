@@ -15,6 +15,7 @@ CoursesResponseTc _$CoursesResponseTcFromJson(Map<String, dynamic> json) =>
       teacher: (json['teacher'] as num?)?.toInt(),
       id: (json['id'] as num?)?.toInt(),
       time: (json['time'] as num?)?.toInt(),
+      name: json['name'] as String?,
       type: json['type'] as String?,
       finalTest: json['finalTest'] == null
           ? null
@@ -22,7 +23,7 @@ CoursesResponseTc _$CoursesResponseTcFromJson(Map<String, dynamic> json) =>
       descrip: json['descrip'] as String?,
       nameTeacher: json['nameTeacher'] as String?,
       num_of_level: (json['num_of_level'] as num?)?.toInt(),
-    )..name = json['name'] as String?;
+    );
 
 Map<String, dynamic> _$CoursesResponseTcToJson(CoursesResponseTc instance) =>
     <String, dynamic>{

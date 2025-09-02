@@ -20,11 +20,12 @@ Widget CourseMeItem(
           width: 240.w,
           height: 230.h,
           foregroundDecoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(25)),
-              image: DecorationImage(
-                image: AssetImage(image!),
-                fit: BoxFit.cover,
-              )),
+            borderRadius: BorderRadius.all(Radius.circular(25)),
+            // image: DecorationImage(
+            //   image: AssetImage(image!),
+            //   fit: BoxFit.cover,
+            // )
+          ),
         ),
         Container(
           width: 240.w,
@@ -39,15 +40,6 @@ Widget CourseMeItem(
                 Color.fromRGBO(0, 0, 0, 0.7),
               ],
               stops: [0.0, 0.737],
-              // colors: [
-              //  Color.fromARGB(52, 50, 50, 50),
-              //  Color.fromARGB(2, 50, 50, 50),
-              // ],
-              // stops: [
-              //    1.5,
-              //    0.25,
-              //   //  0.2
-              // ]
             ),
           ),
         ),
@@ -71,18 +63,17 @@ Widget CourseMeItem(
                           .copyWith(color: Colors.white)),
                 ),
                 verticalBox(8.h),
-                Card(
-                  color: Colors.white,
-                  // Colors.grey,
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 3.h, horizontal: 2.w),
-                    child: Text(nameTeacher!,
-                        textDirection: TextDirection.rtl,
-                        style: FontStyleAndText.smallestTouch
-                            .copyWith(color: ColorManger.font, fontSize: 12)),
-                  ),
-                ),
+                // Card(
+                //   color: Colors.white,
+                //   child: Padding(
+                //     padding:
+                //         EdgeInsets.symmetric(vertical: 3.h, horizontal: 2.w),
+                //     child: Text(nameTeacher!,
+                //         textDirection: TextDirection.rtl,
+                //         style: FontStyleAndText.smallestTouch
+                //             .copyWith(color: ColorManger.font, fontSize: 12)),
+                //   ),
+                // ),
                 Row(
                   children: [
                     Text(

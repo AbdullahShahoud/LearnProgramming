@@ -14,6 +14,7 @@ import '../../features/home/UI/home.dart';
 import '../../features/home/UI/home_page.dart';
 import '../../features/courses/UI/courses_all.dart';
 import '../../features/login/Ui/login.dart';
+import '../../features/login/forgetPassword/Ui/forget_password.dart';
 import '../../features/login/forgetPassword/Ui/forget_password_confirm.dart';
 import '../../features/login/logic/cubit/login_cubit.dart';
 import '../../features/login/otp/otp_ui.dart';
@@ -23,11 +24,16 @@ import '../../features/profile/UI/profile.dart';
 import '../../features/singin/Ui/signup.dart';
 import '../../features/singin/logic/cubit/singin_cubit.dart';
 import '../../features/teacher/addCourse/Ui/add_courses.dart';
+import '../../features/teacher/addCourse/Ui/add_lessoin.dart';
+import '../../features/teacher/addCourse/Ui/add_test.dart';
+import '../../features/teacher/addCourse/Ui/level_courses.dart';
+import '../../features/teacher/addCourse/Ui/tests.dart';
+import '../../features/teacher/courses/Ui/edit_courses.dart';
+import '../../features/teacher/courses/Ui/edit_lessoin.dart';
 import '../../features/teacher/courses/Ui/lesson_body_tc.dart';
 import '../../features/teacher/courses/Ui/lesson_teacher.dart';
 import '../../features/teacher/courses/Ui/test_teacher.dart';
 import '../../features/teacher/courses/Ui/level_teacher.dart';
-import '../../features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../features/teacher/home_Teacher/Ui/home_page_teacher.dart';
 
 class AppRouters {
@@ -75,7 +81,15 @@ class AppRouters {
       case Routers.introdactionCourse:
         return MaterialPageRoute(builder: (context) => CourseIntrodaction());
       case Routers.confirmPassword:
-        return MaterialPageRoute(builder: (context) => ForgetPasswordConfirm());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (BuildContext context) => getIt<LoginCubit>(),
+                child: ForgetPassword()));
+      case Routers.Password:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (BuildContext context) => getIt<LoginCubit>(),
+                child: ForgetPasswordConfirm()));
       case Routers.otp:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
@@ -84,36 +98,31 @@ class AppRouters {
 
 // **********************************************************************************************************
       case Routers.home_page_teacher:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) =>
-                    getIt<CourserCubitTeacher>()..emitCoursesTeacher(),
-                child: HomePageTeacher()));
+        return MaterialPageRoute(builder: (context) => HomePageTeacher());
+
       case Routers.level_teacher:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) => getIt<CourserCubitTeacher>(),
-                child: LevelsTeacher()));
-      case Routers.level_teacher:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) => getIt<CourserCubitTeacher>(),
-                child: TestTeacher()));
-      case Routers.level_teacher:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) => getIt<CourserCubitTeacher>(),
-                child: LessonBodyTeacher()));
-      case Routers.level_teacher:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) => getIt<CourserCubitTeacher>(),
-                child: LessonTeacher()));
+        return MaterialPageRoute(builder: (context) => LevelsTeacher());
+      case Routers.test_teacher:
+        return MaterialPageRoute(builder: (context) => TestTeacher());
+      case Routers.lesson_body_teacher:
+        return MaterialPageRoute(builder: (context) => LessonBodyTeacher());
+      case Routers.lesson_teacher:
+        return MaterialPageRoute(builder: (context) => LessonTeacher());
+
       case Routers.add_courses:
-        return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-                create: (BuildContext context) => getIt<CourserCubitTeacher>(),
-                child: AddCoursesTeacher()));
+        return MaterialPageRoute(builder: (context) => AddCoursesTeacher());
+      case Routers.add_level:
+        return MaterialPageRoute(builder: (context) => AddLevelCourseTeacher());
+      case Routers.add_lession:
+        return MaterialPageRoute(builder: (context) => AddLessionTeacher());
+      case Routers.add_test:
+        return MaterialPageRoute(builder: (context) => AddTests());
+      case Routers.test:
+        return MaterialPageRoute(builder: (context) => ItemsTest());
+      case Routers.edit_courses:
+        return MaterialPageRoute(builder: (context) => EditCoursesTeacher());
+      case Routers.edit_lession:
+        return MaterialPageRoute(builder: (context) => EditeLessionTeacher());
     }
 
     return null;

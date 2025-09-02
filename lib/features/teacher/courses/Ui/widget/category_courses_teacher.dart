@@ -6,6 +6,7 @@ import 'package:learn_programtion/features/teacher/courses/logic/courses_cubit/c
 
 import '../../../../../core/routing/router.dart';
 import '../../logic/model/courses_response.dart';
+import 'courses_bloc_listener.dart';
 
 class CategoryCoursesTeacher extends StatefulWidget {
   final List<CoursesResponseTc> courses;
@@ -26,9 +27,8 @@ class _CategoryState extends State<CategoryCoursesTeacher> {
           padding: EdgeInsets.only(bottom: 5.h),
           child: InkWell(
             onTap: () {
-              final course =
-                  CourserCubitTeacher.get(context).CoursesTeacher[index];
-              CourserCubitTeacher.get(context).selectedcorse = course;
+              CourserCubitTeacher.get(context).selectedcorse =
+                  getSampleCourses[index];
               context.pushNamed(Routers.level_teacher);
             },
             child: CoursesItem(

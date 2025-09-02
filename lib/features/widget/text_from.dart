@@ -15,6 +15,7 @@ Widget FromFields({
   double paddingContentV = 4,
   double paddingContentH = 50,
   bool obscure = false,
+  String? init_value,
 }) =>
     Padding(
       padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
@@ -23,6 +24,7 @@ Widget FromFields({
           vaildet(value);
           return null;
         },
+        initialValue: init_value,
         controller: controller,
         cursorColor: color,
         textAlign: TextAlign.right,

@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../courses/logic/courses_cubit/cubit/courser_cubit_state.dart';
-import 'widget/from_course.dart';
+import 'widget/editFromCourse.dart';
 
-class AddCoursesTeacher extends StatefulWidget {
-  AddCoursesTeacher({super.key});
+class EditCoursesTeacher extends StatefulWidget {
+  EditCoursesTeacher({super.key});
 
   @override
-  State<AddCoursesTeacher> createState() => _AddCoursesTeacherState();
+  State<EditCoursesTeacher> createState() => _AddCoursesTeacherState();
 }
 
-class _AddCoursesTeacherState extends State<AddCoursesTeacher> {
+class _AddCoursesTeacherState extends State<EditCoursesTeacher> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _AddCoursesTeacherState extends State<AddCoursesTeacher> {
         title: Align(
           alignment: Alignment.centerRight,
           child: Text(
-            'إضافة كورس',
+            'تعديل كورس',
           ),
         ),
       ),
@@ -32,7 +32,7 @@ class _AddCoursesTeacherState extends State<AddCoursesTeacher> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FormCourses(),
+              EditeFormCourses(),
             ],
           )),
         ),

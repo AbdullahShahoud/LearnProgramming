@@ -29,6 +29,7 @@ import '../../features/profile/logic/repo/view_grade_repo.dart';
 import '../../features/teacher/addCourse/logic/repo/add_course_repo.dart';
 import '../../features/teacher/addCourse/logic/repo/add_lession_repo.dart';
 import '../../features/teacher/addCourse/logic/repo/add_level_repo.dart';
+import '../../features/teacher/addCourse/logic/repo/add_quation_repo.dart';
 import '../../features/teacher/addCourse/logic/repo/add_test_repo.dart';
 import '../../features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../features/teacher/courses/logic/repo/courses_repo.dart';
@@ -90,17 +91,25 @@ Future<void> setupGetIt() async {
       () => NotificationRepoTeacher(getIt()));
   getIt.registerLazySingleton<NotificationQautionsRepoTeacher>(
       () => NotificationQautionsRepoTeacher(getIt()));
-  getIt.registerLazySingleton<NotificationTeacherCubit>(
-      () => NotificationTeacherCubit(
+  getIt
+      .registerFactory<NotificationTeacherCubit>(() => NotificationTeacherCubit(
             notificationRepoTeacher: getIt(),
             notificationQautionsRepoTeacher: getIt(),
             sendQuationsRepo: getIt(),
           ));
 
-  getIt.registerLazySingleton<CourserCubitTeacher>(
-      () => CourserCubitTeacher(getIt()));
-  getIt.registerLazySingleton<CoursesTeacherRepo>(
-      () => CoursesTeacherRepo(getIt()));
+  getIt.registerFactory<CourserCubitTeacher>(() => CourserCubitTeacher(
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+        getIt(),
+      ));
 
   getIt.registerLazySingleton<SendQuationsRepoTC>(
       () => SendQuationsRepoTC(getIt()));
@@ -114,7 +123,8 @@ Future<void> setupGetIt() async {
       () => AddLevelTeacherRepo(getIt()));
   getIt.registerLazySingleton<AddCoursesTeacherRepo>(
       () => AddCoursesTeacherRepo(getIt()));
-
+  getIt.registerLazySingleton<CoursesTeacherRepo>(
+      () => CoursesTeacherRepo(getIt()));
   getIt.registerLazySingleton<AddTestRepo>(() => AddTestRepo(getIt()));
   getIt.registerLazySingleton<EidetCourseRepo>(() => EidetCourseRepo(getIt()));
   getIt.registerLazySingleton<EidtLessionTeacherRepo>(
@@ -122,4 +132,5 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<EidtLevelTeacherRepo>(
       () => EidtLevelTeacherRepo(getIt()));
   getIt.registerLazySingleton<EidtQuationRepo>(() => EidtQuationRepo(getIt()));
+  getIt.registerLazySingleton<AddQuationRepo>(() => AddQuationRepo(getIt()));
 }

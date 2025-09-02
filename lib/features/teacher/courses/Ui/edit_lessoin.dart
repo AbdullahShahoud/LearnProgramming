@@ -3,17 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
 
 import '../../../../core/helper/spacing.dart';
+import '../../../../core/routing/router.dart';
 import '../../../../core/theming/color.dart';
 import '../../../../core/theming/font_style.dart';
 import '../../../widget/button.dart';
 import '../../../widget/text_from.dart';
 import '../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
-import 'widget/add_lession_bloc_listener.dart';
 
-class AddLessionTeacher extends StatelessWidget {
-  const AddLessionTeacher({super.key});
+class EditeLessionTeacher extends StatelessWidget {
+  const EditeLessionTeacher({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class AddLessionTeacher extends StatelessWidget {
         title: Align(
           alignment: Alignment.centerRight,
           child: Text(
-            'إضافة درس',
+            'تعديل درس',
           ),
         ),
       ),
@@ -41,6 +42,8 @@ class AddLessionTeacher extends StatelessWidget {
                 controller:
                     context.read<CourserCubitTeacher>().controllerNameLession,
                 icon: SizedBox.shrink(),
+                // init_value:
+                //     context.read<CourserCubitTeacher>().selectedlesson!.name,
                 keyboardType: TextInputType.name,
                 context: context),
             verticalBox(10.h),
@@ -57,6 +60,8 @@ class AddLessionTeacher extends StatelessWidget {
                     context.read<CourserCubitTeacher>().controllerLinkLession,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
+                // init_value:
+                //     context.read<CourserCubitTeacher>().selectedlesson!.video,
                 context: context),
             verticalBox(10.h),
             TextFormField(
@@ -70,6 +75,10 @@ class AddLessionTeacher extends StatelessWidget {
                   context.read<CourserCubitTeacher>().controllerDescripLession,
               cursorColor: Colors.white,
               maxLines: 12,
+              // initialValue: context
+              //     .read<CourserCubitTeacher>()
+              //     .selectedlesson!
+              //     .description,
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 20.sp,
@@ -101,13 +110,12 @@ class AddLessionTeacher extends StatelessWidget {
               keyboardType: TextInputType.name,
             ),
             verticalBox(20.h),
-            AddLessionBlocListener(),
             button(
-                text: 'إضافة',
+                text: 'تعديل',
                 paddingH: 135.w,
                 paddingV: 20.h,
                 function: () {
-                  context.read<CourserCubitTeacher>().emitAddLessionTeacher();
+                  context.pushNamed(Routers.add_test);
                 })
           ],
         ),

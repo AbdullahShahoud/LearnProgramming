@@ -51,7 +51,8 @@ class _PersonInformationState extends State<PersonInformation> {
                                 getIt(),
                                 getIt(),
                                 getIt(),
-                                getIt()),
+                                getIt())
+                              ..emiteGetInformation(),
                             child: bbbb(context));
                       }));
                 },

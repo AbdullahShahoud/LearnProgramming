@@ -8,35 +8,52 @@ import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_cu
 import 'package:learn_programtion/main.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/router.dart';
+import 'features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 
 class LearnApp extends StatelessWidget {
   LearnApp();
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(412, 915),
-        minTextAdapt: true,
-        child: BlocProvider(
-          create: (context) => CourseesCubit(
-            getIt(),
-            getIt(),
-            getIt(),
-            getIt(),
-            getIt(),
-            getIt(),
-            getIt(),
-            getIt(),
+      designSize: Size(412, 915),
+      minTextAdapt: true,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => CourseesCubit(
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+            ),
           ),
-          child: MaterialApp(
-            title: 'LearnProgram',
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-                // primaryColor: Colors.blue,
-                // scaffoldBackgroundColor: Colors.white,
-                fontFamily: 'Alexandria'),
-            initialRoute: LoginUser ? Routers.home_page : Routers.onbording,
-            onGenerateRoute: AppRouters.generateRoute,
-          ),
-        ));
+          BlocProvider(
+            create: (context) => CourserCubitTeacher(
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+              getIt(),
+            )..emitCoursesTeacher(),
+          )
+        ],
+        child: MaterialApp(
+          title: 'LearnProgram',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(fontFamily: 'Alexandria'),
+          initialRoute: LoginUser ? Routers.home_page_teacher : Routers.Welcome,
+          onGenerateRoute: AppRouters.generateRoute,
+        ),
+      ),
+    );
   }
 }

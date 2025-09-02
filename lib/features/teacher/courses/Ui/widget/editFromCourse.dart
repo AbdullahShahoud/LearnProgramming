@@ -9,13 +9,12 @@ import '../../../../../core/theming/font_style.dart';
 import '../../../../widget/button.dart';
 import '../../../../widget/text_from.dart';
 import '../../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
-import 'add_course_bloc_Listener.dart';
 
-class FormCourses extends StatefulWidget {
-  const FormCourses({super.key});
+class EditeFormCourses extends StatefulWidget {
+  const EditeFormCourses({super.key});
 
   @override
-  State<FormCourses> createState() => _FormCoursesState();
+  State<EditeFormCourses> createState() => _FormCoursesState();
 }
 
 String values = 'jjjj';
@@ -39,7 +38,7 @@ final List<DropdownMenuItem<String>> hhh = vv
         ))
     .toList();
 
-class _FormCoursesState extends State<FormCourses> {
+class _FormCoursesState extends State<EditeFormCourses> {
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -54,7 +53,10 @@ class _FormCoursesState extends State<FormCourses> {
                   }
                 },
                 paddingContentV: 18.h,
-                hint: 'اسم الكورس',
+                // init_value:
+                // BlocProvider.value(value:BlocProvider.of<CourserCubitTeacher>(context)).,
+                // context.read<CourserCubitTeacher>().selectedcorse!.name,
+                hint: 'الاسم',
                 controller: context.read<CourserCubitTeacher>().controllername,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.name,
@@ -71,6 +73,8 @@ class _FormCoursesState extends State<FormCourses> {
                 hint: 'رابط الصورة ',
                 controller: context.read<CourserCubitTeacher>().controllerimage,
                 icon: SizedBox.shrink(),
+                // init_value:
+                //     context.read<CourserCubitTeacher>().selectedcorse!.image,
                 keyboardType: TextInputType.emailAddress,
                 context: context),
             verticalBox(10.h),
@@ -85,6 +89,11 @@ class _FormCoursesState extends State<FormCourses> {
                 hint: ' مدة الكورس',
                 controller: context.read<CourserCubitTeacher>().controllertime,
                 keyboardType: TextInputType.number,
+                // init_value: context
+                //     .read<CourserCubitTeacher>()
+                //     .selectedcorse!
+                //     .time
+                //     .toString(),
                 context: context,
                 icon: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -165,6 +174,8 @@ class _FormCoursesState extends State<FormCourses> {
               controller:
                   context.read<CourserCubitTeacher>().controllerdescription,
               cursorColor: Colors.white,
+              // initialValue:
+              //     context.read<CourserCubitTeacher>().selectedcorse!.descrip,
               maxLines: 12,
               textAlign: TextAlign.right,
               style: TextStyle(
@@ -197,9 +208,8 @@ class _FormCoursesState extends State<FormCourses> {
               keyboardType: TextInputType.name,
             ),
             verticalBox(20.h),
-            AddCoursesBlocListener(),
             button(
-                text: ' إنشاء كورس',
+                text: ' تعديل كورس',
                 paddingH: 135.w,
                 paddingV: 20.h,
                 function: () {
@@ -211,7 +221,7 @@ class _FormCoursesState extends State<FormCourses> {
 }
 
 void Vildatorcourse(BuildContext context) {
-  // if (context.read<CourserCubitTeacher>().keye.currentState!.validate()) {
-  context.read<CourserCubitTeacher>().emitAddCoursesTeacher(values, cc);
-  // }
+  if (context.read<CourserCubitTeacher>().keye.currentState!.validate()) {
+    // context.read<CourserCubitTeacher>().emitSingin();
+  }
 }

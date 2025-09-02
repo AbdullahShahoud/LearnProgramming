@@ -4,8 +4,8 @@ part 'forget_confirm_ruqest.g.dart';
 
 @JsonSerializable()
 class ForgatePasswordConfirmRquest {
-  String? token;
-  String? password;
+  int? token;
+  int? password;
 
   ForgatePasswordConfirmRquest({required this.token, required this.password});
 

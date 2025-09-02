@@ -13,8 +13,8 @@ QuationRuqest _$QuationRuqestFromJson(Map<String, dynamic> json) =>
       b: json['b'] as String?,
       c: json['c'] as String?,
       correct_choice: json['correct_choice'] as String?,
-      quiz: json['quiz'] as String?,
-      course: json['course'] as String?,
+      quiz: (json['quiz'] as num?)?.toInt(),
+      course: (json['course'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$QuationRuqestToJson(QuationRuqest instance) =>

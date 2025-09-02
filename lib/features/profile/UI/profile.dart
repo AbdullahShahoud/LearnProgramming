@@ -82,7 +82,7 @@ class _ProfileState extends State<Profile> {
                 items: [
                   PersonInformation(),
                   Security(),
-                  Visibility(visible: chek!, child: Grade())
+                  if (chek == false) Grade()
                 ],
                 options: CarouselOptions(
                     autoPlay: true,
@@ -93,7 +93,7 @@ class _ProfileState extends State<Profile> {
                     aspectRatio: 20.w / 19.h,
                     enableInfiniteScroll: false,
                     enlargeCenterPage: true,
-                    initialPage: 0,
+                    initialPage: 2,
                     reverse: true),
               ),
             ],
