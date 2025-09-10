@@ -10,12 +10,12 @@ AddCourseResponse _$AddCourseResponseFromJson(Map<String, dynamic> json) =>
     AddCourseResponse(
       message: json['message'] as String?,
       course: (json['course'] as num?)?.toInt(),
-      finals: (json['finals'] as num?)?.toInt(),
+      final_id: (json['final_id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$AddCourseResponseToJson(AddCourseResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'course': instance.course,
-      'finals': instance.finals,
+      'final_id': instance.final_id,
     };

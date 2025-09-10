@@ -3,13 +3,12 @@ import 'package:json_annotation/json_annotation.dart';
 part 'finish_test_request.g.dart';
 
 @JsonSerializable()
-class FinishedTestRuqest {
-  String? courseId;
-  String? levelId;
-  String? dagre;
+class FinishedLevelRuqest {
+  int? course;
+  int? level;
 
-  FinishedTestRuqest(
-      {required this.courseId, required this.levelId, required this.dagre});
+  FinishedLevelRuqest(
+      { required this.level, required this.course});
 
-  Map<String, dynamic> toJson() => _$FinishedTestRuqestToJson(this);
+  Map<String, dynamic> toJson() => _$FinishedLevelRuqestToJson(this);
 }

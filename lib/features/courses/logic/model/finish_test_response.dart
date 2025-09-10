@@ -3,13 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'finish_test_response.g.dart';
 
 @JsonSerializable()
-class FinishTestResponse {
-  String? messsage;
-  int? score;
-  bool? passed;
+class FinishLevelResponse {
+  String? message;
  
-  FinishTestResponse({this.messsage});
+  FinishLevelResponse({this.message});
 
-  factory FinishTestResponse.fromJson(Map<String, dynamic> json) =>
-      _$FinishTestResponseFromJson(json);
+  factory FinishLevelResponse.fromJson(Map<String, dynamic> json) =>
+      _$FinishLevelResponseFromJson(json);
 }

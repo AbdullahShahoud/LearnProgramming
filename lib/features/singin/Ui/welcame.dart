@@ -6,6 +6,7 @@ import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/singin/logic/cubit/singin_cubit.dart';
 import 'package:learn_programtion/features/singin/logic/cubit/singin_stare.dart';
 
+import '../../../core/helper/sherdPrefernce.dart';
 import '../../../core/helper/spacing.dart';
 import '../../../core/routing/router.dart';
 import '../../../core/theming/color.dart';
@@ -56,7 +57,8 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 verticalBox(20.h),
                 InkWell(
-                  onTap: () {
+                  onTap: () async {
+                    await SharedPrefHelper.setData('type', 'student');
                     setState(() {
                       assentType(Check.student, context);
                     });
@@ -99,7 +101,8 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 verticalBox(12.h),
                 InkWell(
-                  onTap: () {
+                  onTap: () async {
+                    await SharedPrefHelper.setData('type', 'teacher');
                     setState(() {
                       assentType(Check.teacher, context);
                     });

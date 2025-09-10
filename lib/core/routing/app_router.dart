@@ -26,6 +26,7 @@ import '../../features/singin/logic/cubit/singin_cubit.dart';
 import '../../features/teacher/addCourse/Ui/add_courses.dart';
 import '../../features/teacher/addCourse/Ui/add_lessoin.dart';
 import '../../features/teacher/addCourse/Ui/add_test.dart';
+import '../../features/teacher/addCourse/Ui/final_test.dart';
 import '../../features/teacher/addCourse/Ui/level_courses.dart';
 import '../../features/teacher/addCourse/Ui/tests.dart';
 import '../../features/teacher/courses/Ui/edit_courses.dart';
@@ -123,6 +124,8 @@ class AppRouters {
         return MaterialPageRoute(builder: (context) => EditCoursesTeacher());
       case Routers.edit_lession:
         return MaterialPageRoute(builder: (context) => EditeLessionTeacher());
+      case Routers.final_test:
+        return MaterialPageRoute(builder: (context) => FinalTestTeacher());
     }
 
     return null;

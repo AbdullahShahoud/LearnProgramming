@@ -8,19 +8,21 @@ import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_cubit.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_state.dart';
 
-class FinishTestBlocListener extends StatelessWidget {
-  const FinishTestBlocListener({super.key});
+import '../../../core/helper/spacing.dart';
+
+class SoulionBlocListener extends StatelessWidget {
+  const SoulionBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<CourseesCubit, CoursesState>(
       listenWhen: (previous, current) =>
-          current is FinishedError ||
-          current is FinishedSuccess ||
-          current is FinishedLoading,
+          current is SoulionTestError ||
+          current is SoulionTestLoading ||
+          current is SoulionTestSuccess,
       listener: (context, state) {
         state.maybeWhen(
-          finishedLoading: () => showDialog(
+          soulionTestLoading: () => showDialog(
             context: context,
             builder: (context) => Center(
               child: CircularProgressIndicator(
@@ -28,8 +30,8 @@ class FinishTestBlocListener extends StatelessWidget {
               ),
             ),
           ),
-          finishedSuccess: (message) => successcourses(context, message),
-          finishedError: (error) => errorcourse(context, error),
+          soulionTestSuccess: (data) => successcourses(context, data),
+          soulionTestError: (error) => errorcourse(context, error),
           orElse: () {
             SizedBox.shrink();
           },
@@ -40,7 +42,7 @@ class FinishTestBlocListener extends StatelessWidget {
   }
 }
 
-void successcourses(BuildContext context, String message) {
+void successcourses(BuildContext context, dynamic message) {
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
@@ -50,10 +52,21 @@ void successcourses(BuildContext context, String message) {
         size: 50,
       ),
       contentPadding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
-      content: Text(
-        message,
-        textDirection: TextDirection.rtl,
-        style: FontStyleAndText.font_big,
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            '${message.score}',
+            textDirection: TextDirection.rtl,
+            style: FontStyleAndText.fontmedia,
+          ),
+          verticalBox(7.h),
+          Text(
+            message.message,
+            textDirection: TextDirection.rtl,
+            style: FontStyleAndText.font_big,
+          ),
+        ],
       ),
       actions: [
         Center(
@@ -61,7 +74,7 @@ void successcourses(BuildContext context, String message) {
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorManger.primary_ColorBlue),
             onPressed: () {
-              context.pushNamed(Routers.levelMe);
+              context.pushNamed(Routers.home_page);
             },
             child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
           ),
@@ -93,7 +106,7 @@ void errorcourse(BuildContext context, String error) {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorManger.primary_ColorBlue),
                   onPressed: () {
-                    context.pop();
+                    context.pushNamed(Routers.home_page);
                   },
                   child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
                 ),

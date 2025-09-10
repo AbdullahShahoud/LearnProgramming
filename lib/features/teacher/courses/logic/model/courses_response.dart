@@ -2,9 +2,19 @@ import 'package:json_annotation/json_annotation.dart';
 part 'courses_response.g.dart';
 
 @JsonSerializable()
+class CourseListResponse {
+  @JsonKey(name: 'CourseResponse')
+  List<CoursesResponseTc>? courseResponse;
+
+  CourseListResponse({this.courseResponse});
+
+  factory CourseListResponse.fromJson(Map<String, dynamic> json) =>
+      _$CourseListResponseFromJson(json);
+}
+
+@JsonSerializable()
 class CoursesResponseTc {
   String? descrip;
-  int? teacher;
   String? nameTeacher;
   int? num_of_level;
   String? image;
@@ -18,7 +28,6 @@ class CoursesResponseTc {
   CoursesResponseTc({
     this.image,
     this.level,
-    this.teacher,
     this.id,
     this.time,
     this.name,
@@ -36,8 +45,8 @@ class CoursesResponseTc {
 @JsonSerializable()
 class Tests {
   List<Quations>? questions;
-
-  Tests({this.questions});
+  int? id;
+  Tests({this.questions, this.id});
 
   factory Tests.fromJson(Map<String, dynamic> json) => _$TestsFromJson(json);
 }
@@ -49,8 +58,9 @@ class Quations {
   String? correct_choice;
   String? b;
   String? c;
-
-  Quations({this.question, this.c, this.correct_choice, this.a, this.b});
+  int? id;
+  Quations(
+      {this.question, this.c, this.correct_choice, this.a, this.b, this.id});
 
   factory Quations.fromJson(Map<String, dynamic> json) =>
       _$QuationsFromJson(json);
@@ -70,7 +80,7 @@ class Levels {
 
 @JsonSerializable()
 class Lessons {
-  String? id;
+  int? id;
   String? name;
   String? description;
   String? video;

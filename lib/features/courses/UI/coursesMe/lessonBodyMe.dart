@@ -108,6 +108,7 @@ class _LessonItemState extends State<LessonBodyMe> {
                                                           CourseesCubit.get(
                                                                   context)
                                                               .seletCourseMe!
+                                                              .course!
                                                               .id!,
                                                           CourseesCubit.get(
                                                                   context)
@@ -165,8 +166,10 @@ class _LessonItemState extends State<LessonBodyMe> {
                         function: () {
                           if (CourseesCubit.get(context)
                               .selectedlessonMe!
-                              .finished) {
-                            CourseesCubit.get(context).emitFinishLesson();
+                              .finished==false) {
+                          CourseesCubit.get(context).emitFinishLesson();
+                          context.pushNamed(Routers.levelMe);
+                          }else{
                             context.pushNamed(Routers.levelMe);
                           }
                         }),

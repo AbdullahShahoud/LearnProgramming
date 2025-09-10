@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/core/routing/router.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/color.dart';
 import '../../../../core/theming/font_style.dart';
@@ -46,7 +48,9 @@ class TestTeacher extends StatelessWidget {
                       text: 'حفظ',
                       paddingV: 16.h,
                       paddingH: 140.w,
-                      function: () {})
+                      function: () {
+                        context.pushNamed(Routers.home_page_teacher);
+                      })
                 ],
               )),
             );

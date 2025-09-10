@@ -24,13 +24,13 @@ class _QuationItemState extends State<QuationItem> {
   Widget build(BuildContext context) {
     return BlocBuilder<CourseesCubit, CoursesState>(
       builder: (context, state) {
-        final grob = CourseesCubit.get(context).responseUser;
+        final grob2 = CourseesCubit.get(context).responseUser2;
         return Container(
-            height: 650.h,
+            height: 750.h,
             child: ListView.builder(
-                itemCount: widget.test.questions.length,
+                itemCount: widget.test.questions!.length,
                 itemBuilder: (context, index) {
-                  final question = widget.test.questions[index];
+                  final question = widget.test.questions![index];
                   return Container(
                       margin:
                           EdgeInsets.only(bottom: 10.h, left: 8.w, right: 8.w),
@@ -89,11 +89,11 @@ class _QuationItemState extends State<QuationItem> {
                                       child: Radio(
                                           focusColor: Colors.white,
                                           splashRadius: 15,
-                                          value: question.a!,
-                                          groupValue: grob[index],
+                                          value: 'a',
+                                          groupValue: grob2[index],
                                           onChanged: (value) {
                                             setState(() {
-                                              grob[index] = value;
+                                              grob2[index] = value;
                                             });
                                           }),
                                     )
@@ -124,11 +124,11 @@ class _QuationItemState extends State<QuationItem> {
                                       child: Radio(
                                           focusColor: Colors.white,
                                           splashRadius: 15,
-                                          value: question.b,
-                                          groupValue: grob[index],
+                                          value: 'b',
+                                          groupValue: grob2[index],
                                           onChanged: (value) {
                                             setState(() {
-                                              grob[index] = value;
+                                              grob2[index] = value;
                                             });
                                           }),
                                     )
@@ -159,11 +159,11 @@ class _QuationItemState extends State<QuationItem> {
                                       child: Radio(
                                           focusColor: Colors.white,
                                           splashRadius: 15,
-                                          value: question.c,
-                                          groupValue: grob[index],
+                                          value: 'c',
+                                          groupValue: grob2[index],
                                           onChanged: (value) {
                                             setState(() {
-                                              grob[index] = value;
+                                              grob2[index] = value;
                                             });
                                           }),
                                     )

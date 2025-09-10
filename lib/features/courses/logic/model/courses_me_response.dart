@@ -3,18 +3,38 @@ import 'package:json_annotation/json_annotation.dart';
 part 'courses_me_response.g.dart';
 
 @JsonSerializable()
+class CourseMeListResponse {
+  List<CourseMeWrapper>? CourseMeResponse;
+
+  CourseMeListResponse({this.CourseMeResponse});
+
+  factory CourseMeListResponse.fromJson(Map<String, dynamic> json) =>
+      _$CourseMeListResponseFromJson(json);
+}
+
+@JsonSerializable()
+class CourseMeWrapper {
+  CoursesMeResponse? course;
+
+  CourseMeWrapper({this.course});
+
+  factory CourseMeWrapper.fromJson(Map<String, dynamic> json) =>
+      _$CourseMeWrapperFromJson(json);
+}
+
+@JsonSerializable()
 class CoursesMeResponse {
   int? id;
   String? name;
   String? image;
   String? nameTeacher;
   String? type;
-  String? time;
+  int? time;
   String? descrip;
   TestMe finalTest;
   bool? checkk;
-  List<LevelMe> level;
-  bool finished;
+  List<LevelMe>? level;
+  bool? finished;
   CoursesMeResponse(
       {this.id,
       this.name,
@@ -34,12 +54,12 @@ class CoursesMeResponse {
 
 @JsonSerializable()
 class LevelMe {
-  List<LessonMe> lessons;
-  bool checkk;
-  int id;
-  TestMe test;
-  String name;
-  bool finished;
+  List<LessonMe>? lessons;
+  bool? checkk;
+  int? id;
+  TestMe? test;
+  String? name;
+  bool? finished;
   LevelMe({
     required this.lessons,
     required this.checkk,
@@ -55,15 +75,13 @@ class LevelMe {
 
 @JsonSerializable()
 class TestMe {
-  List<QuestionMe> questions;
+  List<QuestionMe>? questions;
   bool? finish;
-  bool? checkk;
   int? id;
 
   TestMe({
     required this.questions,
     required this.finish,
-    required this.checkk,
     required this.id,
   });
 
@@ -96,7 +114,7 @@ class LessonMe {
   String? video;
   String? description;
   bool? checkk;
-  bool finished;
+  bool? finished;
   LessonMe(
       {this.name,
       this.video,

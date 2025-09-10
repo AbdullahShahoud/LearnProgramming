@@ -33,4 +33,5 @@ class Routers {
   static const String test = 'Testss';
   static const String edit_courses = 'edit_courses';
   static const String edit_lession = 'edit_lession';
+  static const String final_test = 'final_tes';
 }

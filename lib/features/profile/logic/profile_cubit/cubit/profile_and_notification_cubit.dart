@@ -45,7 +45,8 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
         emit(ProfileAndNotificationState.successBook(book));
       },
       failure: (errorHandler) {
-        emit(ProfileAndNotificationState.errorBook(error: 'nobook'));
+        emit(ProfileAndNotificationState.errorBook(
+            error: errorHandler.errorData));
       },
     );
   }
@@ -61,7 +62,7 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
       },
       failure: (errorHandler) {
         emit(ProfileAndNotificationState.errorNotificationNormal(
-            error: 'noNotification'));
+            error: errorHandler.errorData));
       },
     );
   }
@@ -77,7 +78,7 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
       },
       failure: (errorHandler) {
         emit(ProfileAndNotificationState.errorNotificationQuation(
-            error: 'noNotification'));
+            error: errorHandler.errorData));
       },
     );
   }
@@ -95,9 +96,9 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
             old_password: controllerPassword?.text,
             new_password: controllerPassword2?.text));
     response.when(success: (data) {
-      emit(ProfileAndNotificationState.successSecurite(data));
+      emit(ProfileAndNotificationState.successSecurite(data.message));
     }, failure: (error) {
-      emit(ProfileAndNotificationState.errorSecurite(error: 'Nooooot'));
+      emit(ProfileAndNotificationState.errorSecurite(error: error.errorData));
     });
   }
 
@@ -113,7 +114,7 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
       emit(ProfileAndNotificationState.successPersoinInformation(data));
     }, failure: (error) {
       emit(ProfileAndNotificationState.errorPersoinInformation(
-          error: 'Nooooot'));
+          error: error.errorData));
     });
   }
 
@@ -122,10 +123,10 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
     emit(ProfileAndNotificationState.loadingGrade());
     final response = await viewGradeRepo.getViewGrade();
     response.when(success: (data) {
-      grade.addAll(data.grades);
-      emit(ProfileAndNotificationState.successGrade(data.grades));
+      grade.addAll(data.completed_courses);
+      emit(ProfileAndNotificationState.successGrade(grade));
     }, failure: (error) {
-      emit(ProfileAndNotificationState.errorGrade(error: "Noooooot"));
+      emit(ProfileAndNotificationState.errorGrade(error: error.errorData));
     });
   }
 
@@ -140,7 +141,8 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
       user_name = data.username;
       email = data.email;
     }, failure: (error) {
-      emit(ProfileAndNotificationState.errorGetInformation(error: "Noooooot"));
+      emit(ProfileAndNotificationState.errorGetInformation(
+          error: error.errorData));
     });
   }
 
@@ -150,7 +152,7 @@ class ProfileAndNotificationCubit extends Cubit<ProfileAndNotificationState> {
     response.when(success: (data) {
       emit(ProfileAndNotificationState.successDelete(''));
     }, failure: (error) {
-      emit(ProfileAndNotificationState.errorDelete(error: "Noooooot"));
+      emit(ProfileAndNotificationState.errorDelete(error: error.errorData));
     });
   }
 }

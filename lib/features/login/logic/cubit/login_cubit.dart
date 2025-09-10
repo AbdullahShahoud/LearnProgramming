@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_programtion/features/login/logic/cubit/login_stare.dart';
 import 'package:learn_programtion/features/login/logic/model/login_request.dart';
+import 'package:learn_programtion/features/login/logic/model/login_response.dart';
 import 'package:learn_programtion/features/login/logic/repo/login_repo.dart';
 import 'package:learn_programtion/features/login/otp/logic/model/otp_ruqest.dart';
 import 'package:learn_programtion/features/login/otp/logic/repo/otp_repo.dart';
 import '../../../../core/helper/sherdPrefernce.dart';
+import '../../../../core/network/dio.dart';
 import '../../forgetPassword/model/forget_confirm_ruqest.dart';
 import '../../forgetPassword/model/forget_password_ruqest.dart';
 import '../../forgetPassword/repo/forget_confirm.dart';
@@ -30,7 +32,7 @@ class LoginCubit extends Cubit<LoginState> {
   OtpRepoLogin otpRepoLogin;
   ForgetConfirmeRepo forgetConfirmeRepo;
   ForgetRepo forgetRepo;
-  String? otpLogin;
+  int? otpLogin;
   var keyChangePassword = GlobalKey<FormState>();
   bool obscure = true;
   void cnangeObscure(bool value) {
@@ -46,17 +48,27 @@ class LoginCubit extends Cubit<LoginState> {
     response.when(success: (loginResponse) async {
       emit(LoginState.success(loginResponse));
       await SharedPrefHelper.setData('token', loginResponse.token ?? '');
+      await SharedPrefHelper.setData('type', loginResponse.account_type ?? '');
+      await DioFactory.updateTokenHeader();
     }, failure: (error) async {
-      if (error is DioError && error.errorData?.statusCode == 403) {
+      if (error is DioError && error.statusCode == 403) {
         try {
-          final responseData = error.errorData?.data;
-          await SharedPrefHelper.setData('token', error.errorData.token ?? '');
-          emit(LoginState.error(error: responseData));
+          var tt = LoginResponse.fromJson(error.errorData);
+          await SharedPrefHelper.setData('token', tt.token ?? '');
+          await SharedPrefHelper.setData('type', tt.account_type ?? '');
+          await DioFactory.updateTokenHeader();
+          emit(LoginState.successMs(error.errorData.message));
         } catch (e) {
-          emit(LoginState.error(error: "خطأ في معالجة الاستجابة"));
+          emit(LoginState.error(error: error.errorMessage));
+          // var tt = LoginResponse.fromJson(error.errorData);
+          // await SharedPrefHelper.setData('token', tt.token ?? '');
+          // await DioFactory.updateTokenHeader();
         }
       } else {
         emit(LoginState.error(error: error.toString()));
+        var tt = LoginResponse.fromJson(error.errorData);
+        await SharedPrefHelper.setData('token', tt.token ?? '');
+        await DioFactory.updateTokenHeader();
       }
     });
   }
@@ -71,7 +83,7 @@ class LoginCubit extends Cubit<LoginState> {
       },
       failure: (errorHandler) {
         print('❌ Error: ottttttpLoignnnnn');
-        emit(LoginState.errorOtp(error: 'nototp'));
+        emit(LoginState.errorOtp(error: errorHandler.errorMessage));
       },
     );
   }
@@ -86,7 +98,7 @@ class LoginCubit extends Cubit<LoginState> {
       },
       failure: (errorHandler) {
         print('❌ Error: forrrrrrrrrrrrrgetLoignnnnn');
-        emit(LoginState.errorForget(error: 'noforget'));
+        emit(LoginState.errorForget(error: errorHandler.errorMessage));
       },
     );
   }
@@ -103,7 +115,8 @@ class LoginCubit extends Cubit<LoginState> {
       },
       failure: (errorHandler) {
         print('❌ Error: forrrrrrrrrrrrrgetLoignnnnn');
-        emit(LoginState.errorForgetConfirme(error: 'noforget'));
+        emit(LoginState.errorForgetConfirme(
+            error: errorHandler.errorData.error));
       },
     );
   }

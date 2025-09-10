@@ -6,11 +6,11 @@ part 'singin_response.g.dart';
 class SinginResponse {
   User? user;
   String? account_type;
-  String? token;
+  // String? token;
   SinginResponse({
     this.account_type,
     this.user,
-    this.token,
+    // this.token,
   });
 
   factory SinginResponse.fromJson(Map<String, dynamic> json) =>

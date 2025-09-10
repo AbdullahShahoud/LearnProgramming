@@ -6,13 +6,24 @@ part of 'courses_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+CourseListResponse _$CourseListResponseFromJson(Map<String, dynamic> json) =>
+    CourseListResponse(
+      courseResponse: (json['CourseResponse'] as List<dynamic>?)
+          ?.map((e) => CoursesResponseTc.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$CourseListResponseToJson(CourseListResponse instance) =>
+    <String, dynamic>{
+      'CourseResponse': instance.courseResponse,
+    };
+
 CoursesResponseTc _$CoursesResponseTcFromJson(Map<String, dynamic> json) =>
     CoursesResponseTc(
       image: json['image'] as String?,
       level: (json['level'] as List<dynamic>?)
           ?.map((e) => Levels.fromJson(e as Map<String, dynamic>))
           .toList(),
-      teacher: (json['teacher'] as num?)?.toInt(),
       id: (json['id'] as num?)?.toInt(),
       time: (json['time'] as num?)?.toInt(),
       name: json['name'] as String?,
@@ -28,7 +39,6 @@ CoursesResponseTc _$CoursesResponseTcFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CoursesResponseTcToJson(CoursesResponseTc instance) =>
     <String, dynamic>{
       'descrip': instance.descrip,
-      'teacher': instance.teacher,
       'nameTeacher': instance.nameTeacher,
       'num_of_level': instance.num_of_level,
       'image': instance.image,
@@ -44,10 +54,12 @@ Tests _$TestsFromJson(Map<String, dynamic> json) => Tests(
       questions: (json['questions'] as List<dynamic>?)
           ?.map((e) => Quations.fromJson(e as Map<String, dynamic>))
           .toList(),
+      id: (json['id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$TestsToJson(Tests instance) => <String, dynamic>{
       'questions': instance.questions,
+      'id': instance.id,
     };
 
 Quations _$QuationsFromJson(Map<String, dynamic> json) => Quations(
@@ -56,6 +68,7 @@ Quations _$QuationsFromJson(Map<String, dynamic> json) => Quations(
       correct_choice: json['correct_choice'] as String?,
       a: json['a'] as String?,
       b: json['b'] as String?,
+      id: (json['id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$QuationsToJson(Quations instance) => <String, dynamic>{
@@ -64,6 +77,7 @@ Map<String, dynamic> _$QuationsToJson(Quations instance) => <String, dynamic>{
       'correct_choice': instance.correct_choice,
       'b': instance.b,
       'c': instance.c,
+      'id': instance.id,
     };
 
 Levels _$LevelsFromJson(Map<String, dynamic> json) => Levels(
@@ -87,7 +101,7 @@ Map<String, dynamic> _$LevelsToJson(Levels instance) => <String, dynamic>{
     };
 
 Lessons _$LessonsFromJson(Map<String, dynamic> json) => Lessons(
-      id: json['id'] as String?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       description: json['description'] as String?,
       video: json['video'] as String?,

@@ -8,10 +8,10 @@ part of 'finish_coures_ruqest.dart';
 
 FinishCourseRuqest _$FinishCourseRuqestFromJson(Map<String, dynamic> json) =>
     FinishCourseRuqest(
-      course_id: (json['course_id'] as num?)?.toInt(),
+      course: (json['course'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$FinishCourseRuqestToJson(FinishCourseRuqest instance) =>
     <String, dynamic>{
-      'course_id': instance.course_id,
+      'course': instance.course,
     };

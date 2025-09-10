@@ -6,12 +6,12 @@ part 'add_coures_response.g.dart';
 class AddCourseResponse {
   String? message;
   int? course;
-  int? finals;
+  int? final_id;
 
   AddCourseResponse({
     this.message,
     this.course,
-    this.finals,
+    this.final_id,
   });
 
   factory AddCourseResponse.fromJson(Map<String, dynamic> json) =>

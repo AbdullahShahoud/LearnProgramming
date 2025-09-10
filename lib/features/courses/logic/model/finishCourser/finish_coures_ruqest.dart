@@ -4,9 +4,9 @@ part 'finish_coures_ruqest.g.dart';
 
 @JsonSerializable()
 class FinishCourseRuqest {
-  int? course_id;
+  int? course;
 
-  FinishCourseRuqest({required this.course_id});
+  FinishCourseRuqest({required this.course});
 
   Map<String, dynamic> toJson() => _$FinishCourseRuqestToJson(this);
 }

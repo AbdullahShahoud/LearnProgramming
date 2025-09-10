@@ -28,7 +28,7 @@ class _LoginBlocListenerState extends State<AddTestBlocListener> {
         state.whenOrNull(
           successTestAdd: (data) {
             alertSuccess(context, data, () {
-              context.read<CourserCubitTeacher>().selectTest = 0;
+              // context.read<CourserCubitTeacher>().selectTest = 0;
               context.pushNamed(Routers.test);
             });
           },

@@ -10,10 +10,10 @@ import '../../../core/routing/router.dart';
 import '../../courses/logic/cubit/cubit/coursees_cubit.dart';
 import '../../courses/logic/model/courses_me_response.dart';
 
-Widget CoursesMe(List<CoursesMeResponse> courseItem) {
-  int Pre(CoursesMeResponse coursesMeResponse) {
-    final v =
-        coursesMeResponse.level.where((element) => element.finished == true);
+Widget CoursesMe(List<CourseMeWrapper> courseItem) {
+  int Pre(CourseMeWrapper coursesMeResponse) {
+    final v = coursesMeResponse.course!.level!
+        .where((element) => element.finished == true);
     return v.length;
   }
 
@@ -34,11 +34,11 @@ Widget CoursesMe(List<CoursesMeResponse> courseItem) {
           itemBuilder: (context, index) => InkWell(
             child: CourseMeItem(
                 context: context,
-                image: courseItem[index].image,
-                name: courseItem[index].name,
-                nameTeacher: courseItem[index].nameTeacher,
+                image: courseItem[index].course!.image,
+                name: courseItem[index].course!.name,
+                nameTeacher: courseItem[index].course!.nameTeacher,
                 s: Pre(courseItem[index]),
-                id: courseItem[index].id),
+                id: courseItem[index].course!.id),
             onTap: () {
               final courseMe = CourseesCubit.get(context).coursesMe[index];
               CourseesCubit.get(context).selectCourseMe(courseMe);

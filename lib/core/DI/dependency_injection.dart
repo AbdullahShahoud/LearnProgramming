@@ -5,7 +5,6 @@ import 'package:learn_programtion/features/books/logic/repo/book_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/check_course_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/courser_me_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/courses_repo.dart';
-import 'package:learn_programtion/features/courses/logic/repo/delet_course_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/finish_course_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/finish_lesson_repo.dart';
 import 'package:learn_programtion/features/courses/logic/repo/finish_test_repo.dart';
@@ -19,6 +18,7 @@ import 'package:learn_programtion/features/notification/logic/repo/notification_
 import 'package:learn_programtion/features/singin/logic/cubit/singin_cubit.dart';
 import 'package:learn_programtion/features/singin/logic/repo/singin_repo.dart';
 
+import '../../features/courses/logic/repo/soulion_quation_repo.dart';
 import '../../features/login/forgetPassword/repo/forget_repo.dart';
 import '../../features/profile/logic/repo/information_repo.dart';
 import '../../features/profile/logic/profile_cubit/cubit/profile_and_notification_cubit.dart';
@@ -33,6 +33,9 @@ import '../../features/teacher/addCourse/logic/repo/add_quation_repo.dart';
 import '../../features/teacher/addCourse/logic/repo/add_test_repo.dart';
 import '../../features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../features/teacher/courses/logic/repo/courses_repo.dart';
+import '../../features/teacher/courses/logic/repo/delet_course.dart';
+import '../../features/teacher/courses/logic/repo/delet_lession.dart';
+import '../../features/teacher/courses/logic/repo/delet_level.dart';
 import '../../features/teacher/courses/logic/repo/edit_course_repo.dart';
 import '../../features/teacher/courses/logic/repo/edit_lession_repo.dart';
 import '../../features/teacher/courses/logic/repo/edit_level_repo.dart';
@@ -79,13 +82,14 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<CheckCourseRepo>(() => CheckCourseRepo(getIt()));
   getIt
       .registerLazySingleton<SendQuationsRepo>(() => SendQuationsRepo(getIt()));
-  getIt.registerLazySingleton<FinishTestRepo>(() => FinishTestRepo(getIt()));
+  getIt.registerLazySingleton<FinishLevelRepo>(() => FinishLevelRepo(getIt()));
   getIt
       .registerLazySingleton<FinishLessonRepo>(() => FinishLessonRepo(getIt()));
   getIt
       .registerLazySingleton<FinishCourseRepo>(() => FinishCourseRepo(getIt()));
-  getIt
-      .registerLazySingleton<DeletCoursenRepo>(() => DeletCoursenRepo(getIt()));
+  getIt.registerLazySingleton<SoulionQuationRepo>(
+      () => SoulionQuationRepo(getIt()));
+
   getIt.registerLazySingleton<DeletRepo>(() => DeletRepo(getIt()));
   getIt.registerLazySingleton<NotificationRepoTeacher>(
       () => NotificationRepoTeacher(getIt()));
@@ -99,6 +103,9 @@ Future<void> setupGetIt() async {
           ));
 
   getIt.registerFactory<CourserCubitTeacher>(() => CourserCubitTeacher(
+        getIt(),
+        getIt(),
+        getIt(),
         getIt(),
         getIt(),
         getIt(),
@@ -133,4 +140,9 @@ Future<void> setupGetIt() async {
       () => EidtLevelTeacherRepo(getIt()));
   getIt.registerLazySingleton<EidtQuationRepo>(() => EidtQuationRepo(getIt()));
   getIt.registerLazySingleton<AddQuationRepo>(() => AddQuationRepo(getIt()));
+  getIt.registerLazySingleton<DeletCourseRepo>(() => DeletCourseRepo(getIt()));
+  getIt.registerLazySingleton<DeleteLessionTeacherRepo>(
+      () => DeleteLessionTeacherRepo(getIt()));
+  getIt.registerLazySingleton<DeleteLevelTeacherRepo>(
+      () => DeleteLevelTeacherRepo(getIt()));
 }

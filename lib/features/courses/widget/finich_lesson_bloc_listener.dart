@@ -66,7 +66,7 @@ void successcourses(BuildContext context, String message) {
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorManger.primary_ColorBlue),
             onPressed: () {
-              context.pushNamed(Routers.levelMe);
+              context.pushNamed(Routers.home_page);
             },
             child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
           ),

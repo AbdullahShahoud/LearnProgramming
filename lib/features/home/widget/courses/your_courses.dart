@@ -26,7 +26,9 @@ Widget YourCourses({
                   height: 100.h,
                   width: 100.w,
                   fit: BoxFit.cover,
-                  image: AssetImage(image!)),
+                  image: AssetImage('assets/image/images.png'
+                      // image!
+                      )),
             ),
           ),
           Padding(

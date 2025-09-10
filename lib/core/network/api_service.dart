@@ -8,8 +8,6 @@ import 'package:dio/dio.dart';
 import '../../features/courses/logic/model/checkCourser/check_course_response.dart';
 import '../../features/courses/logic/model/checkCourser/check_course_ruqest.dart';
 import '../../features/courses/logic/model/courses_me_response.dart';
-import '../../features/courses/logic/model/deleteCourse/delet_course_response.dart';
-import '../../features/courses/logic/model/deleteCourse/delet_course_ruqest.dart';
 import '../../features/courses/logic/model/finishCourser/finish_coures_ruqest.dart';
 import '../../features/courses/logic/model/finishCourser/finish_course_response.dart';
 import '../../features/courses/logic/model/finish_lesson_response.dart';
@@ -17,6 +15,8 @@ import '../../features/courses/logic/model/finish_test_request.dart';
 import '../../features/courses/logic/model/finish_test_response.dart';
 import '../../features/courses/logic/model/send_qaustion_request.dart';
 import '../../features/courses/logic/model/send_qaustion_response.dart';
+import '../../features/courses/logic/model/soulion_test_response.dart';
+import '../../features/courses/logic/model/soulion_test_ruqest.dart';
 import '../../features/login/forgetPassword/model/forget_confirm_ruqest.dart';
 import '../../features/login/forgetPassword/model/forget_password_response.dart';
 import '../../features/login/forgetPassword/model/forget_password_ruqest.dart';
@@ -95,10 +95,10 @@ abstract class ApiService {
   Future<GradeRespons> getView();
 
   @GET(ApiConstant.Courses)
-  Future<List<CoursesResponse>> getCourses();
+  Future<CourseListResponseStudent> getCourses();
 
   @GET(ApiConstant.CoursesMe)
-  Future<List<CoursesMeResponse>> getCoursesMe();
+  Future<CourseMeListResponse> getCoursesMe();
 
   @POST(ApiConstant.CheckCourse)
   Future<CheckCourseResponse> checkCourse(
@@ -110,9 +110,9 @@ abstract class ApiService {
     @Body() FinishCourseRuqest finishCourse,
   );
 
-  @POST(ApiConstant.FinishTest)
-  Future<FinishTestResponse> finishedTest(
-    @Body() FinishedTestRuqest finishedTest,
+  @POST(ApiConstant.FinishLevel)
+  Future<FinishLevelResponse> finishedLevel(
+    @Body() FinishedLevelRuqest finishedTest,
   );
 
   @POST(ApiConstant.SendQaution)
@@ -125,10 +125,6 @@ abstract class ApiService {
     @Body() FinishLessonRuqest sendQautions,
   );
 
-  @DELETE(ApiConstant.DeletCourse)
-  Future<DeletCourseResponse> deletCourse(
-    @Body() DeletCourseRuqest deletCourseRuqest,
-  );
   @POST(ApiConstant.DeletUesr)
   Future<void> deletUser();
 
@@ -141,20 +137,23 @@ abstract class ApiService {
   Future<ForgetPasswordResponse> passwordResetConfirm(
     @Body() ForgatePasswordConfirmRquest forgatePasswordConfirmRquest,
   );
+   @POST(ApiConstant.SoulionQuations)
+  Future<SoulionResponse> soulionQuations(
+    @Body() List<QautionRuqest> qautionRuqest,
+  );
   // ************************************************************************************************************
   @GET(ApiConstant.notificationTeacher)
   Future<List<NotificationResponse>> getNotificationTeacher();
   @GET(ApiConstant.notificationTeacherQuations)
   Future<List<NotificationQuationsResponse>> getNotificationTeacherQuations();
   @GET(ApiConstant.coursesTeacher)
-  Future<List<CoursesResponseTc>> getCoursesTeacher();
+  Future<CourseListResponse> getCoursesTeacher();
   @POST(ApiConstant.notificationTeacherQuations)
   Future<void> sendQuationsTeacher(@Body() QuationsRequest quationsRequest);
 
-  @PUT(ApiConstant.eidtCourses)
+  @PUT('${ApiConstant.eidtCourses}{course}/')
   Future<CourseResponse> editCourses(
-    @Body() AddCourseRuqest addCourseRuqest,
-  );
+      @Body() AddCourseRuqest addCourseRuqest, @Path('course') String course);
   @POST(ApiConstant.addCourse)
   Future<AddCourseResponse> addCourses(
     @Body() AddCourseRuqest addCourseRuqest,
@@ -163,18 +162,16 @@ abstract class ApiService {
   Future<AddLevelResponse> addLevel(
     @Body() AddLevelRuqest addLevelRuqest,
   );
-  @PUT(ApiConstant.eidtLevel)
+  @PUT('${ApiConstant.eidtLevel}{level}/')
   Future<CourseResponse> editLevel(
-    @Body() AddLevelRuqest addLevelRuqest,
-  );
+      @Body() AddLevelRuqest addLevelRuqest, @Path('level') String level);
   @POST(ApiConstant.addLesssion)
   Future<AddLessionResponse> addLession(
     @Body() AddLessionRuqest addLessionRuqest,
   );
-  @PUT(ApiConstant.eidtLession)
-  Future<CourseResponse> editLession(
-    @Body() AddLessionRuqest addLessionRuqest,
-  );
+  @PUT('${ApiConstant.eidtLession}{lession}/')
+  Future<CourseResponse> editLession(@Body() AddLessionRuqest addLessionRuqest,
+      @Path('lession') String lession);
 
   @POST(ApiConstant.addTest)
   Future<AddTestResponse> addTest(
@@ -184,8 +181,21 @@ abstract class ApiService {
   Future<AddQuationResponse> addQuations(
     @Body() List<QuationRuqest> quationRuqest,
   );
-  @PUT(ApiConstant.eidQuation)
+  @PUT('${ApiConstant.eidQuation}{quation}/')
   Future<CourseResponse> editQuations(
-    @Body() List<QuationRuqest> quationRuqest,
+      @Body() QuationRuqest quationRuqest, @Path('quation') String quation);
+
+  @DELETE('${ApiConstant.eidtCourses}{course}/')
+  Future<void> deletCourse(
+     @Path('course') String course,
   );
+  @DELETE('${ApiConstant.eidtLevel}{level}/')
+  Future<void> deletLevel(
+     @Path('level') String level
+  );
+  @DELETE('${ApiConstant.eidtLession}{lession}/')
+  Future<void> deletLession(
+      @Path('lession') String lession,
+  );
+
 }

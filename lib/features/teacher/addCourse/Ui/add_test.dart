@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/core/routing/router.dart';
 import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/teacher/addCourse/Ui/widget/add_test_bloc_listener.dart';
 import 'package:learn_programtion/features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import 'package:learn_programtion/features/teacher/courses/logic/courses_cubit/cubit/courser_cubit_state.dart';
 
-import '../../../../core/DI/dependency_injection.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/color.dart';
 import '../../../widget/button.dart';
@@ -23,18 +24,8 @@ class AddTests extends StatelessWidget {
               context: context,
               backgroundColor: ColorManger.primary_ColorBlue,
               builder: ((context) {
-                return BlocProvider(
-                    create: (context) => CourserCubitTeacher(
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt(),
-                        getIt()),
+                return BlocProvider.value(
+                    value: BlocProvider.of<CourserCubitTeacher>(context),
                     child: FromTest(context));
               }));
         },
@@ -87,6 +78,7 @@ class AddTests extends StatelessWidget {
                     paddingV: 20.h,
                     function: () {
                       bb.emitAddQuationsTeacher();
+                      context.pushNamed(Routers.add_test);
                     })
               ],
             ),

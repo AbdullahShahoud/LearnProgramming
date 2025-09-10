@@ -10,9 +10,9 @@ class EidetCourseRepo {
   ApiService _apiService;
   EidetCourseRepo(this._apiService);
   Future<ApiResult<CourseResponse>> eidtCourse(
-      AddCourseRuqest addCourseRuqest) async {
+      AddCourseRuqest addCourseRuqest, String course) async {
     try {
-      final response = await _apiService.editCourses(addCourseRuqest);
+      final response = await _apiService.editCourses(addCourseRuqest, course);
       return ApiResult.success(response);
     } on DioError catch (error) {
       return ApiResult.failure(ApiErrorHandler.fromDioError(error));

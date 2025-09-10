@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_programtion/core/helper/extention.dart';
 import 'package:learn_programtion/features/widget/alert_error.dart';
-import 'package:learn_programtion/features/widget/alert_success.dart';
 
 import '../../../../../core/routing/router.dart';
 import '../../../../../core/theming/color.dart';
@@ -27,9 +26,8 @@ class _LoginBlocListenerState extends State<AddLevelBlocListener> {
       listener: (context, state) {
         state.whenOrNull(
           successLevelAdd: (data) {
-            alertSuccess(context, data, () {
-              context.pushNamed(Routers.add_test);
-            });
+            context.pop();
+            context.pushNamed(Routers.add_level);
           },
           loadinLevelAdd: () => showDialog(
               context: context,
@@ -43,8 +41,7 @@ class _LoginBlocListenerState extends State<AddLevelBlocListener> {
               context,
               error,
               () {
-                // context.pushNamed(Routers.add_level);
-                context.pushNamed(Routers.add_test);
+                context.pushNamed(Routers.add_level);
               },
             );
           },

@@ -1,25 +1,28 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_programtion/core/helper/spacing.dart';
+import 'package:learn_programtion/features/teacher/courses/logic/model/courses_response.dart';
 import '../../../../../core/theming/color.dart';
 import '../../../../../core/theming/font_style.dart';
 import '../../../../widget/button.dart';
 import '../../../../widget/text_from.dart';
 import '../../logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../logic/courses_cubit/cubit/courser_cubit_state.dart';
+import 'delete_level_bloc_listener.dart';
+import 'edit_level_bloc_listener - Copy.dart';
 
 class LevelItemTeacher extends StatefulWidget {
   LevelItemTeacher({
     required this.image,
     required this.name,
+    required this.level,
   });
   String image;
   String name;
-
+  Levels level;
   @override
   State<LevelItemTeacher> createState() => _LessonState();
 }
@@ -47,22 +50,53 @@ class _LessonState extends State<LevelItemTeacher> {
                       height: 100.h,
                       width: 100.w,
                       fit: BoxFit.cover,
-                      image: AssetImage(widget.image)),
+                      image: AssetImage('assets/image/images.png'
+                          // widget.image
+                          )),
                 )
               ],
             ),
           ),
         ),
+        DeleteLevelBlocListener(),
         Positioned(
             top: 5,
             left: 7,
             child: Row(
               children: [
-                Icon(Icons.delete, size: 25, color: ColorManger.font),
+                InkWell(
+                    onTap: () {
+                      context.read<CourserCubitTeacher>().selectedlevel =
+                          widget.level;
+                      context
+                          .read<CourserCubitTeacher>()
+                          .emitDeleteLevelTeacher();
+                    },
+                    child:
+                        Icon(Icons.delete, size: 25, color: ColorManger.font)),
                 horizontalBox(13.w),
                 InkWell(
                   child: Icon(Icons.edit, size: 25, color: ColorManger.font),
                   onTap: () {
+                    context.read<CourserCubitTeacher>().selectedlevel =
+                        widget.level;
+                    context
+                            .read<CourserCubitTeacher>()
+                            .controllereditLevelName =
+                        TextEditingController(
+                            text: context
+                                .read<CourserCubitTeacher>()
+                                .selectedlevel!
+                                .name);
+                    context
+                            .read<CourserCubitTeacher>()
+                            .controllereditLevelNumber =
+                        TextEditingController(
+                            text: context
+                                .read<CourserCubitTeacher>()
+                                .selectedlevel!
+                                .num_of_lesson
+                                .toString());
                     showDialog(
                       context: context,
                       builder: (dialogContext) {
@@ -70,13 +104,6 @@ class _LessonState extends State<LevelItemTeacher> {
                             CourserCubitTeacherState>(
                           builder: (context, state) {
                             final cubit = context.read<CourserCubitTeacher>();
-
-                            // التحقق من وجود selectedlevel
-                            // if (cubit.s == null) {
-                            //   return AlertDialog(
-                            //     content: Text('لم يتم تحديد مستوى'),
-                            //   );
-                            // }
                             return AlertDialog(
                               content: Container(
                                 padding: EdgeInsets.symmetric(vertical: 20.h),
@@ -92,8 +119,8 @@ class _LessonState extends State<LevelItemTeacher> {
                                         return null;
                                       },
                                       hint: 'ادخل الاسم',
-                                      controller: cubit.controller3,
-                                      // init_value: cubit.selectedlevel!.name,
+                                      controller:
+                                          cubit.controllereditLevelName!,
                                       icon: const Icon(
                                           Icons.question_answer_rounded),
                                       keyboardType: TextInputType.name,
@@ -108,20 +135,22 @@ class _LessonState extends State<LevelItemTeacher> {
                                         return null;
                                       },
                                       hint: 'ادخل عدد الدروس',
-                                      controller: cubit.controller4,
+                                      controller:
+                                          cubit.controllereditLevelNumber!,
                                       icon: const Icon(
                                           Icons.question_answer_rounded),
                                       keyboardType: TextInputType.name,
-                                      // init_value: cubit.selectedlevel!.num_of_lesson
-                                      //     .toString(),
                                       context: dialogContext,
                                     ),
                                     verticalBox(10.h),
+                                    EidteLevelBlocListener(),
                                     button(
                                       text: 'تعديل',
                                       paddingH: 90.w,
                                       paddingV: 16.h,
-                                      function: () {},
+                                      function: () {
+                                        cubit.emitEditLevelTeacher();
+                                      },
                                     ),
                                   ],
                                 ),

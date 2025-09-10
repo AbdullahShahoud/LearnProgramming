@@ -7,7 +7,7 @@ import '../model/courses_me_response.dart';
 class CoursesMeRepo {
   ApiService _apiService;
   CoursesMeRepo(this._apiService);
-  Future<ApiResult<List<CoursesMeResponse>>> getCoursesMe() async {
+  Future<ApiResult<CourseMeListResponse>> getCoursesMe() async {
     try {
       final response = await _apiService.getCoursesMe();
       return ApiResult.success(response);

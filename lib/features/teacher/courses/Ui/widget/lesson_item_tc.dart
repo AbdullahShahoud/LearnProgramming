@@ -8,13 +8,16 @@ import 'package:learn_programtion/core/routing/router.dart';
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/theming/color.dart';
 import '../../../../../core/theming/font_style.dart';
+import '../../logic/courses_cubit/cubit/courser_cubit_cubit.dart';
+import '../../logic/model/courses_response.dart';
+import 'delete_lession_bloc_listener - Copy.dart';
 
 class LessonItemTeacher extends StatefulWidget {
   LessonItemTeacher(
-      {required this.image, required this.name, required this.lessonId});
+      {required this.image, required this.name, required this.lesson});
   String image;
   String name;
-  String lessonId;
+  Lessons lesson;
   @override
   State<LessonItemTeacher> createState() => _LessonState();
 }
@@ -48,16 +51,27 @@ class _LessonState extends State<LessonItemTeacher> {
             ),
           ),
         ),
+        DeletLessionBlocListener(),
         Positioned(
             top: 5,
             left: 7,
             child: Row(
               children: [
-                Icon(Icons.delete, size: 25, color: ColorManger.font),
+                InkWell(
+                    onTap: () {
+                      CourserCubitTeacher.get(context).selectedlesson =
+                          widget.lesson;
+                      CourserCubitTeacher.get(context)
+                          .emitDeleteLessionTeacher();
+                    },
+                    child:
+                        Icon(Icons.delete, size: 25, color: ColorManger.font)),
                 horizontalBox(13.w),
                 InkWell(
                   child: Icon(Icons.edit, size: 25, color: ColorManger.font),
                   onTap: () {
+                    CourserCubitTeacher.get(context).selectedlesson =
+                        widget.lesson;
                     context.pushNamed(Routers.edit_lession);
                   },
                 )

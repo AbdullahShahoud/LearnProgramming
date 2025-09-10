@@ -4,7 +4,7 @@ part 'otp_ruqest.g.dart';
 
 @JsonSerializable()
 class OtpRuqestLogin {
-  String? otp_code;
+  int? otp_code;
 
   OtpRuqestLogin({
     required this.otp_code,

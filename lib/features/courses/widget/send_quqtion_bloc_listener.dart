@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/core/routing/router.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_cubit.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_state.dart';
 
@@ -29,7 +30,9 @@ class SendQuationsBlocListener extends StatelessWidget {
       },
       child: SizedBox.shrink(),
       listenWhen: (previous, current) =>
-          current is SendQuationError || current is SendQuationError,
+          current is SendQuationLoading ||
+          current is SendQuationError ||
+          current is SendQuationSuccess,
     );
   }
 }
@@ -87,8 +90,7 @@ void successSend(BuildContext context, String message) {
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorManger.primary_ColorBlue),
             onPressed: () {
-              context.pop();
-              context.pop();
+              context.pushNamed(Routers.levelMe);
             },
             child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
           ),

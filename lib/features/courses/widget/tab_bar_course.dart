@@ -17,11 +17,9 @@ Widget TabBarCourse({
             height: 200.h,
             width: double.infinity,
             foregroundDecoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      image,
-                    ))),
+                image: DecorationImage(fit: BoxFit.cover, image: AssetImage(
+                    // image,
+                    "assets/image/images.png"))),
           ),
           Positioned(
             bottom: 60.h,

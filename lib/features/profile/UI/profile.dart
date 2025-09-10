@@ -27,7 +27,8 @@ class _ProfileState extends State<Profile> {
       body: BlocProvider(
         create: (context) => ProfileAndNotificationCubit(getIt(), getIt(),
             getIt(), getIt(), getIt(), getIt(), getIt(), getIt())
-          ..emiteGetInformation(),
+          ..emiteGetInformation()
+          ..emiteViewGrade(),
         child: Padding(
           padding: EdgeInsets.only(top: 24.h),
           child: Column(

@@ -11,7 +11,7 @@ class CoursesState<T> with _$CoursesState<T> {
       ErrorCoursesMe;
 
   const factory CoursesState.courseSelectedMe(
-      CoursesMeResponse selectedCourseMe) = CourseSelectedMe;
+      CourseMeWrapper selectedCourseMe) = CourseSelectedMe;
   const factory CoursesState.lessonSelectedMe(LessonMe selectedlesson) =
       LessonSelectedMe;
   const factory CoursesState.levelSelectedMe(LevelMe selectedlevel) =
@@ -46,4 +46,9 @@ class CoursesState<T> with _$CoursesState<T> {
       DeleteCoursesSuccess<T>;
   const factory CoursesState.deleteCoursesError({required String error}) =
       DeleteCoursesError;
+      const factory CoursesState.soulionTestLoading() = SoulionTestLoading;
+  const factory CoursesState.soulionTestSuccess(T data) =
+      SoulionTestSuccess<T>;
+  const factory CoursesState.soulionTestError({required String error}) =
+      SoulionTestError;
 }

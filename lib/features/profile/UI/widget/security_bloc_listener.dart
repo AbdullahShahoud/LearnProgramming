@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/core/routing/router.dart';
 import 'package:learn_programtion/core/theming/color.dart';
 import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/profile/logic/profile_cubit/cubit/profile_and_notification_cubit.dart';
@@ -51,6 +52,11 @@ void sucessSecurity(BuildContext context, String message) {
   showDialog(
       context: context,
       builder: (context) => AlertDialog(
+            icon: Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 50,
+            ),
             content: Text(
               message,
               style: FontStyleAndText.font_big,
@@ -61,7 +67,7 @@ void sucessSecurity(BuildContext context, String message) {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: ColorManger.primary_ColorBlue),
                     onPressed: () {
-                      context.pop();
+                      context.pushNamed(Routers.profile);
                     },
                     child: Text('موافق')),
               )

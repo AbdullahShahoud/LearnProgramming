@@ -15,7 +15,7 @@ class LearnApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(412, 915),
+      designSize: Size(500, 1000),
       minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [
@@ -43,14 +43,21 @@ class LearnApp extends StatelessWidget {
               getIt(),
               getIt(),
               getIt(),
-            )..emitCoursesTeacher(),
+              getIt(),
+              getIt(),
+              getIt(),
+            ),
           )
         ],
         child: MaterialApp(
           title: 'LearnProgram',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Alexandria'),
-          initialRoute: LoginUser ? Routers.home_page_teacher : Routers.Welcome,
+          initialRoute: LoginUser
+              ? Student
+                  ? Routers.home_page
+                  : Routers.home_page_teacher
+              : Routers.Welcome,
           onGenerateRoute: AppRouters.generateRoute,
         ),
       ),

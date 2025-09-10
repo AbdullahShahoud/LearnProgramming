@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_programtion/core/helper/extention.dart';
 
 import '../../../../../core/helper/spacing.dart';
+import '../../../../../core/routing/router.dart';
 import '../../../../widget/button.dart';
 import '../../../../widget/text_from.dart';
 import '../../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
@@ -16,8 +18,9 @@ Widget FromTest(BuildContext context) {
       // TODO: implement listener
     },
     builder: (context, state) {
+      var cubit = context.read<CourserCubitTeacher>();
       return Form(
-          key: context.read<CourserCubitTeacher>().keyeTest,
+          key: cubit.keyeTest,
           child: Column(children: [
             verticalBox(10.h),
             FromFields(
@@ -28,8 +31,7 @@ Widget FromTest(BuildContext context) {
                 },
                 paddingContentV: 18.h,
                 hint: 'السؤال',
-                controller:
-                    context.read<CourserCubitTeacher>().controllerAddQuation,
+                controller: cubit.controllerAddQuation,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.name,
                 context: context),
@@ -41,9 +43,7 @@ Widget FromTest(BuildContext context) {
                 },
                 paddingContentV: 18.h,
                 hint: 'الخيار الاول',
-                controller: context
-                    .read<CourserCubitTeacher>()
-                    .controllerAddResponseOne,
+                controller: cubit.controllerAddResponseOne,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
                 context: context),
@@ -55,9 +55,7 @@ Widget FromTest(BuildContext context) {
                 },
                 paddingContentV: 18.h,
                 hint: 'الخيار الثاني',
-                controller: context
-                    .read<CourserCubitTeacher>()
-                    .controllerAddResponseTwo,
+                controller: cubit.controllerAddResponseTwo,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
                 context: context),
@@ -69,9 +67,7 @@ Widget FromTest(BuildContext context) {
                 },
                 paddingContentV: 18.h,
                 hint: 'الخيار الثالث',
-                controller: context
-                    .read<CourserCubitTeacher>()
-                    .controllerAddResponseThree,
+                controller: cubit.controllerAddResponseThree,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
                 context: context),
@@ -83,9 +79,7 @@ Widget FromTest(BuildContext context) {
                 },
                 paddingContentV: 18.h,
                 hint: 'الاجابة الصحيحة',
-                controller: context
-                    .read<CourserCubitTeacher>()
-                    .controllerAddResponseCorrect,
+                controller: cubit.controllerAddResponseCorrect,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
                 context: context),
@@ -95,6 +89,13 @@ Widget FromTest(BuildContext context) {
                 paddingV: 16.h,
                 function: () {
                   context.read<CourserCubitTeacher>().addQuarions();
+                  context.pushNamed(Routers.add_test);
+                  cubit.controllerAddQuation.text = '';
+                  cubit.controllerAddResponseOne.text = '';
+                  cubit.controllerAddResponseTwo.text = '';
+                  cubit.controllerAddResponseThree.text = '';
+                  cubit.controllerAddResponseCorrect.text = '';
+                  cubit.keyeTest = GlobalKey<FormState>();
                 })
           ]));
     },

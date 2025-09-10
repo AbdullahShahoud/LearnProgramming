@@ -4,17 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/DI/dependency_injection.dart';
 import '../../../../../core/helper/spacing.dart';
 import '../../../../../core/theming/color.dart';
 import '../../../../../core/theming/font_style.dart';
-import '../../../addCourse/Ui/widget/from_test.dart';
 import '../../logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../../logic/model/courses_response.dart';
+import 'form_test_final.dart';
 
 class QuationItemTeacher extends StatefulWidget {
   Tests test;
-  QuationItemTeacher(this.test);
+  QuationItemTeacher(
+    this.test,
+  );
 
   @override
   State<QuationItemTeacher> createState() => _QuationItemState();
@@ -144,38 +145,25 @@ class _QuationItemState extends State<QuationItemTeacher> {
                   Positioned(
                       top: 5,
                       left: 7,
-                      child: Row(
-                        children: [
-                          Icon(Icons.delete, size: 25, color: ColorManger.font),
-                          horizontalBox(13.w),
-                          InkWell(
-                            child: Icon(Icons.edit,
-                                size: 25, color: ColorManger.font),
-                            onTap: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  backgroundColor:
-                                      ColorManger.primary_ColorBlue,
-                                  builder: ((context) {
-                                    return BlocProvider(
-                                        create: (context) =>
-                                            CourserCubitTeacher(
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                              getIt(),
-                                            ),
-                                        child: FromTest(context));
-                                  }));
-                            },
-                          )
-                        ],
+                      child: InkWell(
+                        child:
+                            Icon(Icons.edit, size: 25, color: ColorManger.font),
+                        onTap: () {
+                          CourserCubitTeacher.get(context).selectQuations =
+                              widget.test.questions![index].id!;
+                          showModalBottomSheet(
+                              context: context,
+                              backgroundColor: ColorManger.primary_ColorBlue,
+                              builder: ((context) {
+                                return BlocProvider.value(
+                                    value: BlocProvider.of<CourserCubitTeacher>(
+                                        context),
+                                    child: FromEidte(
+                                        context,
+                                        widget.test.questions![index],
+                                        widget.test.id!));
+                              }));
+                        },
                       )),
                 ],
               );

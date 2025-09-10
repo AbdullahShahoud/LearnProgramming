@@ -4,9 +4,9 @@ part 'view_grade.g.dart';
 
 @JsonSerializable()
 class GradeRespons {
-  List<String> grades;
+  List<String> completed_courses;
 
-  GradeRespons(this.grades);
+  GradeRespons(this.completed_courses);
 
   factory GradeRespons.fromJson(Map<String, dynamic> json) =>
       _$GradeResponsFromJson(json);

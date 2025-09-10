@@ -10,9 +10,9 @@ class EidtQuationRepo {
   ApiService _apiService;
   EidtQuationRepo(this._apiService);
   Future<ApiResult<CourseResponse>> editQuation(
-      List<QuationRuqest> quationRuqest) async {
+      QuationRuqest quationRuqest, String qautions) async {
     try {
-      final response = await _apiService.editQuations(quationRuqest);
+      final response = await _apiService.editQuations(quationRuqest, qautions);
       return ApiResult.success(response);
     } on DioError catch (error) {
       return ApiResult.failure(ApiErrorHandler.fromDioError(error));

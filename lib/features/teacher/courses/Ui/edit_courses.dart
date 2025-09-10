@@ -15,6 +15,27 @@ class EditCoursesTeacher extends StatefulWidget {
 
 class _AddCoursesTeacherState extends State<EditCoursesTeacher> {
   @override
+  void initState() {
+    // TODO: implement initState
+    CourserCubitTeacher.get(context).controllereditcoursename =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedcorse!.name);
+    CourserCubitTeacher.get(context).controllereditcoursedescrip =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedcorse!.descrip);
+    CourserCubitTeacher.get(context).controllereditcourseLink =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedcorse!.image);
+    CourserCubitTeacher.get(context).controllereditcoursetime =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context)
+                .selectedcorse!
+                .time
+                .toString());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

@@ -8,7 +8,7 @@ part of 'otp_ruqest.dart';
 
 OtpRuqestLogin _$OtpRuqestLoginFromJson(Map<String, dynamic> json) =>
     OtpRuqestLogin(
-      otp_code: json['otp_code'] as String?,
+      otp_code: (json['otp_code'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$OtpRuqestLoginToJson(OtpRuqestLogin instance) =>

@@ -9,7 +9,6 @@ import 'package:learn_programtion/features/widget/button.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/font_style.dart';
 import '../../logic/cubit/cubit/coursees_state.dart';
-import '../../widget/delet_course_bloc.dart';
 import '../../widget/level_item_me.dart';
 import '../../widget/tab_bar_course.dart';
 
@@ -35,33 +34,19 @@ class LevelesMe extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-              TabBarCourse(image: courseMe.image!, name: courseMe.name!),
+              TabBarCourse(
+                  image: courseMe.course!.image!, name: courseMe.course!.name!),
               verticalBox(8.h),
-              DeletCourseBlocListener(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w),
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          CourseesCubit.get(context).emitdeletCourses();
-                        },
-                        icon: Icon(
-                          Icons.delete,
-                          size: 35,
-                          color: Colors.red,
-                        )),
-                    Spacer(),
-                    Text('المستويات', style: FontStyleAndText.fontbold),
-                  ],
-                ),
+                child: Text('المستويات', style: FontStyleAndText.fontbold),
               ),
               Container(
-                height: 540.h,
+                height: 620.h,
                 child: ListView.builder(
-                    itemCount: courseMe.level.length,
+                    itemCount: courseMe.course!.level!.length,
                     itemBuilder: (context, index) {
-                      final level = courseMe.level[index];
+                      final level = courseMe.course!.level![index];
                       return Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6.w),
                         child: InkWell(
@@ -70,9 +55,9 @@ class LevelesMe extends StatelessWidget {
                             context.pushNamed(Routers.lessonMe);
                           },
                           child: LevelItemMe(
-                            image: courseMe.image!,
-                            name: courseMe.level[index].name,
-                            finished: courseMe.level[index].finished,
+                            image: courseMe.course!.image!,
+                            name: courseMe.course!.level![index].name!,
+                            finished: courseMe.course!.level![index].finished!,
                           ),
                         ),
                       );
@@ -84,7 +69,7 @@ class LevelesMe extends StatelessWidget {
                     text: 'الاختبار النهائي',
                     paddingV: 17.h,
                     function: () {
-                      courseMe.finalTest.checkk!
+                      courseMe.course!.finalTest.finish == false
                           ? context.pushNamed(Routers.questionsFinaly)
                           : null;
                     }),

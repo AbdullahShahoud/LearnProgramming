@@ -6,16 +6,15 @@ part of 'finish_test_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FinishedTestRuqest _$FinishedTestRuqestFromJson(Map<String, dynamic> json) =>
-    FinishedTestRuqest(
-      courseId: json['courseId'] as String?,
-      levelId: json['levelId'] as String?,
-      dagre: json['dagre'] as String?,
+FinishedLevelRuqest _$FinishedLevelRuqestFromJson(Map<String, dynamic> json) =>
+    FinishedLevelRuqest(
+      level: (json['level'] as num?)?.toInt(),
+      course: (json['course'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$FinishedTestRuqestToJson(FinishedTestRuqest instance) =>
+Map<String, dynamic> _$FinishedLevelRuqestToJson(
+        FinishedLevelRuqest instance) =>
     <String, dynamic>{
-      'courseId': instance.courseId,
-      'levelId': instance.levelId,
-      'dagre': instance.dagre,
+      'course': instance.course,
+      'level': instance.level,
     };

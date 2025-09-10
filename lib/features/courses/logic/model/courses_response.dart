@@ -1,27 +1,35 @@
 import 'package:json_annotation/json_annotation.dart';
 
 part 'courses_response.g.dart';
+@JsonSerializable()
+class CourseListResponseStudent {
+  List<CoursesResponse>? courseResponse;
 
+  CourseListResponseStudent({this.courseResponse});
+
+  factory CourseListResponseStudent.fromJson(Map<String, dynamic> json) =>
+      _$CourseListResponseStudentFromJson(json);
+}
 @JsonSerializable()
 class CoursesResponse {
   int? id;
-  String? name;
+  String? name; 
   String? image;
   String? nameTeacher;
   String? type;
   int? time;
   String? descrip;
-  List<Level> level;
+  List<Level> levels;
 
   CoursesResponse({
-    this.id,
-    this.name,
-    this.time,
-    this.descrip,
-    this.nameTeacher,
-    this.type,
-    this.image,
-    required this.level,
+   required this.id,
+   required this.name,
+   required this.time,
+   required this.descrip,
+   required this.nameTeacher,
+   required this.type,
+   required this.image,
+    required this.levels,
   });
 
   factory CoursesResponse.fromJson(Map<String, dynamic> json) =>

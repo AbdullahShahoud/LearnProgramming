@@ -8,19 +8,19 @@ import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_cubit.dart';
 import 'package:learn_programtion/features/courses/logic/cubit/cubit/coursees_state.dart';
 
-class DeletCourseBlocListener extends StatelessWidget {
-  const DeletCourseBlocListener({super.key});
+class FinishLevelBlocListener extends StatelessWidget {
+  const FinishLevelBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<CourseesCubit, CoursesState>(
       listenWhen: (previous, current) =>
-          current is DeleteCoursesError ||
-          current is DeleteCoursesLoading ||
-          current is DeleteCoursesSuccess,
+          current is FinishedError ||
+          current is FinishedSuccess ||
+          current is FinishedLoading,
       listener: (context, state) {
         state.maybeWhen(
-          deleteCoursesLoading: () => showDialog(
+          finishedLoading: () => showDialog(
             context: context,
             builder: (context) => Center(
               child: CircularProgressIndicator(
@@ -28,8 +28,8 @@ class DeletCourseBlocListener extends StatelessWidget {
               ),
             ),
           ),
-          deleteCoursesSuccess: (message) => successcourses(context, message),
-          deleteCoursesError: (error) => errorcourse(context, error),
+          finishedSuccess: (message) => successcourses(context, message),
+          finishedError: (error) => errorcourse(context, error),
           orElse: () {
             SizedBox.shrink();
           },
@@ -61,7 +61,7 @@ void successcourses(BuildContext context, String message) {
             style: ElevatedButton.styleFrom(
                 backgroundColor: ColorManger.primary_ColorBlue),
             onPressed: () {
-              context.pushNamed(Routers.levelMe);
+              context.pushNamed(Routers.questions);
             },
             child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
           ),
@@ -93,7 +93,7 @@ void errorcourse(BuildContext context, String error) {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: ColorManger.primary_ColorBlue),
                   onPressed: () {
-                    context.pushNamed(Routers.home_page);
+                    context.pushNamed(Routers.levelMe);
                   },
                   child: Text('حسناً', style: FontStyleAndText.buttonfonttext),
                 ),

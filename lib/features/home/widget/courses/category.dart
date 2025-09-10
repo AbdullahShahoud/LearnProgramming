@@ -107,7 +107,7 @@ class _CategoryState extends State<CategoryCourses> {
                       type: filteredCourses[index].type,
                       image: filteredCourses[index].image,
                       id: filteredCourses[index].id,
-                      numberLevel: filteredCourses[index].level.length),
+                      numberLevel: filteredCourses[index].levels.length),
                 ),
               ),
               itemCount: filteredCourses.length,

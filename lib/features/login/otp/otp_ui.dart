@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:learn_programtion/core/helper/extention.dart';
 import 'package:learn_programtion/core/helper/spacing.dart';
 import 'package:learn_programtion/core/theming/color.dart';
 import 'package:learn_programtion/core/theming/font_style.dart';
@@ -11,7 +10,6 @@ import 'package:learn_programtion/features/login/logic/cubit/login_cubit.dart';
 import 'package:learn_programtion/features/login/otp/otp_bloc_Listener.dart';
 import 'package:learn_programtion/features/widget/button.dart';
 
-// import '../../../core/routing/router.dart';
 import '../../widget/background.dart';
 
 class OTPLogin extends StatelessWidget {
@@ -42,7 +40,7 @@ class OTPLogin extends StatelessWidget {
               enabledBorderColor: Colors.black,
               showFieldAsBox: true,
               onSubmit: (code) {
-                LoginCubit.get(context).otpLogin = code;
+                LoginCubit.get(context).otpLogin = int.parse(code);
               },
             ),
             OtpLoginBlocListener(),

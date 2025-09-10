@@ -8,6 +8,7 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/routing/router.dart';
 import '../../../../core/theming/font_style.dart';
 import '../../../widget/button.dart';
+import '../../widget/finish_level_bloc_Listener.dart';
 import '../../widget/lesson_item_me.dart';
 import '../../widget/tab_bar_course.dart';
 
@@ -28,15 +29,17 @@ class LessonsMe extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TabBarCourse(image: coures!.image!, name: coures.name!),
+                    TabBarCourse(
+                        image: coures!.course!.image!,
+                        name: coures.course!.name!),
                     verticalBox(10.h),
                     Text('الدروس', style: FontStyleAndText.fontbold),
                     Container(
-                      height: 540.h,
+                      height: 620.h,
                       child: ListView.builder(
-                          itemCount: levelMe.lessons.length,
+                          itemCount: levelMe.lessons!.length,
                           itemBuilder: (context, index) {
-                            final lessonMe = levelMe.lessons[index];
+                            final lessonMe = levelMe.lessons![index];
                             return Padding(
                               padding: EdgeInsets.symmetric(horizontal: 6.w),
                               child: InkWell(
@@ -47,21 +50,25 @@ class LessonsMe extends StatelessWidget {
                                 },
                                 child: LessonItemMe(
                                     context: context,
-                                    image: coures.image!,
+                                    image: coures.course!.image!,
                                     text: lessonMe.name!,
-                                    finish: lessonMe.finished),
+                                    finish: lessonMe.finished!),
                               ),
                             );
                           }),
                     ),
                     verticalBox(10.h),
+                    FinishLevelBlocListener(),
                     button(
                         text: 'الاختبار',
                         paddingV: 16.h,
                         paddingH: 140.w,
                         function: () {
-                          levelMe.finished?
-                          context.pushNamed(Routers.questions):null;
+                          if (levelMe.finished == false) {
+                            context.read<CourseesCubit>().emitFinishLevel();
+                            context.pushNamed(Routers.questions);
+                          }
+                          context.pushNamed(Routers.levelMe);
                         })
                   ]),
             );

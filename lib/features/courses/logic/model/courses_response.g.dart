@@ -6,6 +6,20 @@ part of 'courses_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+CourseListResponseStudent _$CourseListResponseStudentFromJson(
+        Map<String, dynamic> json) =>
+    CourseListResponseStudent(
+      courseResponse: (json['courseResponse'] as List<dynamic>?)
+          ?.map((e) => CoursesResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$CourseListResponseStudentToJson(
+        CourseListResponseStudent instance) =>
+    <String, dynamic>{
+      'courseResponse': instance.courseResponse,
+    };
+
 CoursesResponse _$CoursesResponseFromJson(Map<String, dynamic> json) =>
     CoursesResponse(
       id: (json['id'] as num?)?.toInt(),
@@ -15,7 +29,7 @@ CoursesResponse _$CoursesResponseFromJson(Map<String, dynamic> json) =>
       nameTeacher: json['nameTeacher'] as String?,
       type: json['type'] as String?,
       image: json['image'] as String?,
-      level: (json['level'] as List<dynamic>)
+      levels: (json['levels'] as List<dynamic>)
           .map((e) => Level.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -29,7 +43,7 @@ Map<String, dynamic> _$CoursesResponseToJson(CoursesResponse instance) =>
       'type': instance.type,
       'time': instance.time,
       'descrip': instance.descrip,
-      'level': instance.level,
+      'levels': instance.levels,
     };
 
 Level _$LevelFromJson(Map<String, dynamic> json) => Level(

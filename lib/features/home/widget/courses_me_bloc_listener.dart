@@ -35,7 +35,7 @@ class CoursesMeBlocListener extends StatelessWidget {
   }
 }
 
-Widget success(List<CoursesMeResponse> courseItem) {
+Widget success(List<CourseMeWrapper> courseItem) {
   return CoursesMe(courseItem);
 }
 

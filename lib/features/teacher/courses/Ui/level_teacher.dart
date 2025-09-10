@@ -7,11 +7,24 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/routing/router.dart';
 import '../../../../core/theming/font_style.dart';
 import '../../../courses/widget/tab_bar_course.dart';
+import '../../../widget/button.dart';
 import '../logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 import '../logic/courses_cubit/cubit/courser_cubit_state.dart';
 
-class LevelsTeacher extends StatelessWidget {
+class LevelsTeacher extends StatefulWidget {
   const LevelsTeacher({super.key});
+
+  @override
+  State<LevelsTeacher> createState() => _LevelsTeacherState();
+}
+
+class _LevelsTeacherState extends State<LevelsTeacher> {
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +54,26 @@ class LevelsTeacher extends StatelessWidget {
                                   .read<CourserCubitTeacher>()
                                   .selectedlevel = level;
                               context.pushNamed(Routers.lesson_teacher);
+                              context.read<CourserCubitTeacher>().selectQuiz =
+                                  context
+                                      .read<CourserCubitTeacher>()
+                                      .quiz[index];
                             },
                             child: LevelItemTeacher(
                               image: course.image!,
                               name: course.level![index].name!,
+                              level: course.level![index],
                             ),
                           ));
                     })),
+            verticalBox(10.h),
+            button(
+                text: ' الاختبار',
+                paddingV: 16.h,
+                paddingH: 140.w,
+                function: () {
+                  context.pushNamed(Routers.final_test);
+                })
           ]),
         ));
       },

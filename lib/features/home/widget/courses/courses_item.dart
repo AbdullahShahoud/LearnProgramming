@@ -9,6 +9,8 @@ import 'package:learn_programtion/core/helper/spacing.dart';
 import 'package:learn_programtion/core/routing/router.dart';
 import '../../../../core/theming/color.dart';
 import '../../../../core/theming/font_style.dart';
+import '../../../teacher/courses/Ui/widget/delete_course_bloc_listener.dart';
+import '../../../teacher/courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 
 class CoursesItem extends StatelessWidget {
   CoursesItem(
@@ -38,7 +40,8 @@ class CoursesItem extends StatelessWidget {
           Stack(children: [
             ClipRRect(
               child: Image.asset(
-                image!,
+                'assets/image/images.png',
+                // image!,
                 height: 160.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -72,7 +75,7 @@ class CoursesItem extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(name!,
+                      Text(name ?? 'No Name',
                           textDirection: TextDirection.rtl,
                           style: FontStyleAndText.fontbold
                               .copyWith(color: Colors.white)),
@@ -80,7 +83,7 @@ class CoursesItem extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: Text(
-                          teacherName!,
+                          teacherName ?? 'No Name',
                           textDirection: TextDirection.rtl,
                           style: FontStyleAndText.fontbold
                               .copyWith(color: Colors.white),
@@ -94,7 +97,7 @@ class CoursesItem extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(
               textDirection: TextDirection.rtl,
-              descripe!,
+              descripe ?? 'No Name',
               style: FontStyleAndText.fontmedia,
               textAlign: TextAlign.right,
               maxLines: 3,
@@ -107,7 +110,7 @@ class CoursesItem extends StatelessWidget {
             child: Align(
               alignment: Alignment.topRight,
               child: Text(
-                type!,
+                type ?? 'No Name',
                 textDirection: TextDirection.rtl,
                 textAlign: TextAlign.right,
                 style: FontStyleAndText.fontsmall,
@@ -120,27 +123,39 @@ class CoursesItem extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  '${numberLevel!} ' + ' ' + 'مستويات',
+                  '${numberLevel ?? 'No Name'} ' + ' ' + 'مستويات',
                   textDirection: TextDirection.rtl,
                   style: FontStyleAndText.fontsmall,
                 ),
                 Spacer(),
+                DeleteCoursesBlocListener(),
                 Row(children: [
-                  Icon(Icons.delete, size: 25, color: ColorManger.font),
+                  InkWell(
+                      onTap: () {
+                        CourserCubitTeacher.get(context).selectedcorse =
+                            CourserCubitTeacher.get(context)
+                                .CoursesTeacher!
+                                .where((element) => element.id == id)
+                                .single;
+                        CourserCubitTeacher.get(context)
+                            .emitDeleteCoursesTeacher();
+                      },
+                      child: Icon(Icons.delete,
+                          size: 25, color: ColorManger.font)),
                   horizontalBox(13.w),
                   InkWell(
                     child: Icon(Icons.edit, size: 25, color: ColorManger.font),
                     onTap: () {
+                      CourserCubitTeacher.get(context).selectedcorse =
+                          CourserCubitTeacher.get(context)
+                              .CoursesTeacher!
+                              .where((element) => element.id == id)
+                              .single;
                       context.pushNamed(Routers.edit_courses);
                     },
                   ),
                   horizontalBox(13.w),
                 ])
-                // Text(
-                //   ' ${time!}',
-                //   textDirection: TextDirection.rtl,
-                //   style: FontStyleAndText.fontsmall,
-                // ),
               ],
             ),
           )

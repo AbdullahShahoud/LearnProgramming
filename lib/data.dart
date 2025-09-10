@@ -1,4 +1,4 @@
-// import 'package:learn_programtion/features/courses/logic/model/courses_response.dart';
+// import 'package:learn_programtion/features/courses/logic/m'assets/image/images.pngodel/courses_response.dart';
 // import 'package:learn_programtion/features/notification/logic/model/notification_response.dart';
 
 // import 'features/courses/logic/model/courses_me_response.dart';
@@ -7,7 +7,7 @@
 //   CoursesResponse(
 //     id: '101',
 //     name: 'أساسيات البرمجة بلغة Dart',
-//     image: 'assets/image/images.png',
+//     image: ',
 //     nameTeacher: 'د. خالد فهد',
 //     type: 'برمجة',
 //     time: '10 ساعات',

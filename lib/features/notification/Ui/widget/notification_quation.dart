@@ -19,61 +19,53 @@ class NotificationQuations extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 8.h, left: 6.w, right: 6.w),
           child: Card(
             color: ColorManger.primary_ColorBlue,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, left: 8.0),
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      questionAndResponse[index].course_title!,
-                      textDirection: TextDirection.rtl,
-                      style: FontStyleAndText.fontmedia,
-                    ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Text(
+                    'السؤال',
+                    textDirection: TextDirection.rtl,
+                    style: FontStyleAndText.fontmedia,
                   ),
-                ),
-                Text(
-                  'السؤال',
-                  textDirection: TextDirection.rtl,
-                  style: FontStyleAndText.fontmedia,
-                ),
-                verticalBox(8.h),
-                Text(
-                  questionAndResponse[index].question_text!,
-                  textDirection: TextDirection.rtl,
-                  textAlign: TextAlign.center,
-                  style: FontStyleAndText.fontmedia,
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-                  child: Card(
-                    color: ColorManger.primary_ColorYello,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'الجواب',
-                            textDirection: TextDirection.rtl,
-                            style: FontStyleAndText.fontmedia,
-                          ),
-                          Text(
-                            textDirection: TextDirection.rtl,
-                            questionAndResponse[index].answer_text == null
-                                ? ''
-                                : questionAndResponse[index].answer_text!,
-                            maxLines: 4,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  verticalBox(8.h),
+                  Text(
+                    questionAndResponse[index].question_text!,
+                    textDirection: TextDirection.rtl,
+                    textAlign: TextAlign.center,
+                    style: FontStyleAndText.fontmedia,
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
+                    child: Card(
+                      color: ColorManger.primary_ColorYello,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'الجواب',
+                              textDirection: TextDirection.rtl,
+                              style: FontStyleAndText.fontmedia,
+                            ),
+                            Text(
+                              textDirection: TextDirection.rtl,
+                              questionAndResponse[index].answer_text == ''
+                                  ? 'لم يتم الاجابة بعد'
+                                  : questionAndResponse[index].answer_text!,
+                              maxLines: 2,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

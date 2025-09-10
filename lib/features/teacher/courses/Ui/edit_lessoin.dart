@@ -3,20 +3,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learn_programtion/core/helper/extention.dart';
+import 'package:learn_programtion/features/teacher/courses/Ui/widget/edite_lession_bloc_listener.dart';
 
 import '../../../../core/helper/spacing.dart';
-import '../../../../core/routing/router.dart';
 import '../../../../core/theming/color.dart';
 import '../../../../core/theming/font_style.dart';
 import '../../../widget/button.dart';
 import '../../../widget/text_from.dart';
 import '../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
 
-class EditeLessionTeacher extends StatelessWidget {
+class EditeLessionTeacher extends StatefulWidget {
   const EditeLessionTeacher({super.key});
 
   @override
+  State<EditeLessionTeacher> createState() => _EditeLessionTeacherState();
+}
+
+class _EditeLessionTeacherState extends State<EditeLessionTeacher> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    CourserCubitTeacher.get(context).controllerEditeNameLession =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedlesson!.name);
+    CourserCubitTeacher.get(context).controllerEditeDescripLession =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedlesson!.description);
+    CourserCubitTeacher.get(context).controllerEditeLinkLession =
+        TextEditingController(
+            text: CourserCubitTeacher.get(context).selectedlesson!.video);
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -39,11 +57,10 @@ class EditeLessionTeacher extends StatelessWidget {
                 },
                 paddingContentV: 18.h,
                 hint: 'اسم الدرس',
-                controller:
-                    context.read<CourserCubitTeacher>().controllerNameLession,
+                controller: context
+                    .read<CourserCubitTeacher>()
+                    .controllerEditeNameLession!,
                 icon: SizedBox.shrink(),
-                // init_value:
-                //     context.read<CourserCubitTeacher>().selectedlesson!.name,
                 keyboardType: TextInputType.name,
                 context: context),
             verticalBox(10.h),
@@ -56,12 +73,11 @@ class EditeLessionTeacher extends StatelessWidget {
                 },
                 paddingContentV: 18.h,
                 hint: 'رابط الفيديو ',
-                controller:
-                    context.read<CourserCubitTeacher>().controllerLinkLession,
+                controller: context
+                    .read<CourserCubitTeacher>()
+                    .controllerEditeLinkLession!,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.emailAddress,
-                // init_value:
-                //     context.read<CourserCubitTeacher>().selectedlesson!.video,
                 context: context),
             verticalBox(10.h),
             TextFormField(
@@ -71,14 +87,10 @@ class EditeLessionTeacher extends StatelessWidget {
                 }
                 return null;
               },
-              controller:
-                  context.read<CourserCubitTeacher>().controllerDescripLession,
+              controller: context
+                  .read<CourserCubitTeacher>()
+                  .controllerEditeDescripLession,
               cursorColor: Colors.white,
-              maxLines: 12,
-              // initialValue: context
-              //     .read<CourserCubitTeacher>()
-              //     .selectedlesson!
-              //     .description,
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 20.sp,
@@ -110,12 +122,13 @@ class EditeLessionTeacher extends StatelessWidget {
               keyboardType: TextInputType.name,
             ),
             verticalBox(20.h),
+            EidteLessionBlocListener(),
             button(
                 text: 'تعديل',
                 paddingH: 135.w,
                 paddingV: 20.h,
                 function: () {
-                  context.pushNamed(Routers.add_test);
+                  context.read<CourserCubitTeacher>().emitEidteLessionTeacher();
                 })
           ],
         ),

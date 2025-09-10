@@ -18,6 +18,15 @@ class ItemsTest extends StatefulWidget {
 class _ItemsTestState extends State<ItemsTest> {
   @override
   Widget build(BuildContext context) {
+    @override
+    void initState() {
+      context
+          .read<CourserCubitTeacher>()
+          .quiz
+          .add(context.read<CourserCubitTeacher>().finals!);
+      super.initState();
+    }
+
     return Scaffold(
         body: BlocConsumer<CourserCubitTeacher, CourserCubitTeacherState>(
       listener: (context, state) {
@@ -48,8 +57,8 @@ class _ItemsTestState extends State<ItemsTest> {
                         EdgeInsets.symmetric(vertical: 8.h, horizontal: 15.w),
                     child: Text(
                       index == cubb.length
-                          ? ' ${index} الاختبار '
-                          : 'الاختبار النهائي',
+                          ? 'الاختبار النهائي'
+                          : ' ${index} الاختبار ',
                       style: FontStyleAndText.fontmedia,
                       textAlign: TextAlign.right,
                     ),

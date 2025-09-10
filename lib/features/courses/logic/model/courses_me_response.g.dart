@@ -6,19 +6,45 @@ part of 'courses_me_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+CourseMeListResponse _$CourseMeListResponseFromJson(
+        Map<String, dynamic> json) =>
+    CourseMeListResponse(
+      CourseMeResponse: (json['CourseMeResponse'] as List<dynamic>?)
+          ?.map((e) => CourseMeWrapper.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$CourseMeListResponseToJson(
+        CourseMeListResponse instance) =>
+    <String, dynamic>{
+      'CourseMeResponse': instance.CourseMeResponse,
+    };
+
+CourseMeWrapper _$CourseMeWrapperFromJson(Map<String, dynamic> json) =>
+    CourseMeWrapper(
+      course: json['course'] == null
+          ? null
+          : CoursesMeResponse.fromJson(json['course'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$CourseMeWrapperToJson(CourseMeWrapper instance) =>
+    <String, dynamic>{
+      'course': instance.course,
+    };
+
 CoursesMeResponse _$CoursesMeResponseFromJson(Map<String, dynamic> json) =>
     CoursesMeResponse(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
-      time: json['time'] as String?,
+      time: (json['time'] as num?)?.toInt(),
       type: json['type'] as String?,
       checkk: json['checkk'] as bool?,
       image: json['image'] as String?,
       nameTeacher: json['nameTeacher'] as String?,
       descrip: json['descrip'] as String?,
-      finished: json['finished'] as bool,
-      level: (json['level'] as List<dynamic>)
-          .map((e) => LevelMe.fromJson(e as Map<String, dynamic>))
+      finished: json['finished'] as bool?,
+      level: (json['level'] as List<dynamic>?)
+          ?.map((e) => LevelMe.fromJson(e as Map<String, dynamic>))
           .toList(),
       finalTest: TestMe.fromJson(json['finalTest'] as Map<String, dynamic>),
     );
@@ -39,14 +65,16 @@ Map<String, dynamic> _$CoursesMeResponseToJson(CoursesMeResponse instance) =>
     };
 
 LevelMe _$LevelMeFromJson(Map<String, dynamic> json) => LevelMe(
-      lessons: (json['lessons'] as List<dynamic>)
-          .map((e) => LessonMe.fromJson(e as Map<String, dynamic>))
+      lessons: (json['lessons'] as List<dynamic>?)
+          ?.map((e) => LessonMe.fromJson(e as Map<String, dynamic>))
           .toList(),
-      checkk: json['checkk'] as bool,
-      id: (json['id'] as num).toInt(),
-      finished: json['finished'] as bool,
-      test: TestMe.fromJson(json['test'] as Map<String, dynamic>),
-      name: json['name'] as String,
+      checkk: json['checkk'] as bool?,
+      id: (json['id'] as num?)?.toInt(),
+      finished: json['finished'] as bool?,
+      test: json['test'] == null
+          ? null
+          : TestMe.fromJson(json['test'] as Map<String, dynamic>),
+      name: json['name'] as String?,
     );
 
 Map<String, dynamic> _$LevelMeToJson(LevelMe instance) => <String, dynamic>{
@@ -59,18 +87,16 @@ Map<String, dynamic> _$LevelMeToJson(LevelMe instance) => <String, dynamic>{
     };
 
 TestMe _$TestMeFromJson(Map<String, dynamic> json) => TestMe(
-      questions: (json['questions'] as List<dynamic>)
-          .map((e) => QuestionMe.fromJson(e as Map<String, dynamic>))
+      questions: (json['questions'] as List<dynamic>?)
+          ?.map((e) => QuestionMe.fromJson(e as Map<String, dynamic>))
           .toList(),
       finish: json['finish'] as bool?,
-      checkk: json['checkk'] as bool?,
       id: (json['id'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$TestMeToJson(TestMe instance) => <String, dynamic>{
       'questions': instance.questions,
       'finish': instance.finish,
-      'checkk': instance.checkk,
       'id': instance.id,
     };
 
@@ -97,7 +123,7 @@ LessonMe _$LessonMeFromJson(Map<String, dynamic> json) => LessonMe(
       id: (json['id'] as num?)?.toInt(),
       description: json['description'] as String?,
       checkk: json['checkk'] as bool?,
-      finished: json['finished'] as bool,
+      finished: json['finished'] as bool?,
     );
 
 Map<String, dynamic> _$LessonMeToJson(LessonMe instance) => <String, dynamic>{

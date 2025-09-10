@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_programtion/core/DI/dependency_injection.dart';
-import 'package:learn_programtion/core/helper/extention.dart';
 import 'package:learn_programtion/core/helper/spacing.dart';
 import 'package:learn_programtion/core/theming/font_style.dart';
 import 'package:learn_programtion/features/profile/logic/profile_cubit/cubit/profile_and_notification_cubit.dart';
 import 'package:learn_programtion/features/widget/button.dart';
 
-import '../../../../core/routing/router.dart';
 import '../../../../core/theming/color.dart';
 import '../../../widget/text_from.dart';
 import '../../logic/profile_cubit/cubit/profile_and_notification_state.dart';
@@ -189,7 +187,6 @@ Widget aaaa(BuildContext context) {
                 text: 'حفظ',
                 function: () {
                   ValidationSecurety(context);
-                  context.pushNamed(Routers.home_page);
                 })
           ]),
         );

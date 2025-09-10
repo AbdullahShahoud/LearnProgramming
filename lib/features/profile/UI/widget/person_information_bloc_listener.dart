@@ -46,13 +46,14 @@ void succcessInformation(
   showDialog(
       context: context,
       builder: (context) => AlertDialog(
+            icon: Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 50,
+            ),
             content: Center(
               child: Text(
-                '''
-             '\'تم تعديل الاسم والايميل
-              ${changeEmailResponse.email} 
-              ${changeEmailResponse.username}
-              ''',
+                'تم تعديل الاسم والايميل ',
                 textDirection: TextDirection.rtl,
                 style: FontStyleAndText.fontmedia,
               ),

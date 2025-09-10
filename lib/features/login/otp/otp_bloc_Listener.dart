@@ -9,6 +9,8 @@ import 'package:learn_programtion/features/login/logic/cubit/login_cubit.dart';
 import 'package:learn_programtion/features/login/logic/cubit/login_stare.dart';
 import 'package:learn_programtion/features/login/otp/logic/model/otp_response.dart';
 
+import '../../../core/helper/sherdPrefernce.dart';
+
 class OtpLoginBlocListener extends StatefulWidget {
   const OtpLoginBlocListener({super.key});
 
@@ -24,7 +26,7 @@ class _SinginBlocListenerState extends State<OtpLoginBlocListener> {
           current is LoadingOtp || current is ErrorOtp || current is SuccessOtp,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () => showDialog(
+          loadingOtp: () => showDialog(
             barrierDismissible: false,
             context: context,
             builder: (context) => Center(
@@ -33,8 +35,8 @@ class _SinginBlocListenerState extends State<OtpLoginBlocListener> {
               ),
             ),
           ),
-          success: (data) => SinginSuccess(context, data),
-          error: (error) => singinError(context, error),
+          successOtp: (data) => SinginSuccess(context, data),
+          errorOtp: (error) => singinError(context, error),
         );
       },
       child: const SizedBox.shrink(),
@@ -49,8 +51,8 @@ void SinginSuccess(BuildContext context, OtpResponseLogin otp) {
             title: Text(otp.message!),
             actions: [
               TextButton(
-                  onPressed: () {
-                    context.read<LoginCubit>().type_user == 'student'
+                  onPressed: () async {
+                    await SharedPrefHelper.getString('type') == 'student'
                         ? context.pushNamed(Routers.home_page)
                         : context.pushNamed(Routers.home_page_teacher);
                   },

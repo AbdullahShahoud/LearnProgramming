@@ -58,4 +58,22 @@ class CourserCubitTeacherState<T> with _$CourserCubitTeacherState<T> {
       SuccessTestEdit<T>;
   const factory CourserCubitTeacherState.errorTestEdit({required String error}) =
       ErrorTestEdit;
+
+        const factory CourserCubitTeacherState.loadinCoursesDelet() = LoadingCoursesDelet;
+  const factory CourserCubitTeacherState.successCoursesDelet(T data) =
+      SuccessCoursesDelet<T>;
+  const factory CourserCubitTeacherState.errorCoursesDelet({required String error}) =
+      ErrorCoursesDelet;
+
+            const factory CourserCubitTeacherState.loadinLevelDelet() = LoadingLevelDelet;
+  const factory CourserCubitTeacherState.successLevelDelet(T data) =
+      SuccessLevelDelet<T>;
+  const factory CourserCubitTeacherState.errorLevelDelet({required String error}) =
+      ErrorLevelDelet;
+
+   const factory CourserCubitTeacherState.loadinLessionDelet() = LoadingLessionDelet;
+  const factory CourserCubitTeacherState.successLessionDelet(T data) =
+      SuccessLessionDelet<T>;
+  const factory CourserCubitTeacherState.errorLessionDelet({required String error}) =
+      ErrorLessionDelet;
 }

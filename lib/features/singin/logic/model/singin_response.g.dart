@@ -12,14 +12,12 @@ SinginResponse _$SinginResponseFromJson(Map<String, dynamic> json) =>
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-      token: json['token'] as String?,
     );
 
 Map<String, dynamic> _$SinginResponseToJson(SinginResponse instance) =>
     <String, dynamic>{
       'user': instance.user,
       'account_type': instance.account_type,
-      'token': instance.token,
     };
 
 User _$UserFromJson(Map<String, dynamic> json) => User(

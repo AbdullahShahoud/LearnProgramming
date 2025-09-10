@@ -7,10 +7,12 @@ part of 'view_grade.dart';
 // **************************************************************************
 
 GradeRespons _$GradeResponsFromJson(Map<String, dynamic> json) => GradeRespons(
-      (json['grades'] as List<dynamic>).map((e) => e as String).toList(),
+      (json['completed_courses'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$GradeResponsToJson(GradeRespons instance) =>
     <String, dynamic>{
-      'grades': instance.grades,
+      'completed_courses': instance.completed_courses,
     };

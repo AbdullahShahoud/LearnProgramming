@@ -4,9 +4,9 @@ part 'send_qaustion_response.g.dart';
 
 @JsonSerializable()
 class SendQautionReesponse {
-  String? massage;
+  String? message;
 
-  SendQautionReesponse({this.massage});
+  SendQautionReesponse({this.message});
 
   factory SendQautionReesponse.fromJson(Map<String, dynamic> json) =>
       _$SendQautionReesponseFromJson(json);

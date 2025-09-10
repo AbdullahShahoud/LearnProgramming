@@ -19,37 +19,25 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   void initState() {
+    CourseesCubit.get(context).emitCoursesList();
+    CourseesCubit.get(context).emitCoursesMe();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider(
-        create: (context) => CourseesCubit(
-          getIt(),
-          getIt(),
-          getIt(),
-          getIt(),
-          getIt(),
-          getIt(),
-          getIt(),
-          getIt(),
-        )
-          ..emitCoursesList()
-          ..emitCoursesMe(),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                TabBarhome(),
-                CoursesMeBlocListener(),
-                verticalBox(7.h),
-                CheekCoursesBlocListener(),
-                verticalBox(7.h),
-                CoursesBlocListenerCubit(),
-              ],
-            ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TabBarhome(),
+              CoursesMeBlocListener(),
+              verticalBox(7.h),
+              CheekCoursesBlocListener(),
+              verticalBox(7.h),
+              CoursesBlocListenerCubit(),
+            ],
           ),
         ),
       ),

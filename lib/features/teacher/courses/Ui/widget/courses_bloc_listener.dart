@@ -15,100 +15,100 @@ import '../../logic/model/courses_response.dart';
 import 'category_courses_teacher.dart';
 
 // Example data for testing CoursesResponseTc with all nested classes
-List<CoursesResponseTc> getSampleCourses = [
-  CoursesResponseTc(
-    id: 1,
-    name: "Flutter Advanced",
-    descrip: "Complete Flutter development course with state management",
-    teacher: 101,
-    nameTeacher: "Ahmed Mohamed",
-    num_of_level: 3,
-    image: "assets/image/images.png",
-    type: "Programming",
-    time: 30,
-    finalTest: Tests(
-      questions: [
-        Quations(
-          question: "What is the difference between Provider and Bloc?",
-          a: "Provider uses InheritedWidget",
-          b: "Bloc uses Streams",
-          c: "Both use the same architecture",
-          correct_choice: "a",
-        ),
-        Quations(
-          question: "Which widget is used for navigation?",
-          a: "Navigator",
-          b: "Router",
-          c: "Both",
-          correct_choice: "c",
-        ),
-      ],
-    ),
-    level: [
-      Levels(
-        id: 1,
-        name: "Dart Fundamentals",
-        num_of_lesson: 4,
-        test: Tests(questions: [
-          Quations(
-            question: "What is Dart's null safety?",
-            a: "A way to prevent null errors",
-            b: "A design pattern",
-            c: "A state management solution",
-            correct_choice: "a",
-          ),
-        ]),
-        lessons: [
-          Lessons(
-            id: "1",
-            name: "Introduction to Dart",
-            description: "Basic syntax and features",
-            video: "https://example.com/videos/dart-intro.mp4",
-          ),
-        ],
-      ),
-      Levels(
-        id: 2,
-        name: "UI Development",
-        num_of_lesson: 5,
-        lessons: [
-          Lessons(
-            id: "2",
-            name: "Widgets Basics",
-            description: "Stateless vs Stateful widgets",
-            video: "https://example.com/videos/widgets-basics.mp4",
-          ),
-        ],
-      ),
-    ],
-  ),
-  CoursesResponseTc(
-    id: 2,
-    name: "Python Data Science",
-    descrip: "Data analysis with Python and Pandas",
-    teacher: 102,
-    nameTeacher: "Sarah Ali",
-    num_of_level: 2,
-    image: "assets/image/images.png",
-    type: "Data Science",
-    time: 20,
-    level: [
-      Levels(
-        id: 1,
-        name: "Python Basics",
-        num_of_lesson: 3,
-        lessons: [
-          Lessons(
-            id: "1",
-            name: "Variables and Data Types",
-            description: "Understanding Python variables",
-            video: "https://example.com/videos/python-vars.mp4",
-          ),
-        ],
-      ),
-    ],
-  ),
-];
+// List<CoursesResponseTc> getSampleCourses = [
+//   CoursesResponseTc(
+//     id: 1,
+//     name: "Flutter Advanced",
+//     descrip: "Complete Flutter development course with state management",
+//     teacher: 101,
+//     nameTeacher: "Ahmed Mohamed",
+//     num_of_level: 3,
+//     image: "assets/image/images.png",
+//     type: "Programming",
+//     time: 30,
+//     finalTest: Tests(
+//       questions: [
+//         Quations(
+//           question: "What is the difference between Provider and Bloc?",
+//           a: "Provider uses InheritedWidget",
+//           b: "Bloc uses Streams",
+//           c: "Both use the same architecture",
+//           correct_choice: "a",
+//         ),
+//         Quations(
+//           question: "Which widget is used for navigation?",
+//           a: "Navigator",
+//           b: "Router",
+//           c: "Both",
+//           correct_choice: "c",
+//         ),
+//       ],
+//     ),
+//     level: [
+//       Levels(
+//         id: 1,
+//         name: "Dart Fundamentals",
+//         num_of_lesson: 4,
+//         test: Tests(questions: [
+//           Quations(
+//             question: "What is Dart's null safety?",
+//             a: "A way to prevent null errors",
+//             b: "A design pattern",
+//             c: "A state management solution",
+//             correct_choice: "a",
+//           ),
+//         ]),
+//         lessons: [
+//           Lessons(
+//             id: "1",
+//             name: "Introduction to Dart",
+//             description: "Basic syntax and features",
+//             video: "https://example.com/videos/dart-intro.mp4",
+//           ),
+//         ],
+//       ),
+//       Levels(
+//         id: 2,
+//         name: "UI Development",
+//         num_of_lesson: 5,
+//         lessons: [
+//           Lessons(
+//             id: "2",
+//             name: "Widgets Basics",
+//             description: "Stateless vs Stateful widgets",
+//             video: "https://example.com/videos/widgets-basics.mp4",
+//           ),
+//         ],
+//       ),
+//     ],
+//   ),
+//   CoursesResponseTc(
+//     id: 2,
+//     name: "Python Data Science",
+//     descrip: "Data analysis with Python and Pandas",
+//     teacher: 102,
+//     nameTeacher: "Sarah Ali",
+//     num_of_level: 2,
+//     image: "assets/image/images.png",
+//     type: "Data Science",
+//     time: 20,
+//     level: [
+//       Levels(
+//         id: 1,
+//         name: "Python Basics",
+//         num_of_lesson: 3,
+//         lessons: [
+//           Lessons(
+//             id: "1",
+//             name: "Variables and Data Types",
+//             description: "Understanding Python variables",
+//             video: "https://example.com/videos/python-vars.mp4",
+//           ),
+//         ],
+//       ),
+//     ],
+//   ),
+// ];
 
 class CoursesBlocListenerCubit extends StatelessWidget {
   const CoursesBlocListenerCubit({super.key});
@@ -129,8 +129,7 @@ class CoursesBlocListenerCubit extends StatelessWidget {
               return successCourse(data);
             },
             errorCourses: (error) {
-              // return Error();
-              return successCourse(getSampleCourses);
+              return Error();
             },
             loadinCourses: () {
               return loading(context);

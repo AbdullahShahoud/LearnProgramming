@@ -6,6 +6,7 @@ import 'package:learn_programtion/core/theming/color.dart';
 import 'package:learn_programtion/features/login/logic/cubit/login_cubit.dart';
 import 'package:learn_programtion/features/login/logic/cubit/login_stare.dart';
 
+import '../../../../core/helper/sherdPrefernce.dart';
 import '../../../../core/routing/router.dart';
 import '../../../../core/theming/font_style.dart';
 
@@ -37,15 +38,15 @@ class _LoginBlocListenerState extends State<LoginBlocListener> {
                       color: ColorManger.primary_ColorBlue,
                     ),
                   )),
-          success: (loginResponse) {
-            // context.pushNamed(Routers.otp);
-            context.read<LoginCubit>().type_user == 'student'
+          success: (loginResponse) async {
+            var type = await SharedPrefHelper.getString('type');
+            print(type);
+            type == 'student'
                 ? context.pushNamed(Routers.home_page)
                 : context.pushNamed(Routers.home_page_teacher);
           },
           error: (error) {
             errorLogin(context, error);
-            context.pushNamed(Routers.otp);
           },
         );
       },

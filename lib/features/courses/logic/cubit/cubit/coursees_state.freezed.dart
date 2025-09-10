@@ -22,7 +22,7 @@ mixin _$CoursesState<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -44,6 +44,9 @@ mixin _$CoursesState<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,7 +55,7 @@ mixin _$CoursesState<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -73,6 +76,9 @@ mixin _$CoursesState<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,7 +87,7 @@ mixin _$CoursesState<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -102,6 +108,9 @@ mixin _$CoursesState<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +143,9 @@ mixin _$CoursesState<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -163,6 +175,9 @@ mixin _$CoursesState<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -192,6 +207,9 @@ mixin _$CoursesState<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -258,7 +276,7 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -280,6 +298,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return initialCoursesMe();
   }
@@ -291,7 +312,7 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -312,6 +333,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return initialCoursesMe?.call();
   }
@@ -323,7 +347,7 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -344,6 +368,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (initialCoursesMe != null) {
@@ -382,6 +409,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return initialCoursesMe(this);
   }
@@ -414,6 +444,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return initialCoursesMe?.call(this);
   }
@@ -446,6 +479,9 @@ class _$InitialCoursesMeImpl<T> implements _InitialCoursesMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (initialCoursesMe != null) {
@@ -502,7 +538,7 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -524,6 +560,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return loadingCoursesMe();
   }
@@ -535,7 +574,7 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -556,6 +595,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return loadingCoursesMe?.call();
   }
@@ -567,7 +609,7 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -588,6 +630,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (loadingCoursesMe != null) {
@@ -626,6 +671,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return loadingCoursesMe(this);
   }
@@ -658,6 +706,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return loadingCoursesMe?.call(this);
   }
@@ -690,6 +741,9 @@ class _$LoadingCoursesMeImpl<T> implements LoadingCoursesMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (loadingCoursesMe != null) {
@@ -773,7 +827,7 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -795,6 +849,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return successCoursesMe(data);
   }
@@ -806,7 +863,7 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -827,6 +884,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return successCoursesMe?.call(data);
   }
@@ -838,7 +898,7 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -859,6 +919,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (successCoursesMe != null) {
@@ -897,6 +960,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return successCoursesMe(this);
   }
@@ -929,6 +995,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return successCoursesMe?.call(this);
   }
@@ -961,6 +1030,9 @@ class _$SuccessCoursesMeImpl<T> implements SuccessCoursesMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (successCoursesMe != null) {
@@ -1048,7 +1120,7 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -1070,6 +1142,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return errorCoursesMe(error);
   }
@@ -1081,7 +1156,7 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -1102,6 +1177,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return errorCoursesMe?.call(error);
   }
@@ -1113,7 +1191,7 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -1134,6 +1212,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (errorCoursesMe != null) {
@@ -1172,6 +1253,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return errorCoursesMe(this);
   }
@@ -1204,6 +1288,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return errorCoursesMe?.call(this);
   }
@@ -1236,6 +1323,9 @@ class _$ErrorCoursesMeImpl<T> implements ErrorCoursesMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (errorCoursesMe != null) {
@@ -1261,7 +1351,7 @@ abstract class _$$CourseSelectedMeImplCopyWith<T, $Res> {
           $Res Function(_$CourseSelectedMeImpl<T>) then) =
       __$$CourseSelectedMeImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({CoursesMeResponse selectedCourseMe});
+  $Res call({CourseMeWrapper selectedCourseMe});
 }
 
 /// @nodoc
@@ -1281,7 +1371,7 @@ class __$$CourseSelectedMeImplCopyWithImpl<T, $Res>
       null == selectedCourseMe
           ? _value.selectedCourseMe
           : selectedCourseMe // ignore: cast_nullable_to_non_nullable
-              as CoursesMeResponse,
+              as CourseMeWrapper,
     ));
   }
 }
@@ -1292,7 +1382,7 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
   const _$CourseSelectedMeImpl(this.selectedCourseMe);
 
   @override
-  final CoursesMeResponse selectedCourseMe;
+  final CourseMeWrapper selectedCourseMe;
 
   @override
   String toString() {
@@ -1325,7 +1415,7 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -1347,6 +1437,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return courseSelectedMe(selectedCourseMe);
   }
@@ -1358,7 +1451,7 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -1379,6 +1472,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return courseSelectedMe?.call(selectedCourseMe);
   }
@@ -1390,7 +1486,7 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -1411,6 +1507,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (courseSelectedMe != null) {
@@ -1449,6 +1548,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return courseSelectedMe(this);
   }
@@ -1481,6 +1583,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return courseSelectedMe?.call(this);
   }
@@ -1513,6 +1618,9 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (courseSelectedMe != null) {
@@ -1523,10 +1631,10 @@ class _$CourseSelectedMeImpl<T> implements CourseSelectedMe<T> {
 }
 
 abstract class CourseSelectedMe<T> implements CoursesState<T> {
-  const factory CourseSelectedMe(final CoursesMeResponse selectedCourseMe) =
+  const factory CourseSelectedMe(final CourseMeWrapper selectedCourseMe) =
       _$CourseSelectedMeImpl<T>;
 
-  CoursesMeResponse get selectedCourseMe;
+  CourseMeWrapper get selectedCourseMe;
   @JsonKey(ignore: true)
   _$$CourseSelectedMeImplCopyWith<T, _$CourseSelectedMeImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1602,7 +1710,7 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -1624,6 +1732,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return lessonSelectedMe(selectedlesson);
   }
@@ -1635,7 +1746,7 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -1656,6 +1767,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return lessonSelectedMe?.call(selectedlesson);
   }
@@ -1667,7 +1781,7 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -1688,6 +1802,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (lessonSelectedMe != null) {
@@ -1726,6 +1843,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return lessonSelectedMe(this);
   }
@@ -1758,6 +1878,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return lessonSelectedMe?.call(this);
   }
@@ -1790,6 +1913,9 @@ class _$LessonSelectedMeImpl<T> implements LessonSelectedMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (lessonSelectedMe != null) {
@@ -1879,7 +2005,7 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -1901,6 +2027,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return levelSelectedMe(selectedlevel);
   }
@@ -1912,7 +2041,7 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -1933,6 +2062,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return levelSelectedMe?.call(selectedlevel);
   }
@@ -1944,7 +2076,7 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -1965,6 +2097,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (levelSelectedMe != null) {
@@ -2003,6 +2138,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return levelSelectedMe(this);
   }
@@ -2035,6 +2173,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return levelSelectedMe?.call(this);
   }
@@ -2067,6 +2208,9 @@ class _$LevelSelectedMeImpl<T> implements LevelSelectedMe<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (levelSelectedMe != null) {
@@ -2129,7 +2273,7 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -2151,6 +2295,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return sendQuationInitial();
   }
@@ -2162,7 +2309,7 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -2183,6 +2330,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return sendQuationInitial?.call();
   }
@@ -2194,7 +2344,7 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -2215,6 +2365,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationInitial != null) {
@@ -2253,6 +2406,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return sendQuationInitial(this);
   }
@@ -2285,6 +2441,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return sendQuationInitial?.call(this);
   }
@@ -2317,6 +2476,9 @@ class _$SendQuationInitialImpl<T> implements _SendQuationInitial<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationInitial != null) {
@@ -2373,7 +2535,7 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -2395,6 +2557,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return sendQuationLoading();
   }
@@ -2406,7 +2571,7 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -2427,6 +2592,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return sendQuationLoading?.call();
   }
@@ -2438,7 +2606,7 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -2459,6 +2627,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationLoading != null) {
@@ -2497,6 +2668,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return sendQuationLoading(this);
   }
@@ -2529,6 +2703,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return sendQuationLoading?.call(this);
   }
@@ -2561,6 +2738,9 @@ class _$SendQuationLoadingImpl<T> implements SendQuationLoading<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationLoading != null) {
@@ -2643,7 +2823,7 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -2665,6 +2845,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return sendQuationSuccess(data);
   }
@@ -2676,7 +2859,7 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -2697,6 +2880,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return sendQuationSuccess?.call(data);
   }
@@ -2708,7 +2894,7 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -2729,6 +2915,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationSuccess != null) {
@@ -2767,6 +2956,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return sendQuationSuccess(this);
   }
@@ -2799,6 +2991,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return sendQuationSuccess?.call(this);
   }
@@ -2831,6 +3026,9 @@ class _$SendQuationSuccessImpl<T> implements SendQuationSuccess<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationSuccess != null) {
@@ -2919,7 +3117,7 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -2941,6 +3139,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return sendQuationError(error);
   }
@@ -2952,7 +3153,7 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -2973,6 +3174,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return sendQuationError?.call(error);
   }
@@ -2984,7 +3188,7 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -3005,6 +3209,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationError != null) {
@@ -3043,6 +3250,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return sendQuationError(this);
   }
@@ -3075,6 +3285,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return sendQuationError?.call(this);
   }
@@ -3107,6 +3320,9 @@ class _$SendQuationErrorImpl<T> implements SendQuationError<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (sendQuationError != null) {
@@ -3168,7 +3384,7 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -3190,6 +3406,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return finishedInitial();
   }
@@ -3201,7 +3420,7 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -3222,6 +3441,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return finishedInitial?.call();
   }
@@ -3233,7 +3455,7 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -3254,6 +3476,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedInitial != null) {
@@ -3292,6 +3517,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return finishedInitial(this);
   }
@@ -3324,6 +3552,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return finishedInitial?.call(this);
   }
@@ -3356,6 +3587,9 @@ class _$FinishedInitialImpl<T> implements _FinishedInitial<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedInitial != null) {
@@ -3411,7 +3645,7 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -3433,6 +3667,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return finishedLoading();
   }
@@ -3444,7 +3681,7 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -3465,6 +3702,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return finishedLoading?.call();
   }
@@ -3476,7 +3716,7 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -3497,6 +3737,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedLoading != null) {
@@ -3535,6 +3778,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return finishedLoading(this);
   }
@@ -3567,6 +3813,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return finishedLoading?.call(this);
   }
@@ -3599,6 +3848,9 @@ class _$FinishedLoadingImpl<T> implements FinishedLoading<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedLoading != null) {
@@ -3681,7 +3933,7 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -3703,6 +3955,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return finishedSuccess(data);
   }
@@ -3714,7 +3969,7 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -3735,6 +3990,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return finishedSuccess?.call(data);
   }
@@ -3746,7 +4004,7 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -3767,6 +4025,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedSuccess != null) {
@@ -3805,6 +4066,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return finishedSuccess(this);
   }
@@ -3837,6 +4101,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return finishedSuccess?.call(this);
   }
@@ -3869,6 +4136,9 @@ class _$FinishedSuccessImpl<T> implements FinishedSuccess<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedSuccess != null) {
@@ -3956,7 +4226,7 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -3978,6 +4248,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return finishedError(error);
   }
@@ -3989,7 +4262,7 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -4010,6 +4283,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return finishedError?.call(error);
   }
@@ -4021,7 +4297,7 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -4042,6 +4318,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedError != null) {
@@ -4080,6 +4359,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return finishedError(this);
   }
@@ -4112,6 +4394,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return finishedError?.call(this);
   }
@@ -4144,6 +4429,9 @@ class _$FinishedErrorImpl<T> implements FinishedError<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (finishedError != null) {
@@ -4206,7 +4494,7 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -4228,6 +4516,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return listCoursesInitial();
   }
@@ -4239,7 +4530,7 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -4260,6 +4551,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return listCoursesInitial?.call();
   }
@@ -4271,7 +4565,7 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -4292,6 +4586,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesInitial != null) {
@@ -4330,6 +4627,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return listCoursesInitial(this);
   }
@@ -4362,6 +4662,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return listCoursesInitial?.call(this);
   }
@@ -4394,6 +4697,9 @@ class _$ListCoursesInitialImpl<T> implements _ListCoursesInitial<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesInitial != null) {
@@ -4450,7 +4756,7 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -4472,6 +4778,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return listCoursesLoading();
   }
@@ -4483,7 +4792,7 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -4504,6 +4813,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return listCoursesLoading?.call();
   }
@@ -4515,7 +4827,7 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -4536,6 +4848,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesLoading != null) {
@@ -4574,6 +4889,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return listCoursesLoading(this);
   }
@@ -4606,6 +4924,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return listCoursesLoading?.call(this);
   }
@@ -4638,6 +4959,9 @@ class _$ListCoursesLoadingImpl<T> implements ListCoursesLoading<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesLoading != null) {
@@ -4721,7 +5045,7 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -4743,6 +5067,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return listCoursesSuccess(data);
   }
@@ -4754,7 +5081,7 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -4775,6 +5102,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return listCoursesSuccess?.call(data);
   }
@@ -4786,7 +5116,7 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -4807,6 +5137,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesSuccess != null) {
@@ -4845,6 +5178,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return listCoursesSuccess(this);
   }
@@ -4877,6 +5213,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return listCoursesSuccess?.call(this);
   }
@@ -4909,6 +5248,9 @@ class _$ListCoursesSuccessImpl<T> implements ListCoursesSuccess<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesSuccess != null) {
@@ -4996,7 +5338,7 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -5018,6 +5360,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return listCoursesError(error);
   }
@@ -5029,7 +5374,7 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -5050,6 +5395,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return listCoursesError?.call(error);
   }
@@ -5061,7 +5409,7 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -5082,6 +5430,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesError != null) {
@@ -5120,6 +5471,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return listCoursesError(this);
   }
@@ -5152,6 +5506,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return listCoursesError?.call(this);
   }
@@ -5184,6 +5541,9 @@ class _$ListCoursesErrorImpl<T> implements ListCoursesError<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (listCoursesError != null) {
@@ -5246,7 +5606,7 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -5268,6 +5628,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return checkCoursesLoading();
   }
@@ -5279,7 +5642,7 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -5300,6 +5663,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return checkCoursesLoading?.call();
   }
@@ -5311,7 +5677,7 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -5332,6 +5698,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesLoading != null) {
@@ -5370,6 +5739,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return checkCoursesLoading(this);
   }
@@ -5402,6 +5774,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return checkCoursesLoading?.call(this);
   }
@@ -5434,6 +5809,9 @@ class _$CheckCoursesLoadingImpl<T> implements CheckCoursesLoading<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesLoading != null) {
@@ -5517,7 +5895,7 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -5539,6 +5917,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return checkCoursesSuccess(data);
   }
@@ -5550,7 +5931,7 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -5571,6 +5952,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return checkCoursesSuccess?.call(data);
   }
@@ -5582,7 +5966,7 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -5603,6 +5987,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesSuccess != null) {
@@ -5641,6 +6028,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return checkCoursesSuccess(this);
   }
@@ -5673,6 +6063,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return checkCoursesSuccess?.call(this);
   }
@@ -5705,6 +6098,9 @@ class _$CheckCoursesSuccessImpl<T> implements CheckCoursesSuccess<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesSuccess != null) {
@@ -5794,7 +6190,7 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -5816,6 +6212,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return checkCoursesError(error);
   }
@@ -5827,7 +6226,7 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -5848,6 +6247,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return checkCoursesError?.call(error);
   }
@@ -5859,7 +6261,7 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -5880,6 +6282,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesError != null) {
@@ -5918,6 +6323,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return checkCoursesError(this);
   }
@@ -5950,6 +6358,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return checkCoursesError?.call(this);
   }
@@ -5982,6 +6393,9 @@ class _$CheckCoursesErrorImpl<T> implements CheckCoursesError<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (checkCoursesError != null) {
@@ -6045,7 +6459,7 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -6067,6 +6481,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return deleteCoursesLoading();
   }
@@ -6078,7 +6495,7 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -6099,6 +6516,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return deleteCoursesLoading?.call();
   }
@@ -6110,7 +6530,7 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -6131,6 +6551,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesLoading != null) {
@@ -6169,6 +6592,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return deleteCoursesLoading(this);
   }
@@ -6201,6 +6627,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return deleteCoursesLoading?.call(this);
   }
@@ -6233,6 +6662,9 @@ class _$DeleteCoursesLoadingImpl<T> implements DeleteCoursesLoading<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesLoading != null) {
@@ -6317,7 +6749,7 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -6339,6 +6771,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return deleteCoursesSuccess(data);
   }
@@ -6350,7 +6785,7 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -6371,6 +6806,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return deleteCoursesSuccess?.call(data);
   }
@@ -6382,7 +6820,7 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -6403,6 +6841,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesSuccess != null) {
@@ -6441,6 +6882,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return deleteCoursesSuccess(this);
   }
@@ -6473,6 +6917,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return deleteCoursesSuccess?.call(this);
   }
@@ -6505,6 +6952,9 @@ class _$DeleteCoursesSuccessImpl<T> implements DeleteCoursesSuccess<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesSuccess != null) {
@@ -6593,7 +7043,7 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     required TResult Function() loadingCoursesMe,
     required TResult Function(T data) successCoursesMe,
     required TResult Function(String error) errorCoursesMe,
-    required TResult Function(CoursesMeResponse selectedCourseMe)
+    required TResult Function(CourseMeWrapper selectedCourseMe)
         courseSelectedMe,
     required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
     required TResult Function(LevelMe selectedlevel) levelSelectedMe,
@@ -6615,6 +7065,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     required TResult Function() deleteCoursesLoading,
     required TResult Function(T data) deleteCoursesSuccess,
     required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
   }) {
     return deleteCoursesError(error);
   }
@@ -6626,7 +7079,7 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult? Function()? loadingCoursesMe,
     TResult? Function(T data)? successCoursesMe,
     TResult? Function(String error)? errorCoursesMe,
-    TResult? Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult? Function()? sendQuationInitial,
@@ -6647,6 +7100,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult? Function()? deleteCoursesLoading,
     TResult? Function(T data)? deleteCoursesSuccess,
     TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
   }) {
     return deleteCoursesError?.call(error);
   }
@@ -6658,7 +7114,7 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult Function()? loadingCoursesMe,
     TResult Function(T data)? successCoursesMe,
     TResult Function(String error)? errorCoursesMe,
-    TResult Function(CoursesMeResponse selectedCourseMe)? courseSelectedMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
     TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
     TResult Function(LevelMe selectedlevel)? levelSelectedMe,
     TResult Function()? sendQuationInitial,
@@ -6679,6 +7135,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult Function()? deleteCoursesLoading,
     TResult Function(T data)? deleteCoursesSuccess,
     TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesError != null) {
@@ -6717,6 +7176,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     required TResult Function(DeleteCoursesSuccess<T> value)
         deleteCoursesSuccess,
     required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
   }) {
     return deleteCoursesError(this);
   }
@@ -6749,6 +7211,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
   }) {
     return deleteCoursesError?.call(this);
   }
@@ -6781,6 +7246,9 @@ class _$DeleteCoursesErrorImpl<T> implements DeleteCoursesError<T> {
     TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
     TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
     TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
     required TResult orElse(),
   }) {
     if (deleteCoursesError != null) {
@@ -6798,4 +7266,854 @@ abstract class DeleteCoursesError<T> implements CoursesState<T> {
   @JsonKey(ignore: true)
   _$$DeleteCoursesErrorImplCopyWith<T, _$DeleteCoursesErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SoulionTestLoadingImplCopyWith<T, $Res> {
+  factory _$$SoulionTestLoadingImplCopyWith(_$SoulionTestLoadingImpl<T> value,
+          $Res Function(_$SoulionTestLoadingImpl<T>) then) =
+      __$$SoulionTestLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SoulionTestLoadingImplCopyWithImpl<T, $Res>
+    extends _$CoursesStateCopyWithImpl<T, $Res, _$SoulionTestLoadingImpl<T>>
+    implements _$$SoulionTestLoadingImplCopyWith<T, $Res> {
+  __$$SoulionTestLoadingImplCopyWithImpl(_$SoulionTestLoadingImpl<T> _value,
+      $Res Function(_$SoulionTestLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SoulionTestLoadingImpl<T> implements SoulionTestLoading<T> {
+  const _$SoulionTestLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CoursesState<$T>.soulionTestLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SoulionTestLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialCoursesMe,
+    required TResult Function() loadingCoursesMe,
+    required TResult Function(T data) successCoursesMe,
+    required TResult Function(String error) errorCoursesMe,
+    required TResult Function(CourseMeWrapper selectedCourseMe)
+        courseSelectedMe,
+    required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
+    required TResult Function(LevelMe selectedlevel) levelSelectedMe,
+    required TResult Function() sendQuationInitial,
+    required TResult Function() sendQuationLoading,
+    required TResult Function(String data) sendQuationSuccess,
+    required TResult Function(String error) sendQuationError,
+    required TResult Function() finishedInitial,
+    required TResult Function() finishedLoading,
+    required TResult Function(String data) finishedSuccess,
+    required TResult Function(String error) finishedError,
+    required TResult Function() listCoursesInitial,
+    required TResult Function() listCoursesLoading,
+    required TResult Function(T data) listCoursesSuccess,
+    required TResult Function(String error) listCoursesError,
+    required TResult Function() checkCoursesLoading,
+    required TResult Function(T data) checkCoursesSuccess,
+    required TResult Function(String error) checkCoursesError,
+    required TResult Function() deleteCoursesLoading,
+    required TResult Function(T data) deleteCoursesSuccess,
+    required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
+  }) {
+    return soulionTestLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialCoursesMe,
+    TResult? Function()? loadingCoursesMe,
+    TResult? Function(T data)? successCoursesMe,
+    TResult? Function(String error)? errorCoursesMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult? Function()? sendQuationInitial,
+    TResult? Function()? sendQuationLoading,
+    TResult? Function(String data)? sendQuationSuccess,
+    TResult? Function(String error)? sendQuationError,
+    TResult? Function()? finishedInitial,
+    TResult? Function()? finishedLoading,
+    TResult? Function(String data)? finishedSuccess,
+    TResult? Function(String error)? finishedError,
+    TResult? Function()? listCoursesInitial,
+    TResult? Function()? listCoursesLoading,
+    TResult? Function(T data)? listCoursesSuccess,
+    TResult? Function(String error)? listCoursesError,
+    TResult? Function()? checkCoursesLoading,
+    TResult? Function(T data)? checkCoursesSuccess,
+    TResult? Function(String error)? checkCoursesError,
+    TResult? Function()? deleteCoursesLoading,
+    TResult? Function(T data)? deleteCoursesSuccess,
+    TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
+  }) {
+    return soulionTestLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialCoursesMe,
+    TResult Function()? loadingCoursesMe,
+    TResult Function(T data)? successCoursesMe,
+    TResult Function(String error)? errorCoursesMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult Function()? sendQuationInitial,
+    TResult Function()? sendQuationLoading,
+    TResult Function(String data)? sendQuationSuccess,
+    TResult Function(String error)? sendQuationError,
+    TResult Function()? finishedInitial,
+    TResult Function()? finishedLoading,
+    TResult Function(String data)? finishedSuccess,
+    TResult Function(String error)? finishedError,
+    TResult Function()? listCoursesInitial,
+    TResult Function()? listCoursesLoading,
+    TResult Function(T data)? listCoursesSuccess,
+    TResult Function(String error)? listCoursesError,
+    TResult Function()? checkCoursesLoading,
+    TResult Function(T data)? checkCoursesSuccess,
+    TResult Function(String error)? checkCoursesError,
+    TResult Function()? deleteCoursesLoading,
+    TResult Function(T data)? deleteCoursesSuccess,
+    TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestLoading != null) {
+      return soulionTestLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCoursesMe<T> value) initialCoursesMe,
+    required TResult Function(LoadingCoursesMe<T> value) loadingCoursesMe,
+    required TResult Function(SuccessCoursesMe<T> value) successCoursesMe,
+    required TResult Function(ErrorCoursesMe<T> value) errorCoursesMe,
+    required TResult Function(CourseSelectedMe<T> value) courseSelectedMe,
+    required TResult Function(LessonSelectedMe<T> value) lessonSelectedMe,
+    required TResult Function(LevelSelectedMe<T> value) levelSelectedMe,
+    required TResult Function(_SendQuationInitial<T> value) sendQuationInitial,
+    required TResult Function(SendQuationLoading<T> value) sendQuationLoading,
+    required TResult Function(SendQuationSuccess<T> value) sendQuationSuccess,
+    required TResult Function(SendQuationError<T> value) sendQuationError,
+    required TResult Function(_FinishedInitial<T> value) finishedInitial,
+    required TResult Function(FinishedLoading<T> value) finishedLoading,
+    required TResult Function(FinishedSuccess<T> value) finishedSuccess,
+    required TResult Function(FinishedError<T> value) finishedError,
+    required TResult Function(_ListCoursesInitial<T> value) listCoursesInitial,
+    required TResult Function(ListCoursesLoading<T> value) listCoursesLoading,
+    required TResult Function(ListCoursesSuccess<T> value) listCoursesSuccess,
+    required TResult Function(ListCoursesError<T> value) listCoursesError,
+    required TResult Function(CheckCoursesLoading<T> value) checkCoursesLoading,
+    required TResult Function(CheckCoursesSuccess<T> value) checkCoursesSuccess,
+    required TResult Function(CheckCoursesError<T> value) checkCoursesError,
+    required TResult Function(DeleteCoursesLoading<T> value)
+        deleteCoursesLoading,
+    required TResult Function(DeleteCoursesSuccess<T> value)
+        deleteCoursesSuccess,
+    required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
+  }) {
+    return soulionTestLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult? Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult? Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult? Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult? Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult? Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult? Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult? Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult? Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult? Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult? Function(SendQuationError<T> value)? sendQuationError,
+    TResult? Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult? Function(FinishedLoading<T> value)? finishedLoading,
+    TResult? Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult? Function(FinishedError<T> value)? finishedError,
+    TResult? Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult? Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult? Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult? Function(ListCoursesError<T> value)? listCoursesError,
+    TResult? Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult? Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult? Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
+  }) {
+    return soulionTestLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult Function(SendQuationError<T> value)? sendQuationError,
+    TResult Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult Function(FinishedLoading<T> value)? finishedLoading,
+    TResult Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult Function(FinishedError<T> value)? finishedError,
+    TResult Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult Function(ListCoursesError<T> value)? listCoursesError,
+    TResult Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestLoading != null) {
+      return soulionTestLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SoulionTestLoading<T> implements CoursesState<T> {
+  const factory SoulionTestLoading() = _$SoulionTestLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SoulionTestSuccessImplCopyWith<T, $Res> {
+  factory _$$SoulionTestSuccessImplCopyWith(_$SoulionTestSuccessImpl<T> value,
+          $Res Function(_$SoulionTestSuccessImpl<T>) then) =
+      __$$SoulionTestSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SoulionTestSuccessImplCopyWithImpl<T, $Res>
+    extends _$CoursesStateCopyWithImpl<T, $Res, _$SoulionTestSuccessImpl<T>>
+    implements _$$SoulionTestSuccessImplCopyWith<T, $Res> {
+  __$$SoulionTestSuccessImplCopyWithImpl(_$SoulionTestSuccessImpl<T> _value,
+      $Res Function(_$SoulionTestSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SoulionTestSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SoulionTestSuccessImpl<T> implements SoulionTestSuccess<T> {
+  const _$SoulionTestSuccessImpl(this.data);
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'CoursesState<$T>.soulionTestSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SoulionTestSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SoulionTestSuccessImplCopyWith<T, _$SoulionTestSuccessImpl<T>>
+      get copyWith => __$$SoulionTestSuccessImplCopyWithImpl<T,
+          _$SoulionTestSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialCoursesMe,
+    required TResult Function() loadingCoursesMe,
+    required TResult Function(T data) successCoursesMe,
+    required TResult Function(String error) errorCoursesMe,
+    required TResult Function(CourseMeWrapper selectedCourseMe)
+        courseSelectedMe,
+    required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
+    required TResult Function(LevelMe selectedlevel) levelSelectedMe,
+    required TResult Function() sendQuationInitial,
+    required TResult Function() sendQuationLoading,
+    required TResult Function(String data) sendQuationSuccess,
+    required TResult Function(String error) sendQuationError,
+    required TResult Function() finishedInitial,
+    required TResult Function() finishedLoading,
+    required TResult Function(String data) finishedSuccess,
+    required TResult Function(String error) finishedError,
+    required TResult Function() listCoursesInitial,
+    required TResult Function() listCoursesLoading,
+    required TResult Function(T data) listCoursesSuccess,
+    required TResult Function(String error) listCoursesError,
+    required TResult Function() checkCoursesLoading,
+    required TResult Function(T data) checkCoursesSuccess,
+    required TResult Function(String error) checkCoursesError,
+    required TResult Function() deleteCoursesLoading,
+    required TResult Function(T data) deleteCoursesSuccess,
+    required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
+  }) {
+    return soulionTestSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialCoursesMe,
+    TResult? Function()? loadingCoursesMe,
+    TResult? Function(T data)? successCoursesMe,
+    TResult? Function(String error)? errorCoursesMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult? Function()? sendQuationInitial,
+    TResult? Function()? sendQuationLoading,
+    TResult? Function(String data)? sendQuationSuccess,
+    TResult? Function(String error)? sendQuationError,
+    TResult? Function()? finishedInitial,
+    TResult? Function()? finishedLoading,
+    TResult? Function(String data)? finishedSuccess,
+    TResult? Function(String error)? finishedError,
+    TResult? Function()? listCoursesInitial,
+    TResult? Function()? listCoursesLoading,
+    TResult? Function(T data)? listCoursesSuccess,
+    TResult? Function(String error)? listCoursesError,
+    TResult? Function()? checkCoursesLoading,
+    TResult? Function(T data)? checkCoursesSuccess,
+    TResult? Function(String error)? checkCoursesError,
+    TResult? Function()? deleteCoursesLoading,
+    TResult? Function(T data)? deleteCoursesSuccess,
+    TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
+  }) {
+    return soulionTestSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialCoursesMe,
+    TResult Function()? loadingCoursesMe,
+    TResult Function(T data)? successCoursesMe,
+    TResult Function(String error)? errorCoursesMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult Function()? sendQuationInitial,
+    TResult Function()? sendQuationLoading,
+    TResult Function(String data)? sendQuationSuccess,
+    TResult Function(String error)? sendQuationError,
+    TResult Function()? finishedInitial,
+    TResult Function()? finishedLoading,
+    TResult Function(String data)? finishedSuccess,
+    TResult Function(String error)? finishedError,
+    TResult Function()? listCoursesInitial,
+    TResult Function()? listCoursesLoading,
+    TResult Function(T data)? listCoursesSuccess,
+    TResult Function(String error)? listCoursesError,
+    TResult Function()? checkCoursesLoading,
+    TResult Function(T data)? checkCoursesSuccess,
+    TResult Function(String error)? checkCoursesError,
+    TResult Function()? deleteCoursesLoading,
+    TResult Function(T data)? deleteCoursesSuccess,
+    TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestSuccess != null) {
+      return soulionTestSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCoursesMe<T> value) initialCoursesMe,
+    required TResult Function(LoadingCoursesMe<T> value) loadingCoursesMe,
+    required TResult Function(SuccessCoursesMe<T> value) successCoursesMe,
+    required TResult Function(ErrorCoursesMe<T> value) errorCoursesMe,
+    required TResult Function(CourseSelectedMe<T> value) courseSelectedMe,
+    required TResult Function(LessonSelectedMe<T> value) lessonSelectedMe,
+    required TResult Function(LevelSelectedMe<T> value) levelSelectedMe,
+    required TResult Function(_SendQuationInitial<T> value) sendQuationInitial,
+    required TResult Function(SendQuationLoading<T> value) sendQuationLoading,
+    required TResult Function(SendQuationSuccess<T> value) sendQuationSuccess,
+    required TResult Function(SendQuationError<T> value) sendQuationError,
+    required TResult Function(_FinishedInitial<T> value) finishedInitial,
+    required TResult Function(FinishedLoading<T> value) finishedLoading,
+    required TResult Function(FinishedSuccess<T> value) finishedSuccess,
+    required TResult Function(FinishedError<T> value) finishedError,
+    required TResult Function(_ListCoursesInitial<T> value) listCoursesInitial,
+    required TResult Function(ListCoursesLoading<T> value) listCoursesLoading,
+    required TResult Function(ListCoursesSuccess<T> value) listCoursesSuccess,
+    required TResult Function(ListCoursesError<T> value) listCoursesError,
+    required TResult Function(CheckCoursesLoading<T> value) checkCoursesLoading,
+    required TResult Function(CheckCoursesSuccess<T> value) checkCoursesSuccess,
+    required TResult Function(CheckCoursesError<T> value) checkCoursesError,
+    required TResult Function(DeleteCoursesLoading<T> value)
+        deleteCoursesLoading,
+    required TResult Function(DeleteCoursesSuccess<T> value)
+        deleteCoursesSuccess,
+    required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
+  }) {
+    return soulionTestSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult? Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult? Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult? Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult? Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult? Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult? Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult? Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult? Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult? Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult? Function(SendQuationError<T> value)? sendQuationError,
+    TResult? Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult? Function(FinishedLoading<T> value)? finishedLoading,
+    TResult? Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult? Function(FinishedError<T> value)? finishedError,
+    TResult? Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult? Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult? Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult? Function(ListCoursesError<T> value)? listCoursesError,
+    TResult? Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult? Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult? Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
+  }) {
+    return soulionTestSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult Function(SendQuationError<T> value)? sendQuationError,
+    TResult Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult Function(FinishedLoading<T> value)? finishedLoading,
+    TResult Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult Function(FinishedError<T> value)? finishedError,
+    TResult Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult Function(ListCoursesError<T> value)? listCoursesError,
+    TResult Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestSuccess != null) {
+      return soulionTestSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SoulionTestSuccess<T> implements CoursesState<T> {
+  const factory SoulionTestSuccess(final T data) = _$SoulionTestSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SoulionTestSuccessImplCopyWith<T, _$SoulionTestSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SoulionTestErrorImplCopyWith<T, $Res> {
+  factory _$$SoulionTestErrorImplCopyWith(_$SoulionTestErrorImpl<T> value,
+          $Res Function(_$SoulionTestErrorImpl<T>) then) =
+      __$$SoulionTestErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$SoulionTestErrorImplCopyWithImpl<T, $Res>
+    extends _$CoursesStateCopyWithImpl<T, $Res, _$SoulionTestErrorImpl<T>>
+    implements _$$SoulionTestErrorImplCopyWith<T, $Res> {
+  __$$SoulionTestErrorImplCopyWithImpl(_$SoulionTestErrorImpl<T> _value,
+      $Res Function(_$SoulionTestErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$SoulionTestErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SoulionTestErrorImpl<T> implements SoulionTestError<T> {
+  const _$SoulionTestErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'CoursesState<$T>.soulionTestError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SoulionTestErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SoulionTestErrorImplCopyWith<T, _$SoulionTestErrorImpl<T>> get copyWith =>
+      __$$SoulionTestErrorImplCopyWithImpl<T, _$SoulionTestErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialCoursesMe,
+    required TResult Function() loadingCoursesMe,
+    required TResult Function(T data) successCoursesMe,
+    required TResult Function(String error) errorCoursesMe,
+    required TResult Function(CourseMeWrapper selectedCourseMe)
+        courseSelectedMe,
+    required TResult Function(LessonMe selectedlesson) lessonSelectedMe,
+    required TResult Function(LevelMe selectedlevel) levelSelectedMe,
+    required TResult Function() sendQuationInitial,
+    required TResult Function() sendQuationLoading,
+    required TResult Function(String data) sendQuationSuccess,
+    required TResult Function(String error) sendQuationError,
+    required TResult Function() finishedInitial,
+    required TResult Function() finishedLoading,
+    required TResult Function(String data) finishedSuccess,
+    required TResult Function(String error) finishedError,
+    required TResult Function() listCoursesInitial,
+    required TResult Function() listCoursesLoading,
+    required TResult Function(T data) listCoursesSuccess,
+    required TResult Function(String error) listCoursesError,
+    required TResult Function() checkCoursesLoading,
+    required TResult Function(T data) checkCoursesSuccess,
+    required TResult Function(String error) checkCoursesError,
+    required TResult Function() deleteCoursesLoading,
+    required TResult Function(T data) deleteCoursesSuccess,
+    required TResult Function(String error) deleteCoursesError,
+    required TResult Function() soulionTestLoading,
+    required TResult Function(T data) soulionTestSuccess,
+    required TResult Function(String error) soulionTestError,
+  }) {
+    return soulionTestError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialCoursesMe,
+    TResult? Function()? loadingCoursesMe,
+    TResult? Function(T data)? successCoursesMe,
+    TResult? Function(String error)? errorCoursesMe,
+    TResult? Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult? Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult? Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult? Function()? sendQuationInitial,
+    TResult? Function()? sendQuationLoading,
+    TResult? Function(String data)? sendQuationSuccess,
+    TResult? Function(String error)? sendQuationError,
+    TResult? Function()? finishedInitial,
+    TResult? Function()? finishedLoading,
+    TResult? Function(String data)? finishedSuccess,
+    TResult? Function(String error)? finishedError,
+    TResult? Function()? listCoursesInitial,
+    TResult? Function()? listCoursesLoading,
+    TResult? Function(T data)? listCoursesSuccess,
+    TResult? Function(String error)? listCoursesError,
+    TResult? Function()? checkCoursesLoading,
+    TResult? Function(T data)? checkCoursesSuccess,
+    TResult? Function(String error)? checkCoursesError,
+    TResult? Function()? deleteCoursesLoading,
+    TResult? Function(T data)? deleteCoursesSuccess,
+    TResult? Function(String error)? deleteCoursesError,
+    TResult? Function()? soulionTestLoading,
+    TResult? Function(T data)? soulionTestSuccess,
+    TResult? Function(String error)? soulionTestError,
+  }) {
+    return soulionTestError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialCoursesMe,
+    TResult Function()? loadingCoursesMe,
+    TResult Function(T data)? successCoursesMe,
+    TResult Function(String error)? errorCoursesMe,
+    TResult Function(CourseMeWrapper selectedCourseMe)? courseSelectedMe,
+    TResult Function(LessonMe selectedlesson)? lessonSelectedMe,
+    TResult Function(LevelMe selectedlevel)? levelSelectedMe,
+    TResult Function()? sendQuationInitial,
+    TResult Function()? sendQuationLoading,
+    TResult Function(String data)? sendQuationSuccess,
+    TResult Function(String error)? sendQuationError,
+    TResult Function()? finishedInitial,
+    TResult Function()? finishedLoading,
+    TResult Function(String data)? finishedSuccess,
+    TResult Function(String error)? finishedError,
+    TResult Function()? listCoursesInitial,
+    TResult Function()? listCoursesLoading,
+    TResult Function(T data)? listCoursesSuccess,
+    TResult Function(String error)? listCoursesError,
+    TResult Function()? checkCoursesLoading,
+    TResult Function(T data)? checkCoursesSuccess,
+    TResult Function(String error)? checkCoursesError,
+    TResult Function()? deleteCoursesLoading,
+    TResult Function(T data)? deleteCoursesSuccess,
+    TResult Function(String error)? deleteCoursesError,
+    TResult Function()? soulionTestLoading,
+    TResult Function(T data)? soulionTestSuccess,
+    TResult Function(String error)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestError != null) {
+      return soulionTestError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCoursesMe<T> value) initialCoursesMe,
+    required TResult Function(LoadingCoursesMe<T> value) loadingCoursesMe,
+    required TResult Function(SuccessCoursesMe<T> value) successCoursesMe,
+    required TResult Function(ErrorCoursesMe<T> value) errorCoursesMe,
+    required TResult Function(CourseSelectedMe<T> value) courseSelectedMe,
+    required TResult Function(LessonSelectedMe<T> value) lessonSelectedMe,
+    required TResult Function(LevelSelectedMe<T> value) levelSelectedMe,
+    required TResult Function(_SendQuationInitial<T> value) sendQuationInitial,
+    required TResult Function(SendQuationLoading<T> value) sendQuationLoading,
+    required TResult Function(SendQuationSuccess<T> value) sendQuationSuccess,
+    required TResult Function(SendQuationError<T> value) sendQuationError,
+    required TResult Function(_FinishedInitial<T> value) finishedInitial,
+    required TResult Function(FinishedLoading<T> value) finishedLoading,
+    required TResult Function(FinishedSuccess<T> value) finishedSuccess,
+    required TResult Function(FinishedError<T> value) finishedError,
+    required TResult Function(_ListCoursesInitial<T> value) listCoursesInitial,
+    required TResult Function(ListCoursesLoading<T> value) listCoursesLoading,
+    required TResult Function(ListCoursesSuccess<T> value) listCoursesSuccess,
+    required TResult Function(ListCoursesError<T> value) listCoursesError,
+    required TResult Function(CheckCoursesLoading<T> value) checkCoursesLoading,
+    required TResult Function(CheckCoursesSuccess<T> value) checkCoursesSuccess,
+    required TResult Function(CheckCoursesError<T> value) checkCoursesError,
+    required TResult Function(DeleteCoursesLoading<T> value)
+        deleteCoursesLoading,
+    required TResult Function(DeleteCoursesSuccess<T> value)
+        deleteCoursesSuccess,
+    required TResult Function(DeleteCoursesError<T> value) deleteCoursesError,
+    required TResult Function(SoulionTestLoading<T> value) soulionTestLoading,
+    required TResult Function(SoulionTestSuccess<T> value) soulionTestSuccess,
+    required TResult Function(SoulionTestError<T> value) soulionTestError,
+  }) {
+    return soulionTestError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult? Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult? Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult? Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult? Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult? Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult? Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult? Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult? Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult? Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult? Function(SendQuationError<T> value)? sendQuationError,
+    TResult? Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult? Function(FinishedLoading<T> value)? finishedLoading,
+    TResult? Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult? Function(FinishedError<T> value)? finishedError,
+    TResult? Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult? Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult? Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult? Function(ListCoursesError<T> value)? listCoursesError,
+    TResult? Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult? Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult? Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult? Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult? Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult? Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult? Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult? Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult? Function(SoulionTestError<T> value)? soulionTestError,
+  }) {
+    return soulionTestError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCoursesMe<T> value)? initialCoursesMe,
+    TResult Function(LoadingCoursesMe<T> value)? loadingCoursesMe,
+    TResult Function(SuccessCoursesMe<T> value)? successCoursesMe,
+    TResult Function(ErrorCoursesMe<T> value)? errorCoursesMe,
+    TResult Function(CourseSelectedMe<T> value)? courseSelectedMe,
+    TResult Function(LessonSelectedMe<T> value)? lessonSelectedMe,
+    TResult Function(LevelSelectedMe<T> value)? levelSelectedMe,
+    TResult Function(_SendQuationInitial<T> value)? sendQuationInitial,
+    TResult Function(SendQuationLoading<T> value)? sendQuationLoading,
+    TResult Function(SendQuationSuccess<T> value)? sendQuationSuccess,
+    TResult Function(SendQuationError<T> value)? sendQuationError,
+    TResult Function(_FinishedInitial<T> value)? finishedInitial,
+    TResult Function(FinishedLoading<T> value)? finishedLoading,
+    TResult Function(FinishedSuccess<T> value)? finishedSuccess,
+    TResult Function(FinishedError<T> value)? finishedError,
+    TResult Function(_ListCoursesInitial<T> value)? listCoursesInitial,
+    TResult Function(ListCoursesLoading<T> value)? listCoursesLoading,
+    TResult Function(ListCoursesSuccess<T> value)? listCoursesSuccess,
+    TResult Function(ListCoursesError<T> value)? listCoursesError,
+    TResult Function(CheckCoursesLoading<T> value)? checkCoursesLoading,
+    TResult Function(CheckCoursesSuccess<T> value)? checkCoursesSuccess,
+    TResult Function(CheckCoursesError<T> value)? checkCoursesError,
+    TResult Function(DeleteCoursesLoading<T> value)? deleteCoursesLoading,
+    TResult Function(DeleteCoursesSuccess<T> value)? deleteCoursesSuccess,
+    TResult Function(DeleteCoursesError<T> value)? deleteCoursesError,
+    TResult Function(SoulionTestLoading<T> value)? soulionTestLoading,
+    TResult Function(SoulionTestSuccess<T> value)? soulionTestSuccess,
+    TResult Function(SoulionTestError<T> value)? soulionTestError,
+    required TResult orElse(),
+  }) {
+    if (soulionTestError != null) {
+      return soulionTestError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SoulionTestError<T> implements CoursesState<T> {
+  const factory SoulionTestError({required final String error}) =
+      _$SoulionTestErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$SoulionTestErrorImplCopyWith<T, _$SoulionTestErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

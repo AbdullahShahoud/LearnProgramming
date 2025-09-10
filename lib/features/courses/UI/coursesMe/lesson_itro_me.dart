@@ -28,7 +28,7 @@ class LessonsIntrodactionMe extends StatelessWidget {
                 child: SingleChildScrollView(
           child: Column(
             children: [
-              TabBarCourse(image: coure!.image!, name: coure.name!),
+              TabBarCourse(image: coure!.course!.image!, name: coure.course!.name!),
               verticalBox(30.h),
               Text(
                 'بعد حضورك الدرس سوف نجري لك \n احتبارا يقيس مدى فهمك',

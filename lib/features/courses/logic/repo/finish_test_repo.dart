@@ -6,13 +6,13 @@ import 'package:learn_programtion/features/courses/logic/model/finish_test_respo
 import '../../../../core/network/api_error_handler.dart';
 import '../../../../core/network/api_service.dart';
 
-class FinishTestRepo {
+class FinishLevelRepo {
   ApiService _apiService;
-  FinishTestRepo(this._apiService);
-  Future<ApiResult<FinishTestResponse>> finishTest(
-      FinishedTestRuqest finishedTestRuqest) async {
+  FinishLevelRepo(this._apiService);
+  Future<ApiResult<FinishLevelResponse>> finishLevel(
+      FinishedLevelRuqest finishedLevelRuqest) async {
     try {
-      final response = await _apiService.finishedTest(finishedTestRuqest);
+      final response = await _apiService.finishedLevel(finishedLevelRuqest);
       return ApiResult.success(response);
     } on DioError catch (error) {
       return ApiResult.failure(ApiErrorHandler.fromDioError(error));

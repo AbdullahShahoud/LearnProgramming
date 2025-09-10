@@ -46,6 +46,11 @@ void sucessDelet(BuildContext context, String message) {
   showDialog(
       context: context,
       builder: (context) => AlertDialog(
+            icon: Icon(
+              Icons.check,
+              color: Colors.green,
+              size: 50,
+            ),
             content: Text(
               message,
               style: FontStyleAndText.font_big,

@@ -10,12 +10,12 @@ class ApiConstant {
   static const String ProfileViewGrade = "courses/certificate/";
   static const String Courses = "course/";
   static const String CoursesMe = "enrollments/";
-  static const String SendQaution = "SendQaution";
+  static const String SendQaution = "lesson-question/";
   static const String FinishCourse = "courses/check-course-completion/";
   static const String FinishLeson = "lessons/mark-attendance/";
-  static const String FinishTest = "FinishTest";
+  static const String FinishLevel = "levels/check-completion/";
   static const String CheckCourse = "enrollments/";
-  static const String DeletCourse = "DeletCourse";
+  static const String SoulionQuations = "submit-answer/";
   static const String DeletUesr = "logout/";
   static const String verfify_email = "verify-email/";
   static const String UserInformation = "user-detail/";

@@ -20,7 +20,7 @@ class SinginCubit extends Cubit<SinginState> {
   TextEditingController? controllerName = TextEditingController();
   var key = GlobalKey<FormState>();
   static SinginCubit get(context) => BlocProvider.of(context);
-  Check? site = Check.student;
+  Check? site;
   String? otp;
   bool obscure = true;
   bool obscure1 = true;
@@ -34,16 +34,16 @@ class SinginCubit extends Cubit<SinginState> {
 
   void emitSingin() async {
     emit(SinginState.loading());
+    String type = await SharedPrefHelper.getString('type');
     final respons = await _singinRepo.Singin(SinginRequest(
         email: controllerEmail?.text,
         password: controllerPassword?.text,
         username: controllerName?.text,
-        account_type: site == Check.student ? 'student' : 'teacher',
+        account_type: type,
         confirmPassword: controllerPasswordCon?.text));
     respons.when(
       success: (singin) async {
         emit(SinginState.success(singin));
-        await SharedPrefHelper.setData('token', singin.token ?? '');
         await SharedPrefHelper.setData('id', singin.user!.id);
         await SharedPrefHelper.setData('userName', singin.user!.username ?? '');
         print('User Email: ${singin.user!.email}');
@@ -51,7 +51,7 @@ class SinginCubit extends Cubit<SinginState> {
       },
       failure: (errorHandler) {
         print('❌ Error: ${errorHandler.errorMessage}');
-        emit(SinginState.error(error: 'notSingin'));
+        emit(SinginState.error(error: errorHandler.errorMessage));
       },
     );
   }

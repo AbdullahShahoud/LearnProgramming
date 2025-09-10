@@ -67,6 +67,7 @@ class AddLevelCourseTeacher extends StatelessWidget {
                         paddingH: 90.w,
                         paddingV: 16.h,
                         function: () {
+                          context.pop();
                           context
                               .read<CourserCubitTeacher>()
                               .emitAddLevelTeacher();
@@ -114,36 +115,37 @@ class AddLevelCourseTeacher extends StatelessWidget {
                               color: const Color.fromARGB(48, 121, 98, 248),
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: InkWell(
-                              onTap: () {
-                                cub.select = cub.level[index];
-                              },
-                              child: ExpansionTile(
-                                  title: Text(
-                                    ' ${index} مستوى',
-                                    style: FontStyleAndText.fontmedia,
-                                  ),
-                                  children: [
-                                    Container(
-                                      height: 350.h,
-                                      child: ListView.builder(
-                                        itemCount: cub.lession[index],
-                                        itemBuilder: (context, index) {
-                                          return Padding(
-                                            padding: EdgeInsets.all(10.0),
-                                            child: InkWell(
-                                                onTap: () {
-                                                  context.pushNamed(
-                                                      Routers.add_lession);
-                                                },
-                                                child: LessionItem(
-                                                    ' ${index} درس')),
-                                          );
-                                        },
-                                      ),
-                                    )
-                                  ]),
-                            ),
+                            child: ExpansionTile(
+                                onExpansionChanged: (value) {
+                                  if (value == true) {
+                                    print(cub.level[index]);
+                                    cub.select = cub.level[index];
+                                  }
+                                },
+                                title: Text(
+                                  ' ${index} مستوى',
+                                  style: FontStyleAndText.fontmedia,
+                                ),
+                                children: [
+                                  Container(
+                                    height: 350.h,
+                                    child: ListView.builder(
+                                      itemCount: cub.lession[index],
+                                      itemBuilder: (context, index) {
+                                        return Padding(
+                                          padding: EdgeInsets.all(10.0),
+                                          child: InkWell(
+                                              onTap: () {
+                                                context.pushNamed(
+                                                    Routers.add_lession);
+                                              },
+                                              child:
+                                                  LessionItem(' ${index} درس')),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                ]),
                           ),
                         );
                       },
@@ -155,6 +157,10 @@ class AddLevelCourseTeacher extends StatelessWidget {
                   paddingH: 135.w,
                   paddingV: 20.h,
                   function: () {
+                    // CourserCubitTeacher.get(context)
+                    //     .quiz
+                    //     .add(CourserCubitTeacher.get(context).finals!);
+
                     context.pushNamed(Routers.test);
                   },
                 ),

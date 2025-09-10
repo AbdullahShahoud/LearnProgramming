@@ -9,11 +9,11 @@ part of 'send_qaustion_response.dart';
 SendQautionReesponse _$SendQautionReesponseFromJson(
         Map<String, dynamic> json) =>
     SendQautionReesponse(
-      massage: json['massage'] as String?,
+      message: json['message'] as String?,
     );
 
 Map<String, dynamic> _$SendQautionReesponseToJson(
         SendQautionReesponse instance) =>
     <String, dynamic>{
-      'massage': instance.massage,
+      'message': instance.message,
     };

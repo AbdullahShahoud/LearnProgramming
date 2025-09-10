@@ -7,7 +7,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:learn_programtion/features/singin/Ui/widget/form_singin.dart';
 import 'package:learn_programtion/features/singin/Ui/widget/singin_bloc_listener.dart';
 import 'package:learn_programtion/features/singin/logic/cubit/singin_cubit.dart';
-import 'package:learn_programtion/features/singin/logic/cubit/singin_stare.dart';
 
 import '../../../core/helper/spacing.dart';
 import '../../../core/theming/font_style.dart';
@@ -24,42 +23,37 @@ class _HomeSignInState extends State<HomeSignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<SinginCubit, SinginState>(
-        listener: (context, state) {},
-        builder: (context, state) => SingleChildScrollView(
-          child: SafeArea(
-              child: Stack(
-            children: [
-              Background(context),
-              Padding(
-                padding: EdgeInsets.only(top: 80.h),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset('assets/svg/logo_text.svg',
-                        width: 100.w, height: 100.h),
-                    Padding(
-                      padding: EdgeInsets.only(right: 20.w),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          'اهلا بك',
-                          style: FontStyleAndText.homefont,
-                        ),
-                      ),
+      body: SafeArea(
+          child: Stack(
+        children: [
+          Background(context),
+          Padding(
+            padding: EdgeInsets.only(top: 80.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset('assets/svg/logo_text.svg',
+                    width: 100.w, height: 100.h),
+                Padding(
+                  padding: EdgeInsets.only(right: 20.w),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'اهلا بك',
+                      style: FontStyleAndText.homefont,
                     ),
-                    verticalBox(20.h),
-                    FormSingin(),
-                    verticalBox(20.h),
-                    YourAccount(),
-                    SinginBlocListener()
-                  ],
+                  ),
                 ),
-              )
-            ],
-          )),
-        ),
-      ),
+                verticalBox(20.h),
+                FormSingin(),
+                verticalBox(20.h),
+                YourAccount(),
+                SinginBlocListener()
+              ],
+            ),
+          )
+        ],
+      )),
     );
   }
 }

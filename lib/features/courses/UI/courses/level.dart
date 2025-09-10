@@ -35,13 +35,13 @@ class _CoursesLevelState extends State<CoursesLevel> {
             Container(
                 height: 500.h,
                 child: ListView.builder(
-                    itemCount: course.level.length,
+                    itemCount: course.levels.length,
                     itemBuilder: (context, index) {
                       return Padding(
                           padding: EdgeInsets.symmetric(horizontal: 6.w),
                           child: LevelItem(
                             image: course.image!,
-                            name: course.level[index].name,
+                            name: course.levels[index].name,
                           ));
                     })),
             verticalBox(10.h),

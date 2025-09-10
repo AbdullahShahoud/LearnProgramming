@@ -370,12 +370,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<CoursesResponse>> getCourses() async {
+  Future<CourseListResponseStudent> getCourses() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CoursesResponse>>(Options(
+    final _options = _setStreamType<CourseListResponseStudent>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -391,13 +391,10 @@ class _ApiService implements ApiService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CoursesResponse> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CourseListResponseStudent _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) =>
-              CoursesResponse.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CourseListResponseStudent.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -406,12 +403,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<CoursesMeResponse>> getCoursesMe() async {
+  Future<CourseMeListResponse> getCoursesMe() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CoursesMeResponse>>(Options(
+    final _options = _setStreamType<CourseMeListResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -427,13 +424,10 @@ class _ApiService implements ApiService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CoursesMeResponse> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CourseMeListResponse _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) =>
-              CoursesMeResponse.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CourseMeListResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -511,21 +505,21 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<FinishTestResponse> finishedTest(
-      FinishedTestRuqest finishedTest) async {
+  Future<FinishLevelResponse> finishedLevel(
+      FinishedLevelRuqest finishedTest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(finishedTest.toJson());
-    final _options = _setStreamType<FinishTestResponse>(Options(
+    final _options = _setStreamType<FinishLevelResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'FinishTest',
+          'levels/check-completion/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -535,9 +529,9 @@ class _ApiService implements ApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late FinishTestResponse _value;
+    late FinishLevelResponse _value;
     try {
-      _value = FinishTestResponse.fromJson(_result.data!);
+      _value = FinishLevelResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -560,7 +554,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'SendQaution',
+          'lesson-question/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -608,41 +602,6 @@ class _ApiService implements ApiService {
     late FinishLessonResponse _value;
     try {
       _value = FinishLessonResponse.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<DeletCourseResponse> deletCourse(
-      DeletCourseRuqest deletCourseRuqest) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(deletCourseRuqest.toJson());
-    final _options = _setStreamType<DeletCourseResponse>(Options(
-      method: 'DELETE',
-      headers: _headers,
-      extra: _extra,
-    )
-        .compose(
-          _dio.options,
-          'DeletCourse',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        )));
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late DeletCourseResponse _value;
-    try {
-      _value = DeletCourseResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -746,6 +705,40 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<SoulionResponse> soulionQuations(
+      List<QautionRuqest> qautionRuqest) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = qautionRuqest.map((e) => e.toJson()).toList();
+    final _options = _setStreamType<SoulionResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'submit-answer/',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SoulionResponse _value;
+    try {
+      _value = SoulionResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
   Future<List<NotificationResponse>> getNotificationTeacher() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -819,12 +812,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<CoursesResponseTc>> getCoursesTeacher() async {
+  Future<CourseListResponse> getCoursesTeacher() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CoursesResponseTc>>(Options(
+    final _options = _setStreamType<CourseListResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -840,13 +833,10 @@ class _ApiService implements ApiService {
           _dio.options.baseUrl,
           baseUrl,
         )));
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CoursesResponseTc> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CourseListResponse _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) =>
-              CoursesResponseTc.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CourseListResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -881,7 +871,10 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<CourseResponse> editCourses(AddCourseRuqest addCourseRuqest) async {
+  Future<CourseResponse> editCourses(
+    AddCourseRuqest addCourseRuqest,
+    String course,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -894,7 +887,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'courses/',
+          'courses/${course}/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -983,7 +976,10 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<CourseResponse> editLevel(AddLevelRuqest addLevelRuqest) async {
+  Future<CourseResponse> editLevel(
+    AddLevelRuqest addLevelRuqest,
+    String level,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -996,7 +992,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'levels/',
+          'levels/${level}/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -1052,7 +1048,10 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<CourseResponse> editLession(AddLessionRuqest addLessionRuqest) async {
+  Future<CourseResponse> editLession(
+    AddLessionRuqest addLessionRuqest,
+    String lession,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -1065,7 +1064,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'lessons/',
+          'lessons/${lession}/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -1154,11 +1153,15 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<CourseResponse> editQuations(List<QuationRuqest> quationRuqest) async {
+  Future<CourseResponse> editQuations(
+    QuationRuqest quationRuqest,
+    String quation,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = quationRuqest.map((e) => e.toJson()).toList();
+    final _data = <String, dynamic>{};
+    _data.addAll(quationRuqest.toJson());
     final _options = _setStreamType<CourseResponse>(Options(
       method: 'PUT',
       headers: _headers,
@@ -1166,7 +1169,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'questions/',
+          'questions/${quation}/',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -1184,6 +1187,81 @@ class _ApiService implements ApiService {
       rethrow;
     }
     return _value;
+  }
+
+  @override
+  Future<void> deletCourse(String course) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<void>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'courses/${course}/',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<void> deletLevel(String level) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<void>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'levels/${level}/',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<void> deletLession(String lession) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<void>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'lessons/${lession}/',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    await _dio.fetch<void>(_options);
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

@@ -17,6 +17,7 @@ class LessonTeacher extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final levelMe = context.read<CourserCubitTeacher>().selectedlevel!;
+    final coures = context.read<CourserCubitTeacher>().selectedcorse;
     return Scaffold(
       body: SafeArea(
         child: BlocConsumer<CourserCubitTeacher, CourserCubitTeacherState>(
@@ -24,7 +25,6 @@ class LessonTeacher extends StatelessWidget {
             // TODO: implement listener
           },
           builder: (context, state) {
-            final coures = context.read<CourserCubitTeacher>().selectedcorse;
             return SingleChildScrollView(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,7 +49,7 @@ class LessonTeacher extends StatelessWidget {
                                 child: LessonItemTeacher(
                                     image: coures.image!,
                                     name: levelMe.lessons![index].name!,
-                                    lessonId: levelMe.lessons![index].id!),
+                                    lesson: levelMe.lessons![index]),
                               ),
                             );
                           }),

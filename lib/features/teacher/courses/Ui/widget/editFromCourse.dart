@@ -9,6 +9,7 @@ import '../../../../../core/theming/font_style.dart';
 import '../../../../widget/button.dart';
 import '../../../../widget/text_from.dart';
 import '../../../courses/logic/courses_cubit/cubit/courser_cubit_cubit.dart';
+import 'edit_course_bloc_listener - Copy.dart';
 
 class EditeFormCourses extends StatefulWidget {
   const EditeFormCourses({super.key});
@@ -17,8 +18,8 @@ class EditeFormCourses extends StatefulWidget {
   State<EditeFormCourses> createState() => _FormCoursesState();
 }
 
-String values = 'jjjj';
 int cc = 0;
+String values = 'jjjj';
 List<String> vv = [
   'jjjj',
   'jjjj22',
@@ -42,7 +43,7 @@ class _FormCoursesState extends State<EditeFormCourses> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: context.read<CourserCubitTeacher>().keye,
+        key: context.read<CourserCubitTeacher>().keyeEditCourse,
         child: Column(
           children: [
             FromFields(
@@ -53,11 +54,10 @@ class _FormCoursesState extends State<EditeFormCourses> {
                   }
                 },
                 paddingContentV: 18.h,
-                // init_value:
-                // BlocProvider.value(value:BlocProvider.of<CourserCubitTeacher>(context)).,
-                // context.read<CourserCubitTeacher>().selectedcorse!.name,
                 hint: 'الاسم',
-                controller: context.read<CourserCubitTeacher>().controllername,
+                controller: context
+                    .read<CourserCubitTeacher>()
+                    .controllereditcoursename!,
                 icon: SizedBox.shrink(),
                 keyboardType: TextInputType.name,
                 context: context),
@@ -71,10 +71,10 @@ class _FormCoursesState extends State<EditeFormCourses> {
                 },
                 paddingContentV: 18.h,
                 hint: 'رابط الصورة ',
-                controller: context.read<CourserCubitTeacher>().controllerimage,
+                controller: context
+                    .read<CourserCubitTeacher>()
+                    .controllereditcourseLink!,
                 icon: SizedBox.shrink(),
-                // init_value:
-                //     context.read<CourserCubitTeacher>().selectedcorse!.image,
                 keyboardType: TextInputType.emailAddress,
                 context: context),
             verticalBox(10.h),
@@ -87,13 +87,10 @@ class _FormCoursesState extends State<EditeFormCourses> {
                 color: Color.fromARGB(48, 121, 98, 248),
                 paddingContentV: 18.h,
                 hint: ' مدة الكورس',
-                controller: context.read<CourserCubitTeacher>().controllertime,
+                controller: context
+                    .read<CourserCubitTeacher>()
+                    .controllereditcoursetime!,
                 keyboardType: TextInputType.number,
-                // init_value: context
-                //     .read<CourserCubitTeacher>()
-                //     .selectedcorse!
-                //     .time
-                //     .toString(),
                 context: context,
                 icon: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -171,11 +168,10 @@ class _FormCoursesState extends State<EditeFormCourses> {
                 }
                 return null;
               },
-              controller:
-                  context.read<CourserCubitTeacher>().controllerdescription,
+              controller: context
+                  .read<CourserCubitTeacher>()
+                  .controllereditcoursedescrip,
               cursorColor: Colors.white,
-              // initialValue:
-              //     context.read<CourserCubitTeacher>().selectedcorse!.descrip,
               maxLines: 12,
               textAlign: TextAlign.right,
               style: TextStyle(
@@ -208,20 +204,25 @@ class _FormCoursesState extends State<EditeFormCourses> {
               keyboardType: TextInputType.name,
             ),
             verticalBox(20.h),
+            EditCoursesBlocListener(),
             button(
                 text: ' تعديل كورس',
                 paddingH: 135.w,
                 paddingV: 20.h,
                 function: () {
-                  Vildatorcourse(context);
+                  vildatorCourse(context);
                 })
           ],
         ));
   }
 }
 
-void Vildatorcourse(BuildContext context) {
-  if (context.read<CourserCubitTeacher>().keye.currentState!.validate()) {
-    // context.read<CourserCubitTeacher>().emitSingin();
+void vildatorCourse(BuildContext context) {
+  if (context
+      .read<CourserCubitTeacher>()
+      .keyeEditCourse
+      .currentState!
+      .validate()) {
+    context.read<CourserCubitTeacher>().emitEditCoursesTeacher(values, cc);
   }
 }

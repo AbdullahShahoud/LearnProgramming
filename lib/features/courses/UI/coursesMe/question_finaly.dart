@@ -10,8 +10,8 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/routing/router.dart';
 import '../../logic/cubit/cubit/coursees_state.dart';
 import '../../widget/finish_course_bloc_listener.dart';
-import '../../widget/finish_test_bloc_Listener.dart';
 import '../../widget/quation_item.dart';
+import '../../widget/soulion_bloc_listener.dart';
 
 class QuestionFinaly extends StatefulWidget {
   const QuestionFinaly({super.key});
@@ -29,7 +29,8 @@ class _QuestionFinalyState extends State<QuestionFinaly> {
         ),
         body: BlocBuilder<CourseesCubit, CoursesState>(
           builder: (context, state) {
-            final test = CourseesCubit.get(context).seletCourseMe?.finalTest;
+            final test =
+                CourseesCubit.get(context).seletCourseMe?.course!.finalTest;
             return SafeArea(
               child: SingleChildScrollView(
                   child: Column(
@@ -50,83 +51,15 @@ class _QuestionFinalyState extends State<QuestionFinaly> {
                   verticalBox(5.h),
                   QuationItem(test!),
                   verticalBox(10.h),
-                  FinishTestBlocListener(),
-                  FinishCourseBlocListener(),
+                  SoulionBlocListener(),
+                  // FinishCourseBlocListener(),
                   button(
                       text: 'النتيجة',
                       paddingV: 16.h,
                       paddingH: 140.w,
                       function: () {
-                        // CourseesCubit.get(context).emitFinishTest();
-                        showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                                  title: Text('النتيجة'),
-                                  content: Container(
-                                      height: 220.h,
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            '''لقد حصلت عل
-                                              00 ''',
-                                            textDirection: TextDirection.rtl,
-                                            style: FontStyleAndText.fontmedia,
-                                          ),
-                                          verticalBox(35.h),
-                                          button(
-                                              text: 'موافق',
-                                              paddingH: 50.w,
-                                              paddingV: 17.h,
-                                              function: () {
-                                                CourseesCubit.get(context)
-                                                    .emitFinishCourse();
-                                                showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (context) =>
-                                                            AlertDialog(
-                                                              content:
-                                                                  Container(
-                                                                height: 200.h,
-                                                                child: Column(
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .center,
-                                                                  children: [
-                                                                    Icon(
-                                                                      Icons
-                                                                          .lock_open_rounded,
-                                                                      size: 40,
-                                                                      color: Colors
-                                                                          .green,
-                                                                    ),
-                                                                    verticalBox(
-                                                                        15.h),
-                                                                    Text(
-                                                                      'تم إنهاء الكورس بنجاح',
-                                                                      style: FontStyleAndText
-                                                                          .fontmedia,
-                                                                    ),
-                                                                    verticalBox(
-                                                                        10.h),
-                                                                    button(
-                                                                        paddingH: 30
-                                                                            .w,
-                                                                        text:
-                                                                            'موافق',
-                                                                        function:
-                                                                            () {
-                                                                          context
-                                                                              .pushNamed(Routers.home_page);
-                                                                        })
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ));
-                                              })
-                                        ],
-                                      )),
-                                ));
+                        CourseesCubit.get(context).emitSouliontest(test);
+                        // CourseesCubit.get(context).emitFinishCourse();
                       })
                 ],
               )),

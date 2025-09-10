@@ -67,7 +67,7 @@ class _CoursesAllState extends State<CoursesAll> {
             (index) {
               final course = courses[index];
               return ListView.builder(
-                itemCount: course.level.length,
+                itemCount: course.levels.length,
                 itemBuilder: (context, levelIndex) {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 5.h),
@@ -84,7 +84,7 @@ class _CoursesAllState extends State<CoursesAll> {
                         type: course.type,
                         image: course.image,
                         id: course.id,
-                        numberLevel: course.level.length,
+                        numberLevel: course.levels.length,
                       ),
                     ),
                   );
