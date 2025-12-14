@@ -18,4 +18,3 @@ this is same screenshot to app:
 
 <img width="12476" height="6904" alt="Frame 22" src="https://github.com/user-attachments/assets/da1557d1-9d7f-4d8c-8dd4-874fab968e10" />
 
-
