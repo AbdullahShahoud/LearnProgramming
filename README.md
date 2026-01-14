@@ -1,6 +1,7 @@
-learn_programtion
-This mobile application provides an interactive learning experience for students in technical subjects. The key features include:
+learn programtion
+This mobile application provides an interactive learning experience for students in technical subjects.
 
+ The key features include:
 Course Content: Courses are presented through detailed lessons and educational videos.
 
 Quizzes & Final Exam: Each course includes quizzes after every level, with a final exam at the end.
